@@ -5,7 +5,8 @@ export class Boat{
         public hp:number,
         public people:number,
         public length:number,
-        public img:number
+        public img:number,
+        public price:number
     ){
 
     }

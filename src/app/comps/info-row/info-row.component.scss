@@ -1,12 +1,15 @@
 :host{
     width: fit-content;
     display: flex;
-    align-items: center;
+    align-items:center;
+    justify-content: space-between;
     gap: 10px;
     padding-left: 10px;
     font-size: 15px;
     color: black;
     border-top: 1px solid black;
+    padding-top: 10px;
+    flex: 0.6;
 }
 :host:nth-child(1){
     border-top: none;

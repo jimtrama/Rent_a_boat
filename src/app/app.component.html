@@ -1,14 +1,22 @@
 <div class="top-level">
-<div class="logo-container">
-  <img src="/assets/icons/medusa.png" />
-</div>
-<img class="prop-icon" src="/assets/icons/blades.png" />
-</div>
-
-<div class="main-container">
-    <app-card *ngFor="let boat of boats" [boat]="boat"   />
+  <div class="logo-container">
+    <img src="/assets/icons/medusa.png" />
+    <img class="boat-icon" src="/assets/icons/boat.png" />
+  </div>
+  <img class="prop-icon" src="/assets/icons/blades.png" />
 </div>
 
+<div (touchend)="onTouchEnd($event)" (mouseup)="onMouseUp($event)" (touchstart)="onTouchStart($event)" (mousedown)="onMouseDown($event)" class="main-container">
+  <app-card *ngFor="let boat of boats" [boat]="boat" />
+</div>
+<div class="bullet-container">
+  <div
+    class="bullet"
+    [ngClass]="{ selected: selectedIndex == i }"
+    *ngFor="let boat of boats; let i = index"
+  ></div>
+</div>
+
+<img class="arrow-icon" src="/assets/icons/right-arrow.png" />
 <img class="background-icon" src="/assets/icons/turbine.png" />
-<img class="boat-icon" src="/assets/icons/boat.png" />
-<span class="title" >Medusa Boats</span>
+<span class="title">Medusa Boats</span>
