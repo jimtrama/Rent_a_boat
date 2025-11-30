@@ -3,8 +3,9 @@
     width: 100vw;
     height: 100vh;
     overflow: hidden;
-    background: #e6feff;
-    background: linear-gradient(180deg, rgba(230, 254, 255, 1) 0%, rgba(45, 124, 194, 1) 100%);
+    // background: #e6feff;
+    // background: linear-gradient(180deg, rgba(230, 254, 255, 1) 0%, rgba(45, 124, 194, 1) 100%);
+    background-color: white;
 }
 .top-level{
     width: 100vw;
@@ -86,7 +87,6 @@
     left: 50%;
     transform: translateX(-50%);
     font-size: large;
-    color: white;
 }
 
 .boat-icon{
