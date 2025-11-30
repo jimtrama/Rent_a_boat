@@ -5,18 +5,20 @@
   </div>
   <img class="prop-icon" src="/assets/icons/blades.png" />
 </div>
-
-<div (touchend)="onTouchEnd($event)" (mouseup)="onMouseUp($event)" (touchstart)="onTouchStart($event)" (mousedown)="onMouseDown($event)" class="main-container">
-  <app-card *ngFor="let boat of boats" [boat]="boat" />
-</div>
-<div class="bullet-container">
-  <div
-    class="bullet"
-    [ngClass]="{ selected: selectedIndex == i }"
-    *ngFor="let boat of boats; let i = index"
-  ></div>
-</div>
-
-<img class="arrow-icon" src="/assets/icons/right-arrow.png" />
-<img class="background-icon" src="/assets/icons/turbine.png" />
 <span class="title">Medusa Boats</span>
+<div  class="outer-wrapper">
+  <div (touchend)="onTouchEnd($event)" (mouseup)="onMouseUp($event)" (touchstart)="onTouchStart($event)" (mousedown)="onMouseDown($event)" class="main-container">
+    <app-card *ngFor="let boat of boats" [boat]="boat" />
+  </div>
+  <div class="bullet-container">
+    <div
+      class="bullet"
+      [ngClass]="{ selected: selectedIndex == i }"
+      *ngFor="let boat of boats; let i = index"
+    ></div>
+  </div>
+  <img class="background-icon" src="/assets/icons/turbine.png" />
+</div>
+
+<img class="arrow-right-icon" src="/assets/icons/right-arrow.png" />
+<img class="arrow-left-icon" src="/assets/icons/right-arrow.png" />

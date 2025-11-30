@@ -1,51 +1,135 @@
 import { Component } from '@angular/core';
 import { Boat } from './models/boat.model';
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   standalone: false,
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  public boats:Boat[] = [
-    new  Boat(35,5,5.45,1,50),
-    new  Boat(35,5,5.45,2,50),
-    new  Boat(25,4,6.45,2,50),
-    new  Boat(35,5,5.45,2,50),
+  public boats: Boat[] = [
+    new Boat(35, 5, 5.45, 1, 50),
+    new Boat(35, 5, 5.45, 2, 50),
+    new Boat(25, 4, 6.45, 2, 50),
+    new Boat(35, 5, 5.45, 2, 50),
   ];
 
-  public selectedIndex = 0 ;
+  public selectedIndex = 0;
   public touchStartX = 0;
-  onTouchEnd(e:TouchEvent){
+  private showingLeftIcon = false;
+  private showingRightIcon = true;
+
+  onTouchEnd(e: TouchEvent) {
+    let boatsEls = document.getElementsByTagName('app-card');
     let touchEndX = e.changedTouches[0].pageX;
-    this.calculateBulletChange(touchEndX)
+    let values = [];
+    let isLeftSwipe = this.touchStartX > touchEndX;
+
+    for (let boatEl of boatsEls) {
+      let x = boatEl.getBoundingClientRect().x;
+      values.push(x);
+    }
+
+    let min = 1000;
+    let max = -1000;
+    let index = 0;
+    console.log(values , this.touchStartX > touchEndX );
+    
+    if (isLeftSwipe) {
+      this.rotateLeft();
+      for (let i = 0; i < values.length; i++) {
+        if (values[i] > 50 && values[i] < min) {
+          min = values[i];
+          index = i;
+        }
+      }
+      if(index>0){
+        this.showLeftArrow();
+      }
+      if(index == values.length-1){
+        this.hideRightArrow();
+      }
+    } else {
+      this.rotateRight();
+      for (let i = 0; i < values.length; i++) {
+        if (values[i] < 0 && values[i] > max) {
+          max = values[i];
+          index = i;
+        }
+      }
+      if(index == 0){
+        this.hideLeftArrow();
+      }
+      if(index < values.length-1){
+        this.showRightArrow();
+      }
+    }
+    this.selectedIndex = index;
   }
 
-  onMouseDown(e:MouseEvent){
+  private rotateLeft(){
+    document.getElementsByClassName('background-icon')[0].classList.remove("rotate-blade-right")
+    document.getElementsByClassName('background-icon')[0].classList.remove("rotate-blade-left")
+    setTimeout(()=>{document.getElementsByClassName('background-icon')[0].classList.add("rotate-blade-left")})
+  }
+
+  private rotateRight(){
+    document.getElementsByClassName('background-icon')[0].classList.remove("rotate-blade-left")
+    document.getElementsByClassName('background-icon')[0].classList.remove("rotate-blade-right")
+    setTimeout(()=>{document.getElementsByClassName('background-icon')[0].classList.add("rotate-blade-right")})
+  }
+
+  private showLeftArrow(){
+    if(!this.showingLeftIcon){
+      console.log("show left");
+      document.getElementsByClassName('arrow-left-icon')[0].classList.remove("slide-out-left")
+      document.getElementsByClassName('arrow-left-icon')[0].classList.add("slide-in-left")
+      this.showingLeftIcon = true;
+    }
+  }
+
+  private hideLeftArrow(){
+    if(this.showingLeftIcon){
+      console.log("hide left");
+      document.getElementsByClassName('arrow-left-icon')[0].classList.remove("slide-in-left")
+      document.getElementsByClassName('arrow-left-icon')[0].classList.add("slide-out-left")
+      this.showingLeftIcon = false;
+    }
+  }
+
+  private hideRightArrow(){
+    if(this.showingRightIcon){
+      console.log("hide right");
+      document.getElementsByClassName('arrow-right-icon')[0].classList.remove("slide-in-right")
+      document.getElementsByClassName('arrow-right-icon')[0].classList.add("slide-out-right")
+      this.showingRightIcon = false;
+    }
+  }
+
+  private showRightArrow(){
+    if(!this.showingRightIcon){
+      console.log("show right");
+      document.getElementsByClassName('arrow-right-icon')[0].classList.remove("slide-out-right")
+      document.getElementsByClassName('arrow-right-icon')[0].classList.add("slide-in-right")
+      this.showingRightIcon = true;
+    }
+  }
+
+  onMouseDown(e: MouseEvent) {
     this.touchStartX = e.layerX;
   }
 
-  onMouseUp(e:MouseEvent){
-    let xEnd=e.layerX;
-    if(xEnd>this.touchStartX && this.selectedIndex + 1 < this.boats.length){
+  onMouseUp(e: MouseEvent) {
+    let xEnd = e.layerX;
+    if (xEnd > this.touchStartX && this.selectedIndex + 1 < this.boats.length) {
       this.selectedIndex++;
-    }else if(this.touchStartX > xEnd && this.selectedIndex-1>=0){
+    } else if (this.touchStartX > xEnd && this.selectedIndex - 1 >= 0) {
       this.selectedIndex--;
     }
-    
   }
 
-  onTouchStart(e:TouchEvent){
+  onTouchStart(e: TouchEvent) {
     this.touchStartX = e.changedTouches[0].pageX;
-  }
-
-  calculateBulletChange(xEnd:number){
-    if(xEnd<this.touchStartX && this.selectedIndex + 1 < this.boats.length){
-      this.selectedIndex++;
-    }else if(this.touchStartX < xEnd && this.selectedIndex-1>=0){
-      this.selectedIndex--;
-    }
   }
 }
