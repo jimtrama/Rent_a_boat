@@ -1,3 +1,11 @@
+:host{
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: #e6feff;
+    background: linear-gradient(180deg, rgba(230, 254, 255, 1) 0%, rgba(45, 124, 194, 1) 100%);
+}
 .top-level{
     width: 100vw;
     height:200px;
@@ -8,7 +16,7 @@
     .logo-container{
         width: 140vw;
         height: 150px;
-        background-color:black ;
+        background: black;
         transform: rotate(-5deg);
         position: absolute;
         top: -50px;
@@ -31,12 +39,13 @@
 
 .main-container{
     position: absolute;
-    top: 50vh;
+    top: 55vh;
     left: 50vw;
     transform: translate(-50%,-50%);
     width: 70vw;
-    background-color: white;
+    background-color: transparent;
     height: 60vh;
+    min-height: fit-content;
     border-radius: 5px;
     
     overflow-x: scroll;
@@ -46,24 +55,87 @@
     justify-content: flex-start;
     gap:11px;
     padding-left: 10px;
+    z-index: 1;
 }
 
-.bottom-icon{
+.prop-icon{
     height: 50px;
     width: 50px;
     position: absolute;
-    bottom: 40px;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 100px;
+    right:5px;
     animation-name: rotating;
     animation-duration: 1s;
     animation-iteration-count: infinite;
 }
 
+.background-icon{
+    position: absolute;
+    top:52%;
+    left: 50%;
+    height: 100px;
+
+    transform: translate(-50%,-50%);
+    z-index: 0;
+}
+
+.title{
+    position:absolute;
+    bottom: 10px;
+    font-family: 'prettyFont';
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: large;
+    color: white;
+}
+
+.boat-icon{
+    position :absolute;
+    bottom: 30px;
+    left:0;
+    height: 50px;
+    width: 50px;
+    animation-name: flowing;
+    animation-duration: 4s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes flowing {
+    0%{
+        left: -50px ;
+    }
+    10%{
+        transform: rotate(-10deg);
+    }
+    20%{
+        transform: rotate(10deg);
+    }
+    30%{
+        transform: rotate(-10deg);
+    }
+    40%{
+        transform: rotate(10deg);
+    }
+    50%{
+        transform: rotate(-10deg);
+    }
+    60%{
+        transform: rotate(10deg);
+    }
+    70%{
+        transform: rotate(-10deg);
+    }
+    100%{
+        left:calc(100% + 50px);
+    }
+}
+
 @keyframes rotating {
     0%{
-        transform: rotate(0deg);
+        transform: rotate(0deg) ;
     }
+    
     100%{
         transform: rotate(360deg);
     }

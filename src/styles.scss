@@ -2,6 +2,10 @@
     font-family: 'mainFont'; /*a name to be used later*/
     src: url('/assets/font/main.ttf'); /*URL to font*/
 }
+@font-face {
+    font-family: 'prettyFont'; /*a name to be used later*/
+    src: url('/assets/font/pretty.ttf'); /*URL to font*/
+}
 
 *{
     padding: 0;
