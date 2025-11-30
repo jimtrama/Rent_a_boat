@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Boat } from './models/boat.model';
+
 
 @Component({
   selector: 'app-root',
@@ -7,5 +9,8 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'rent_a_boat';
+  public boats:Boat[] = [
+    new  Boat(35,5,5.45,1),
+    new  Boat(35,5,5.45,2)
+  ];
 }

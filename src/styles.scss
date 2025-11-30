@@ -1,1 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: 'mainFont'; /*a name to be used later*/
+    src: url('/assets/font/main.ttf'); /*URL to font*/
+}
+
+*{
+    padding: 0;
+    margin: 0
+}

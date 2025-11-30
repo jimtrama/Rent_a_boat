@@ -1,0 +1,49 @@
+.top-level{
+    width: 100vw;
+    height:200px;
+    overflow:  hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    .logo-container{
+        width: 140vw;
+        height: 150px;
+        background-color:black ;
+        transform: rotate(-5deg);
+        position: absolute;
+        top: -50px;
+        left: -10px;
+        overflow: hidden;
+
+        img{
+            position: absolute;
+            top:60%;
+            left: 50vw;
+            transform:rotate(5deg) translate(-50%,-50%);
+            height: 40px;
+            aspect-ratio: 1/1;
+            -webkit-filter: invert(100%); /* Safari/Chrome */
+            filter: invert(100%);
+        }
+}
+}
+
+
+.main-container{
+    position: absolute;
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%,-50%);
+    width: 70vw;
+    background-color: white;
+    height: 60vh;
+    border-radius: 5px;
+    
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap:11px;
+    padding-left: 10px;
+}
