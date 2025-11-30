@@ -1,4 +1,9 @@
-import { Component } from '@angular/core';
+import {
+  AfterViewChecked,
+  AfterViewInit,
+  Component,
+  OnInit,
+} from '@angular/core';
 import { Boat } from './models/boat.model';
 
 @Component({
@@ -7,7 +12,34 @@ import { Boat } from './models/boat.model';
   standalone: false,
   styleUrl: './app.component.scss',
 })
-export class AppComponent {
+export class AppComponent implements AfterViewInit {
+  ngAfterViewInit(): void {
+    const options = {
+      root: document.getElementById('scroll-area'),
+      rootMargin: '0px',
+      scrollMargin: '0px',
+      threshold: 1.0,
+    };
+
+    const observer = new IntersectionObserver(this.callback.bind(this), options);
+    for (let el of document.getElementsByTagName('app-card')) {
+      observer.observe(el);
+    }
+  }
+
+  private callback(entries: IntersectionObserverEntry[], observer: any) {
+    console.log(entries);
+
+    for (let i = 0; i < entries.length; i++) {
+      if (entries[i].isIntersecting) {
+        console.log(entries[i]);
+        console.log(+entries[i].target.id.split('-')[1]);
+        
+        this.selectedIndex = +entries[i].target.id.split('-')[1];
+      }
+    }
+  }
+
   public boats: Boat[] = [
     new Boat(35, 5, 5.45, 1, 50),
     new Boat(35, 5, 5.45, 2, 50),
@@ -34,8 +66,8 @@ export class AppComponent {
     let min = 1000;
     let max = -1000;
     let index = 0;
-    console.log(values , this.touchStartX > touchEndX );
-    
+    console.log(values, this.touchStartX > touchEndX);
+
     if (isLeftSwipe) {
       this.rotateLeft();
       for (let i = 0; i < values.length; i++) {
@@ -44,10 +76,10 @@ export class AppComponent {
           index = i;
         }
       }
-      if(index>0){
+      if (index > 0) {
         this.showLeftArrow();
       }
-      if(index == values.length-1){
+      if (index == values.length - 1) {
         this.hideRightArrow();
       }
     } else {
@@ -58,60 +90,92 @@ export class AppComponent {
           index = i;
         }
       }
-      if(index == 0){
+      if (index == 0) {
         this.hideLeftArrow();
       }
-      if(index < values.length-1){
+      if (index < values.length - 1) {
         this.showRightArrow();
       }
     }
-    this.selectedIndex = index;
+    //this.selectedIndex = index;
   }
 
-  private rotateLeft(){
-    document.getElementsByClassName('background-icon')[0].classList.remove("rotate-blade-right")
-    document.getElementsByClassName('background-icon')[0].classList.remove("rotate-blade-left")
-    setTimeout(()=>{document.getElementsByClassName('background-icon')[0].classList.add("rotate-blade-left")})
+  private rotateLeft() {
+    document
+      .getElementsByClassName('background-icon')[0]
+      .classList.remove('rotate-blade-right');
+    document
+      .getElementsByClassName('background-icon')[0]
+      .classList.remove('rotate-blade-left');
+    setTimeout(() => {
+      document
+        .getElementsByClassName('background-icon')[0]
+        .classList.add('rotate-blade-left');
+    });
   }
 
-  private rotateRight(){
-    document.getElementsByClassName('background-icon')[0].classList.remove("rotate-blade-left")
-    document.getElementsByClassName('background-icon')[0].classList.remove("rotate-blade-right")
-    setTimeout(()=>{document.getElementsByClassName('background-icon')[0].classList.add("rotate-blade-right")})
+  private rotateRight() {
+    document
+      .getElementsByClassName('background-icon')[0]
+      .classList.remove('rotate-blade-left');
+    document
+      .getElementsByClassName('background-icon')[0]
+      .classList.remove('rotate-blade-right');
+    setTimeout(() => {
+      document
+        .getElementsByClassName('background-icon')[0]
+        .classList.add('rotate-blade-right');
+    });
   }
 
-  private showLeftArrow(){
-    if(!this.showingLeftIcon){
-      console.log("show left");
-      document.getElementsByClassName('arrow-left-icon')[0].classList.remove("slide-out-left")
-      document.getElementsByClassName('arrow-left-icon')[0].classList.add("slide-in-left")
+  private showLeftArrow() {
+    if (!this.showingLeftIcon) {
+      console.log('show left');
+      document
+        .getElementsByClassName('arrow-left-icon')[0]
+        .classList.remove('slide-out-left');
+      document
+        .getElementsByClassName('arrow-left-icon')[0]
+        .classList.add('slide-in-left');
       this.showingLeftIcon = true;
     }
   }
 
-  private hideLeftArrow(){
-    if(this.showingLeftIcon){
-      console.log("hide left");
-      document.getElementsByClassName('arrow-left-icon')[0].classList.remove("slide-in-left")
-      document.getElementsByClassName('arrow-left-icon')[0].classList.add("slide-out-left")
+  private hideLeftArrow() {
+    if (this.showingLeftIcon) {
+      console.log('hide left');
+      document
+        .getElementsByClassName('arrow-left-icon')[0]
+        .classList.remove('slide-in-left');
+      document
+        .getElementsByClassName('arrow-left-icon')[0]
+        .classList.add('slide-out-left');
       this.showingLeftIcon = false;
     }
   }
 
-  private hideRightArrow(){
-    if(this.showingRightIcon){
-      console.log("hide right");
-      document.getElementsByClassName('arrow-right-icon')[0].classList.remove("slide-in-right")
-      document.getElementsByClassName('arrow-right-icon')[0].classList.add("slide-out-right")
+  private hideRightArrow() {
+    if (this.showingRightIcon) {
+      console.log('hide right');
+      document
+        .getElementsByClassName('arrow-right-icon')[0]
+        .classList.remove('slide-in-right');
+      document
+        .getElementsByClassName('arrow-right-icon')[0]
+        .classList.add('slide-out-right');
       this.showingRightIcon = false;
     }
   }
 
-  private showRightArrow(){
-    if(!this.showingRightIcon){
-      console.log("show right");
-      document.getElementsByClassName('arrow-right-icon')[0].classList.remove("slide-out-right")
-      document.getElementsByClassName('arrow-right-icon')[0].classList.add("slide-in-right")
+  private showRightArrow() {
+    if (!this.showingRightIcon) {
+      console.log('show right');
+      document
+        .getElementsByClassName('arrow-right-icon')[0]
+        .classList.remove('slide-out-right');
+      document
+        .getElementsByClassName('arrow-right-icon')[0]
+        .classList.add('slide-in-right');
       this.showingRightIcon = true;
     }
   }

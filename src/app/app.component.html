@@ -7,8 +7,8 @@
 </div>
 <span class="title">Medusa Boats</span>
 <div  class="outer-wrapper">
-  <div (touchend)="onTouchEnd($event)" (mouseup)="onMouseUp($event)" (touchstart)="onTouchStart($event)" (mousedown)="onMouseDown($event)" class="main-container">
-    <app-card *ngFor="let boat of boats" [boat]="boat" />
+  <div id="scroll-area" (touchend)="onTouchEnd($event)" (mouseup)="onMouseUp($event)" (touchstart)="onTouchStart($event)" (mousedown)="onMouseDown($event)" class="main-container">
+    <app-card *ngFor="let boat of boats;let i = index" [boat]="boat" [id]="'boat-'+i" />
   </div>
   <div class="bullet-container">
     <div
