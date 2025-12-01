@@ -5,16 +5,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CardComponent } from './comps/card/card.component';
 import { InfoRowComponent } from './comps/info-row/info-row.component';
-
+import { ContactRowComponent } from './comps/contact-row/contact-row.component';
 @NgModule({
   declarations: [
     AppComponent,
     CardComponent,
-    InfoRowComponent
+    InfoRowComponent,
+    ContactRowComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
