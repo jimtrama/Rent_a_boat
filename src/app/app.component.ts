@@ -13,33 +13,6 @@ import { Boat } from './models/boat.model';
   styleUrl: './app.component.scss',
 })
 export class AppComponent implements AfterViewInit {
-  ngAfterViewInit(): void {
-    const options = {
-      root: document.getElementById('scroll-area'),
-      rootMargin: '0px',
-      scrollMargin: '0px',
-      threshold: 1.0,
-    };
-
-    const observer = new IntersectionObserver(this.callback.bind(this), options);
-    for (let el of document.getElementsByTagName('app-card')) {
-      observer.observe(el);
-    }
-  }
-
-  private callback(entries: IntersectionObserverEntry[], observer: any) {
-    console.log(entries);
-
-    for (let i = 0; i < entries.length; i++) {
-      if (entries[i].isIntersecting) {
-        console.log(entries[i]);
-        console.log(+entries[i].target.id.split('-')[1]);
-        
-        this.selectedIndex = +entries[i].target.id.split('-')[1];
-      }
-    }
-  }
-
   public boats: Boat[] = [
     new Boat(35, 5, 5.45, 1, 50),
     new Boat(35, 5, 5.45, 2, 50),
@@ -52,52 +25,49 @@ export class AppComponent implements AfterViewInit {
   private showingLeftIcon = false;
   private showingRightIcon = true;
 
-  onTouchEnd(e: TouchEvent) {
-    let boatsEls = document.getElementsByTagName('app-card');
-    let touchEndX = e.changedTouches[0].pageX;
-    let values = [];
-    let isLeftSwipe = this.touchStartX > touchEndX;
+  ngAfterViewInit(): void {
+    const options = {
+      root: null,
+      rootMargin: '1px',
+      scrollMargin: '1px',
+      threshold: 1.0,
+    };
 
-    for (let boatEl of boatsEls) {
-      let x = boatEl.getBoundingClientRect().x;
-      values.push(x);
+    const observer = new IntersectionObserver(
+      (entries: IntersectionObserverEntry[], observer: any) => {
+        for (let i = 0; i < entries.length; i++) {
+          if (entries[i].isIntersecting) {
+            this.selectedIndex = +entries[i].target.id.split('-')[1];
+          }
+        }
+        if (this.selectedIndex > 0) {
+          this.showLeftArrow();
+        }
+        if (this.selectedIndex == this.boats.length - 1) {
+          this.hideRightArrow();
+        }
+        if (this.selectedIndex == 0) {
+          this.hideLeftArrow();
+        }
+        if (this.selectedIndex < this.boats.length - 1) {
+          this.showRightArrow();
+        }
+      },
+      options
+    );
+    for (let el of document.getElementsByClassName('card')) {
+      observer.observe(el);
     }
+  }
 
-    let min = 1000;
-    let max = -1000;
-    let index = 0;
-    console.log(values, this.touchStartX > touchEndX);
-
+  onTouchEnd(e: TouchEvent) {
+    let touchEndX = e.changedTouches[0].pageX;
+    let isLeftSwipe = this.touchStartX > touchEndX;
     if (isLeftSwipe) {
       this.rotateLeft();
-      for (let i = 0; i < values.length; i++) {
-        if (values[i] > 50 && values[i] < min) {
-          min = values[i];
-          index = i;
-        }
-      }
-      if (index > 0) {
-        this.showLeftArrow();
-      }
-      if (index == values.length - 1) {
-        this.hideRightArrow();
-      }
     } else {
       this.rotateRight();
-      for (let i = 0; i < values.length; i++) {
-        if (values[i] < 0 && values[i] > max) {
-          max = values[i];
-          index = i;
-        }
-      }
-      if (index == 0) {
-        this.hideLeftArrow();
-      }
-      if (index < values.length - 1) {
-        this.showRightArrow();
-      }
     }
-    //this.selectedIndex = index;
   }
 
   private rotateLeft() {
