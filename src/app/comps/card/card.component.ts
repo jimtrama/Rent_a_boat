@@ -9,4 +9,9 @@ import { Boat } from '../../models/boat.model';
 })
 export class CardComponent {
   @Input() boat!:Boat;
+
+  onImgClick(img:string){
+    console.log(img);
+    
+  }
 }

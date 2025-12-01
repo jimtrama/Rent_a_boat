@@ -1,10 +1,9 @@
 import {
-  AfterViewChecked,
   AfterViewInit,
   Component,
-  OnInit,
 } from '@angular/core';
 import { Boat } from './models/boat.model';
+
 
 @Component({
   selector: 'app-root',
@@ -14,10 +13,10 @@ import { Boat } from './models/boat.model';
 })
 export class AppComponent implements AfterViewInit {
   public boats: Boat[] = [
-    new Boat(35, 5, 5.45, 1, 50),
-    new Boat(35, 5, 5.45, 2, 50),
-    new Boat(25, 4, 6.45, 2, 50),
-    new Boat(35, 5, 5.45, 2, 50),
+    new Boat(35, 5, 5.45, ["boat1","boat2"], 50),
+    new Boat(35, 5, 5.45, ["boat1"], 50),
+    new Boat(25, 4, 6.45, ["boat1"], 50),
+    new Boat(35, 5, 5.45, ["boat1"], 50),
   ];
 
   public selectedIndex = 0;

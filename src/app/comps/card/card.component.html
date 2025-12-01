@@ -1,4 +1,6 @@
-<img class="img" [src]="'/assets/boats/boat'+boat.img+'.jpg'" alt="">
+<div class="imgs-container" >
+    <img (click)="onImgClick(img)" class="img" *ngFor="let img of boat.imgs" [src]="'/assets/boats/'+img+'.jpg'" alt="">
+</div>
 <div class="main-container">
     <app-info-row text="Hp" icon="horse" value="35"/>
     <app-info-row text="People" icon="people" value="5"/>

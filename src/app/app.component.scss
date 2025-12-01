@@ -61,16 +61,7 @@
     z-index: 1;
 }
 
-.prop-icon{
-    height: 50px;
-    width: 50px;
-    position: absolute;
-    top: 100px;
-    right:5px;
-    animation-name: rotating;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
-}
+
 
 .background-icon{
     height: 50px;
@@ -241,12 +232,3 @@
     }
 }
 
-@keyframes rotating {
-    0%{
-        transform: rotate(0deg) ;
-    }
-    
-    100%{
-        transform: rotate(360deg);
-    }
-}
