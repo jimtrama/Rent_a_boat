@@ -70,11 +70,10 @@
 }
 
 .title{
-    position:absolute;
-    top: 115px;
+    width: 100%;
+    display: block;
+    text-align: center;
     font-family: 'prettyFont';
-    left: 50%;
-    transform: translateX(-50%);
     font-size: large;
 }
 
@@ -236,13 +235,13 @@
 
 .info-container{
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-top: 50px;
     padding-bottom: 50px;
     gap: 30px;
     position: relative;
+    flex-wrap: wrap;
 }
 
 .map-container{

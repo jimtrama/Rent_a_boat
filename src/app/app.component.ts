@@ -31,7 +31,7 @@ export class AppComponent implements AfterViewInit {
     console.log("clicked",this.selectedIndex);
     
     const container = document.getElementById('scroll-area');
-    let x = document.getElementById("boat-"+this.selectedIndex)!.getBoundingClientRect().x  * this.selectedIndex;
+    let x = document.getElementById("boat-"+this.selectedIndex)!.getBoundingClientRect().x  * (this.selectedIndex-this.selectedIndex/3);
     console.log(x);
     
     container?.scroll({left:x,behavior:'smooth'})
