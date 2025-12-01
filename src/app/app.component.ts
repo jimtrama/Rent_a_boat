@@ -23,6 +23,39 @@ export class AppComponent implements AfterViewInit {
   public touchStartX = 0;
   private showingLeftIcon = false;
   private showingRightIcon = true;
+  private clicked = false;
+
+  onRightArrowClick(){
+    this.clicked = true;
+    this.selectedIndex++;
+    console.log("clicked",this.selectedIndex);
+    
+    const container = document.getElementById('scroll-area');
+    let x = document.getElementById("boat-"+this.selectedIndex)!.getBoundingClientRect().x  * this.selectedIndex;
+    console.log(x);
+    
+    container?.scroll({left:x,behavior:'smooth'})
+  }
+
+  onLeftArrowClick(){
+    this.selectedIndex--; 
+    const container = document.getElementById('scroll-area');
+    let x = document.getElementById("boat-"+ this.selectedIndex)!.
+    getBoundingClientRect().left;
+    console.log(x,this.selectedIndex);
+    
+    container?.scroll({left:x,behavior:'smooth'})
+  }
+
+  facebookClicked(){
+    open("https://www.facebook.com/p/Medusa-boats-rental-100063928245216/")
+  }
+  phoneClicked(){
+    open("tel:+3069318154")
+  }
+  instagramClicked(){
+    open("https://www.instagram.com/medusa_boat_rental")
+  }
 
   ngAfterViewInit(): void {
     const options = {
@@ -37,6 +70,8 @@ export class AppComponent implements AfterViewInit {
         for (let i = 0; i < entries.length; i++) {
           if (entries[i].isIntersecting) {
             this.selectedIndex = +entries[i].target.id.split('-')[1];
+            console.log("obs",this.selectedIndex);
+            
           }
         }
         if (this.selectedIndex > 0) {

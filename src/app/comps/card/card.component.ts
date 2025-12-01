@@ -24,8 +24,6 @@ export class CardComponent {
       (entries: IntersectionObserverEntry[], observer: any) => {
         for (let i = entries.length -1 ; i >=0 ; i--) {
           if (entries[i].isIntersecting) {
-            
-            console.log(entries);
             this.selectedImg = +entries[i].target.id.split('-')[1];
           }
         }
