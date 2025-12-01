@@ -8,7 +8,7 @@
 }
 .top-level{
     width: 100vw;
-    height:200px;
+    height:150px;
     overflow-x:  hidden;
     position: relative;
     .logo-container{
@@ -40,7 +40,6 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
 }
 
 .main-container{
@@ -60,13 +59,14 @@
     padding-left: 30px;
     padding-top: 30px;
     z-index: 1;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
 }
 
 
 
 .background-icon{
     height: 50px;
+    margin-top: 5px;
 }
 
 .title{
