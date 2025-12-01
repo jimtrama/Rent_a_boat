@@ -13,9 +13,8 @@
     scroll-snap-align:center;
     border: 3px solid black;
     border-radius: 10px;
-    margin: 10px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    gap: 30px;
+    gap: 10px;
     position: relative;
     padding-bottom: 20px;
 }
@@ -46,6 +45,26 @@
     width: 95%;
     flex-wrap: wrap;
     gap: 10px;
+    margin-top: 20px;
+}
+
+.bullets-container{
+    width: 50%;
+    display: flex;
+    gap: 10px;
+    align-self: center;
+    justify-content: center;
+}
+
+.img-bullet{
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    background-color: lightgray;
+}
+
+.selected{
+    background-color: black;
 }
 
 .price{

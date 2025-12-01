@@ -16,7 +16,7 @@
         width: 140vw;
         height: 150px;
         background: black;
-        transform: rotate(-5deg);
+        transform: rotate(-2deg);
         position: absolute;
         top: -50px;
         left: -10px;
@@ -46,6 +46,7 @@
 
 .main-container{
     width: 70vw;
+    max-width: 390px;
     background-color: transparent;
     height: 60vh;
     min-height: fit-content;

@@ -1,5 +1,8 @@
 <div class="imgs-container" >
-    <img (click)="onImgClick(img)" class="img" *ngFor="let img of boat.imgs" [src]="'/assets/boats/'+img+'.jpg'" alt="">
+    <img (click)="onImgClick(img)" [id]="'img-'+i" class="img" *ngFor="let img of boat.imgs;let i =index" [src]="'/assets/boats/'+img+'.jpg'" alt="">
+</div>
+<div id="bullets-container" class="bullets-container" >
+    <div  class="img-bullet" [ngClass]="{'selected':selectedImg == i}" *ngFor="let img of boat.imgs;let i = index;" ></div>
 </div>
 <div class="main-container">
     <app-info-row text="Hp" icon="horse" value="35"/>

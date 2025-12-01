@@ -13,9 +13,9 @@ import { Boat } from './models/boat.model';
 })
 export class AppComponent implements AfterViewInit {
   public boats: Boat[] = [
-    new Boat(35, 5, 5.45, ["boat1","boat2"], 50),
-    new Boat(35, 5, 5.45, ["boat1"], 50),
-    new Boat(25, 4, 6.45, ["boat1"], 50),
+    new Boat(35, 5, 5.45, ["boat1","boat2","boat2","boat2"], 50),
+    new Boat(35, 5, 5.45, ["boat1","boat2","boat1"], 50),
+    new Boat(25, 4, 6.45, ["boat1","boat2"], 50),
     new Boat(35, 5, 5.45, ["boat1"], 50),
   ];
 
@@ -155,10 +155,11 @@ export class AppComponent implements AfterViewInit {
 
   onMouseUp(e: MouseEvent) {
     let xEnd = e.layerX;
-    if (xEnd > this.touchStartX && this.selectedIndex + 1 < this.boats.length) {
-      this.selectedIndex++;
-    } else if (this.touchStartX > xEnd && this.selectedIndex - 1 >= 0) {
-      this.selectedIndex--;
+    let isLeftSwipe = this.touchStartX > xEnd;
+    if (isLeftSwipe) {
+      this.rotateLeft();
+    } else {
+      this.rotateRight();
     }
   }
 
