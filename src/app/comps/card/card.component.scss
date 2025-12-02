@@ -21,25 +21,29 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    gap: 5px;
 }
 
 .imgs-container{
     display: flex;
     overflow-x: scroll;
-    width: 100%;
+    width: 300px;
+    height: 300px;
     gap: 10px;
     justify-content: flex-start;
     align-items: center;
     scroll-snap-type: x mandatory;
     scroll-snap-align: center;
-    padding-right: 10px;
+    position:relative;
 }
 
 .img{
-    width: calc(100% - 10px);
-    height: auto;
+    object-fit: cover;
+    position:absolute;
+    width: calc(90% - 10px);
+    height: 100%;
     border-radius: 10px;
-    //min-width: 161px;
+    transition: all 0.8s;
     margin: 10px;
     box-shadow: rgba(255, 255, 255, 0.35) 0px 5px 15px;
 }
@@ -53,7 +57,7 @@
     justify-content: center;
 }
 
-.bullets-container{
+.arrows-container{
     width: 50%;
     display: flex;
     gap: 10px;
@@ -61,22 +65,15 @@
     justify-content: center;
 }
 
-.img-bullet{
-    height: 8px;
-    width: 8px;
+.arrow{
+    height: 20px;
+    width: 20px;
     border-radius: 50%;
-    background-color: lightgray;
-}
-
-.selected{
-    background-color: black;
-}
-
-.price{
     background-color: white;
-    padding: 5px 15px;
-    border-radius: 10px;
-    font-weight: bolder;
-    box-shadow: rgba(63, 63, 63, 0.35) 0px 5px 10px;
-    align-self: flex-end;
+    cursor: pointer;
+    padding: 10px;
+    box-shadow: rgba(150, 150, 150, 0.35) 0px 5px 15px;
+}
+.left-icon{
+    transform: rotate(-180deg);
 }

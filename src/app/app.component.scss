@@ -64,17 +64,22 @@
 
 
 
-.background-icon{
+.blades-icon{
     height: 50px;
     margin-top: 5px;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+
 }
 
 .title{
-    width: 100%;
-    display: block;
-    text-align: center;
+    position: absolute;
+    bottom: 0;
     font-family: 'prettyFont';
     font-size: large;
+    color: white;
 }
 
 .boat-icon{
@@ -232,7 +237,19 @@
         top: 90px;
     }
 }
-
+.same-info-container{
+    display: flex;
+    padding: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    gap: 10px;
+    border:2px solid black;
+    margin: 5px;
+    border-radius: 20px;
+    margin-top: 40px;
+}
 .info-container{
     display: flex;
     justify-content: center;

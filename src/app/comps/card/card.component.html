@@ -1,27 +1,24 @@
+<span style="font-family: titleFont;" >{{boat.title}}</span>
 <div class="new-container">
   <div class="imgs-container">
     <img
       (click)="onImgClick(img)"
       [id]="'img-' + i"
-      class="img"
+      [class]="boatId+'-img' + ' img'"
       *ngFor="let img of boat.imgs; let i = index"
       [src]="'/assets/boats/' + img"
       alt=""
     />
   </div>
-  <div id="bullets-container" class="bullets-container">
-    <div
-      class="img-bullet"
-      [ngClass]="{ selected: selectedImg == i }"
-      *ngFor="let img of boat.imgs; let i = index"
-    ></div>
+  <div class="arrows-container">
+      <img class="arrow left-icon" *ngIf="selectedImg!=0" (click)="onLeftArrowClick()" src="/assets/icons/right-arrow.png" />
+      <img class="arrow right-icon" *ngIf="selectedImg!=boat.imgs.length-1" (click)="onRightArrowClick()" src="/assets/icons/right-arrow.png" />
   </div>
 </div>
 
 <div class="main-container">
-  <app-info-row text="Hp" icon="horse" value="35" />
-  <app-info-row text="People" icon="people" value="5" />
-  <app-info-row text="Music" icon="music" value="USB" />
-  <app-info-row text="Length" icon="ruler" value="5.4m" />
+  <app-info-row text="Hp" icon="horse" [value]="boat.hp" />
+  <app-info-row text="Max People" icon="people" [value]="boat.people" />
+  <app-info-row text="Length" icon="ruler" [value]="boat.length" />
+  <app-info-row text="Sundeck" icon="deck-chair" value="" />
 </div>
-<span class="price">{{ boat.price }}€</span>

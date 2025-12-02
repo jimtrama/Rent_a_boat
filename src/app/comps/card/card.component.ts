@@ -9,34 +9,46 @@ import { Boat } from '../../models/boat.model';
 })
 export class CardComponent {
   @Input() boat!:Boat;
+  @Input() boatId!:number;
+
 
   public selectedImg = 0;
 
   ngAfterViewInit(): void {
-    const options = {
-      root: null,
-      rootMargin: '0px',
-      scrollMargin: '0px',
-      threshold: 1.0,
-    };
+    setTimeout(()=>{this.calculateImages();});
+  }
 
-    const observer = new IntersectionObserver(
-      (entries: IntersectionObserverEntry[], observer: any) => {
-        for (let i = entries.length -1 ; i >=0 ; i--) {
-          if (entries[i].isIntersecting) {
-            this.selectedImg = +entries[i].target.id.split('-')[1];
-          }
-        }
-      },
-      options
-    );
-    for (let el of document.getElementsByClassName('img')) {
-      observer.observe(el);
+  private calculateImages(){
+    let imgs = document.getElementsByClassName(this.boatId +'-img');
+    //console.log(imgs);
+    
+    for (let i = this.selectedImg ; i<imgs.length;i++ ) {
+      (imgs[i] as HTMLElement ).style.left = (i*10)+"px"; 
+      (imgs[i] as HTMLElement ).style.height = (90-((i-this.selectedImg)*8))+"%"; 
+      (imgs[i] as HTMLElement ).style.zIndex = (imgs.length - i)+""; 
+      (imgs[i] as HTMLElement ).style.transform = "rotate("+((i-this.selectedImg)*2)+"deg)";
+    }
+
+    for (let i = this.selectedImg-1 ; i>=0;i-- ) {
+      (imgs[i] as HTMLElement ).style.left = (i*10)+"px"; 
+      (imgs[i] as HTMLElement ).style.height = (90-(i*5))+"%"; 
+      (imgs[i] as HTMLElement ).style.zIndex = (i)+""; 
+      (imgs[i] as HTMLElement ).style.transform = "rotate("+((i-this.selectedImg)*2)+"deg)";
     }
   }
 
   onImgClick(img:string){
     console.log(img);
     
+  }
+
+  onRightArrowClick(){
+    this.selectedImg++;
+    this.calculateImages();
+  }
+
+  onLeftArrowClick(){
+    this.selectedImg--;
+    this.calculateImages();
   }
 }

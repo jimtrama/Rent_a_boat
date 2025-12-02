@@ -1,13 +1,22 @@
-export class Boat{
+export type BoatArgs = {
+  hp: string;
+  people: string;
+  length: string;
+  imgs: string[];
+  title: string;
+};
 
-
-    constructor(
-        public hp:number,
-        public people:number,
-        public length:number,
-        public imgs:string[],
-        public price:number
-    ){
-
-    }
+export class Boat {
+    public hp: string = ""
+    public people: string = ""
+    public length: string = ""
+    public imgs: string[] = []
+    public title: string = ""
+  constructor(args:BoatArgs) {
+    this.hp = args.hp;
+    this.people = args.people;
+    this.length = args.length;
+    this.imgs = args.imgs;
+    this.title = args.title;
+  }
 }

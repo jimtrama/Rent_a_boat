@@ -2,12 +2,13 @@
   <div class="logo-container">
     <img src="/assets/icons/medusa.png" />
     <img class="boat-icon" src="/assets/icons/boat.png" />
+    <span class="title">Medusa Boats</span>
   </div>
+  <img class="blades-icon" src="/assets/icons/turbine.png" />
 </div>
-<span class="title">Medusa Boats</span>
 <div  class="outer-wrapper">
   <div id="scroll-area" (touchend)="onTouchEnd($event)" (mouseup)="onMouseUp($event)" (touchstart)="onTouchStart($event)" (mousedown)="onMouseDown($event)" class="main-container">
-    <app-card class="card" *ngFor="let boat of boats;let i = index" [boat]="boat" [id]="'boat-'+i" />
+    <app-card class="card" *ngFor="let boat of boats;let i = index" [boat]="boat" [boatId]="i" [id]="'boat-'+i" />
   </div>
   <div class="bullet-container">
     <div
@@ -16,7 +17,17 @@
       *ngFor="let boat of boats; let i = index"
     ></div>
   </div>
-  <img class="background-icon" src="/assets/icons/turbine.png" />
+</div>
+<div class="same-info-container" >
+  <span style="position: absolute;top: 0;left: 5px;font-family: titleFont;" > Common Features</span>
+  <app-info-row text="Car Charger"  icon="car" value="Female adapter"></app-info-row>
+  <app-info-row text="GPS"  icon="gps" value="Tracking System"></app-info-row>
+  <app-info-row text="Mp3 Player" icon="music" value="USB/Bt" />
+  <app-info-row text="Box" icon="ice-box" value="Ice Box" />
+  <app-info-row text="Ladder" icon="swim-ladder" value="Swim Ladder" />
+  <app-info-row text="Trim" icon="engine" value="Power Trim" />
+  <app-info-row text="First Aid" icon="kit" value="Safety Kit" />
+  <app-info-row text="Deck chair" icon="seat" value="Deck chair" />
 </div>
 <div class="info-container">
   <app-contact-row label="Phone" value="+306975616367" (click)="phoneClicked()" ></app-contact-row>
