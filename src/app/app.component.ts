@@ -13,10 +13,10 @@ import { Boat } from './models/boat.model';
 })
 export class AppComponent implements AfterViewInit {
   public boats: Boat[] = [
-    new Boat(35, 5, 5.45, ["boat1","boat2","boat2","boat2"], 50),
-    new Boat(35, 5, 5.45, ["boat1","boat2","boat1"], 50),
-    new Boat(25, 4, 6.45, ["boat1","boat2"], 50),
-    new Boat(35, 5, 5.45, ["boat1"], 50),
+    new Boat(35, 5, 5.45, ["2.jpeg","2.jpeg"], 50),
+    new Boat(35, 5, 5.45, ["3.jpeg","4.jpeg","1.jpg"], 50),
+    new Boat(25, 4, 6.45, ["2.jpeg","3.jpeg"], 50),
+    new Boat(35, 5, 5.45, ["3.jpeg"], 50),
   ];
 
   public selectedIndex = 0;
@@ -51,7 +51,7 @@ export class AppComponent implements AfterViewInit {
     open("https://www.facebook.com/p/Medusa-boats-rental-100063928245216/")
   }
   phoneClicked(){
-    open("tel:+3069318154")
+    open("tel:+306975616367")
   }
   instagramClicked(){
     open("https://www.instagram.com/medusa_boat_rental")
