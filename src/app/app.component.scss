@@ -248,9 +248,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    img{
-        width: 80vw;
-        border-radius: 10px;
-    }
+    width: 100%;
+    aspect-ratio: 1/1;
     padding-bottom: 50px;
+    max-height: 518px;
 }
