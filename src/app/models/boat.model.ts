@@ -4,6 +4,7 @@ export type BoatArgs = {
   length: string;
   imgs: string[];
   title: string;
+  bed?:boolean;
 };
 
 export class Boat {
@@ -12,11 +13,13 @@ export class Boat {
     public length: string = ""
     public imgs: string[] = []
     public title: string = ""
+    public bed:boolean = false;
   constructor(args:BoatArgs) {
     this.hp = args.hp;
     this.people = args.people;
     this.length = args.length;
     this.imgs = args.imgs;
     this.title = args.title;
+    this.bed = args.bed?args.bed:false;
   }
 }

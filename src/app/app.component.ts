@@ -15,8 +15,8 @@ export class AppComponent implements AfterViewInit {
   public boats: Boat[] = [
     new Boat({hp:"yamaha 30/40", people:"5",length:"4.5m", imgs:["2.jpeg","3.jpeg"], title:"Blazer Astra"}),
     new Boat({hp:"yamaha 30/40", people:"5",length:"4.5m", imgs:["1.jpg","2.jpeg","3.jpeg"], title:"Compass"}),
-    new Boat({hp:"mercury 30/40", people:"7",length:"5m", imgs:["1.jpg","2.jpeg","3.jpeg"], title:"Carel"}),
-    new Boat({hp:"selva yamaha 30/60", people:"10",length:"6.1m", imgs:["1.jpg","2.jpeg","3.jpeg"], title:"Poseidon"}),
+    new Boat({hp:"mercury 30/40", people:"7",length:"5m", imgs:["1.jpg","2.jpeg","3.jpeg"], title:"Carel",bed:true}),
+    new Boat({hp:"yamaha 30/60", people:"10",length:"6.1m", imgs:["1.jpg","2.jpeg","3.jpeg"], title:"Poseidon"}),
   ];
 
   public selectedIndex = 0;
