@@ -22,8 +22,6 @@ export class CardComponent {
 
   private calculateImages() {
     let imgs = document.getElementsByClassName(this.boatId + '-img');
-    //console.log(imgs);
-
     for (let i = this.selectedImg; i < imgs.length; i++) {
       (imgs[i] as HTMLElement).style.left = i * 10 + 'px';
       (imgs[i] as HTMLElement).style.height =
@@ -43,7 +41,6 @@ export class CardComponent {
   }
 
   onImgClick(img: string) {
-    console.log(img);
     this.imgClicked.emit(img);
   }
 
@@ -60,7 +57,6 @@ export class CardComponent {
   private imageSwinging = false;
   private xTouchStart = 0;
   onTouchStartImg(e: TouchEvent) {
-    console.log(e);
     this.imageSwinging = true;
     this.xTouchStart = e.targetTouches[0].pageX;
   }
@@ -71,7 +67,6 @@ export class CardComponent {
       e.preventDefault();
       let imgs = document.getElementsByClassName(this.boatId + '-img');
       xDiff = e.targetTouches[0].pageX - this.xTouchStart;
-      console.log(xDiff);
       if(xDiff>0 && this.selectedImg == 0) return;
       if(xDiff<0 && this.selectedImg == imgs.length-1) return;
       (imgs[this.selectedImg] as HTMLElement).style.left = xDiff + 'px';

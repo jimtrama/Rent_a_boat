@@ -52,7 +52,6 @@ export class AppComponent implements AfterViewInit {
 
   onRightArrowClick() {
     this.selectedIndex++;
-    console.log('clicked', this.selectedIndex);
 
     const container = document.getElementById('scroll-area');
     let x =
@@ -60,8 +59,6 @@ export class AppComponent implements AfterViewInit {
         .getElementById('boat-' + this.selectedIndex)!
         .getBoundingClientRect().x *
       (this.selectedIndex - this.selectedIndex / 6);
-    console.log(x);
-
     container?.scroll({ left: x, behavior: 'smooth' });
   }
 
@@ -71,8 +68,6 @@ export class AppComponent implements AfterViewInit {
     let x = document
       .getElementById('boat-' + this.selectedIndex)!
       .getBoundingClientRect().left;
-    console.log(x, this.selectedIndex);
-
     container?.scroll({ left: x, behavior: 'smooth' });
   }
 
@@ -99,7 +94,6 @@ export class AppComponent implements AfterViewInit {
         for (let i = 0; i < entries.length; i++) {
           if (entries[i].isIntersecting) {
             this.selectedIndex = +entries[i].target.id.split('-')[1];
-            console.log('obs', this.selectedIndex);
           }
         }
         if (this.selectedIndex > 0) {
@@ -152,7 +146,6 @@ export class AppComponent implements AfterViewInit {
 
   private showLeftArrow() {
     if (!this.showingLeftIcon) {
-      console.log('show left');
       document
         .getElementsByClassName('arrow-left-icon')[0]
         .classList.remove('slide-out-left');
@@ -165,7 +158,6 @@ export class AppComponent implements AfterViewInit {
 
   private hideLeftArrow() {
     if (this.showingLeftIcon) {
-      console.log('hide left');
       document
         .getElementsByClassName('arrow-left-icon')[0]
         .classList.remove('slide-in-left');
@@ -178,7 +170,6 @@ export class AppComponent implements AfterViewInit {
 
   private hideRightArrow() {
     if (this.showingRightIcon) {
-      console.log('hide right');
       document
         .getElementsByClassName('arrow-right-icon')[0]
         .classList.remove('slide-in-right');
@@ -191,7 +182,6 @@ export class AppComponent implements AfterViewInit {
 
   private showRightArrow() {
     if (!this.showingRightIcon) {
-      console.log('show right');
       document
         .getElementsByClassName('arrow-right-icon')[0]
         .classList.remove('slide-out-right');
