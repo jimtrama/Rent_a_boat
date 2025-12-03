@@ -122,16 +122,6 @@ export class AppComponent implements AfterViewInit {
     }
   }
 
-  onTouchEnd(e: TouchEvent) {
-    let touchEndX = e.changedTouches[0].pageX;
-    let isLeftSwipe = this.touchStartX > touchEndX;
-    if (isLeftSwipe) {
-      this.rotateLeft();
-    } else {
-      this.rotateRight();
-    }
-  }
-
   private rotateLeft() {
     document
       .getElementsByClassName('blades-icon')[0]
@@ -212,6 +202,20 @@ export class AppComponent implements AfterViewInit {
     }
   }
 
+  onTouchStart(e: TouchEvent) {
+    this.touchStartX = e.changedTouches[0].pageX;
+  }
+
+  onTouchEnd(e: TouchEvent) {
+    let touchEndX = e.changedTouches[0].pageX;
+    let isLeftSwipe = this.touchStartX > touchEndX;
+    if (isLeftSwipe) {
+      this.rotateLeft();
+    } else {
+      this.rotateRight();
+    }
+  }
+
   onMouseDown(e: MouseEvent) {
     this.touchStartX = e.layerX;
   }
@@ -226,16 +230,12 @@ export class AppComponent implements AfterViewInit {
     }
   }
 
-  onTouchStart(e: TouchEvent) {
-    this.touchStartX = e.changedTouches[0].pageX;
-  }
-
   public imgForModal = '';
-  imageClickedOpenModal(img:string){
+  imageClickedOpenModal(img: string) {
     this.imgForModal = img;
   }
 
-  closeModal(){
+  closeModal() {
     this.imgForModal = '';
   }
 }
