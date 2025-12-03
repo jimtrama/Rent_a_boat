@@ -46,8 +46,7 @@
     width: 80vw;
     max-width: 390px;
     background-color: transparent;
-    height: 60vh;
-    min-height: fit-content;
+    height: fit-content;
     border-radius: 10px;
     
     overflow-x: scroll;
@@ -56,8 +55,7 @@
     align-items: center;
     justify-content: flex-start;
     gap:50px;
-    padding-left: 30px;
-    padding-top: 30px;
+    margin-top: 10px;
     z-index: 1;
     padding-bottom: 10px;
 }
