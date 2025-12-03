@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Boat } from '../../models/boat.model';
 
 @Component({
@@ -10,6 +10,7 @@ import { Boat } from '../../models/boat.model';
 export class CardComponent {
   @Input() boat!:Boat;
   @Input() boatId!:number;
+  @Output() imgClicked:EventEmitter<string> = new EventEmitter();
 
 
   public selectedImg = 0;
@@ -39,7 +40,7 @@ export class CardComponent {
 
   onImgClick(img:string){
     console.log(img);
-    
+    this.imgClicked.emit(img);
   }
 
   onRightArrowClick(){

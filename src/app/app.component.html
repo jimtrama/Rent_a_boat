@@ -21,6 +21,8 @@
       [boat]="boat"
       [boatId]="i"
       [id]="'boat-' + i"
+      (imgClicked)="imageClickedOpenModal($event)"
+
     />
   </div>
   <img
@@ -93,4 +95,8 @@
     (load)="loadingMap()"
   ></iframe>
   <img style="width: 50px;position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);" class="rotatingAnimation" *ngIf="mapLoading" src="/assets/icons/blades.png" />
+</div>
+<div class="img-modal-container" (click)="closeModal()" *ngIf="imgForModal != ''">
+  <img class="main-img" [src]="'/assets/boats/'+imgForModal" />
+  <img class="icon" src="/assets/icons/cancel.png" (click)="closeModal()" />
 </div>

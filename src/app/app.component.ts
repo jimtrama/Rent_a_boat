@@ -229,4 +229,13 @@ export class AppComponent implements AfterViewInit {
   onTouchStart(e: TouchEvent) {
     this.touchStartX = e.changedTouches[0].pageX;
   }
+
+  public imgForModal = '';
+  imageClickedOpenModal(img:string){
+    this.imgForModal = img;
+  }
+
+  closeModal(){
+    this.imgForModal = '';
+  }
 }
