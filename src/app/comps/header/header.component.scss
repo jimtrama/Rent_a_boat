@@ -14,9 +14,8 @@
   top: -50px;
   left: -10px;
   overflow: hidden;
-}
 
-img {
+  img {
   position: absolute;
   top: 60%;
   left: 50vw;
@@ -26,11 +25,46 @@ img {
   -webkit-filter: invert(100%); /* Safari/Chrome */
   filter: invert(100%);
 }
+}
+
+.menu-container{
+    display: flex;
+    gap: 20px;
+    bottom: 5px;
+    left: 10px;
+    position: absolute;
+    align-items: center;
+
+    button{
+        color: white;
+        background-color: black;
+        font-family: titleFont;
+        cursor: pointer;
+        outline: none;
+        border: none;
+        border-radius: 10px;
+        padding: 10px;
+    }
+
+    span{
+        height: 5px;
+        width: 5px;
+        background-color: white;
+        border-radius: 50%;
+    }
+}
+
+.active{
+    background-color: white !important;
+    color: black !important;
+}
+
+
 
 .title {
   position: absolute;
-  bottom: 0;
-  left: 50%;
+  top: 50%;
+  left: 60%;
   transform: translateX(-50%);
   font-family: "prettyFont";
   font-size: large;

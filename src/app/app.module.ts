@@ -8,6 +8,9 @@ import { InfoRowComponent } from './comps/info-row/info-row.component';
 import { ContactRowComponent } from './comps/contact-row/contact-row.component';
 import { HeaderComponent } from './comps/header/header.component';
 import { FotterComponent } from './comps/fotter/fotter.component';
+import { FleetComponent } from './pages/fleet/fleet.component';
+import { DestinationsComponent } from './pages/destinations/destinations.component';
+import { ReviewsComponent } from './pages/reviews/reviews.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,7 +18,10 @@ import { FotterComponent } from './comps/fotter/fotter.component';
     InfoRowComponent,
     ContactRowComponent,
     HeaderComponent,
-    FotterComponent
+    FotterComponent,
+    FleetComponent,
+    DestinationsComponent,
+    ReviewsComponent
   ],
   imports: [
     BrowserModule,

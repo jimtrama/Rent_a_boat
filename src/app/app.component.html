@@ -1,57 +1,5 @@
 <app-header></app-header>
-<div class="outer-wrapper">
-  <div
-    id="scroll-area"
-    (touchend)="onTouchEnd($event)"
-    (mouseup)="onMouseUp($event)"
-    (touchstart)="onTouchStart($event)"
-    (mousedown)="onMouseDown($event)"
-    class="main-container"
-  >
-    <app-card
-      class="card"
-      *ngFor="let boat of boats; let i = index"
-      [boat]="boat"
-      [boatId]="i"
-      [id]="'boat-' + i"
-      (imgClicked)="imageClickedOpenModal($event)"
-    />
-  </div>
-  <img
-      class="arrow-right-icon"
-      (click)="onRightArrowClick()"
-      src="/assets/icons/right-arrow.png"
-    />
-    <img
-      class="arrow-left-icon"
-      (click)="onLeftArrowClick()"
-      src="/assets/icons/right-arrow.png"
-    />
-  <div class="bullet-container">
-    <div
-      class="bullet"
-      [ngClass]="{ selected: selectedIndex == i }"
-      *ngFor="let boat of boats; let i = index"
-    ></div>
-  </div>
-</div>
-<div class="same-info-container">
-  <span style="position: absolute; top: -11px; left: 10px; font-family: titleFont;background-color: white;">
-    Common Features</span
-  >
-  <app-info-row
-    text="Car Charger"
-    icon="car"
-    value="Female adapter"
-  ></app-info-row>
-  <app-info-row text="GPS" icon="gps" value="Tracking System"></app-info-row>
-  <app-info-row text="Mp3 Player" icon="music" value="USB/Bt" />
-  <app-info-row text="Box" icon="ice-box" value="Ice Box" />
-  <app-info-row text="Ladder" icon="swim-ladder" value="Swim Ladder" />
-  <app-info-row text="Trim" icon="engine" value="Power Trim" />
-  <app-info-row text="First Aid" icon="kit" value="Safety Kit" />
-  <app-info-row text="Deck chair" icon="seat" value="Deck chair" />
-</div>
+<router-outlet></router-outlet>
 <div
   style="width: 100; display: flex; justify-content: center; margin-top: 20px"
 >
@@ -59,7 +7,7 @@
   <span style="font-family: titleFont">Free Parking</span>
 </div>
 <app-fotter></app-fotter>
-<div class="img-modal-container" (click)="closeModal()" *ngIf="imgForModal != ''">
+<!-- <div class="img-modal-container" (click)="" *ngIf="imgForModal != ''">
   <img class="main-img" [src]="'/assets/boats/'+imgForModal" />
   <img class="icon" src="/assets/icons/cancel.png" (click)="closeModal()" />
-</div>
+</div> -->

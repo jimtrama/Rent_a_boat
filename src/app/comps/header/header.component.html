@@ -2,5 +2,12 @@
   <img src="/assets/icons/medusa.png" />
   <img class="boat-icon" src="/assets/icons/boat.png" />
   <span class="title">Medusa Boats</span>
+  <div class="menu-container">
+    <button [routerLink]="['fleet']" routerLinkActive="active">Our Fleet</button>
+    <span></span>
+    <button [routerLink]="['destinations']" routerLinkActive="active">Destinations</button>
+    <span></span>
+    <button [routerLink]="['reviews']" routerLinkActive="active">Reviews</button>
+  </div>
 </div>
 <img class="blades-icon" src="/assets/icons/turbine.png" />
