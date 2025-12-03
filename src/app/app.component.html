@@ -22,7 +22,8 @@
       [boatId]="i"
       [id]="'boat-' + i"
     />
-    <img
+  </div>
+  <img
       class="arrow-right-icon"
       (click)="onRightArrowClick()"
       src="/assets/icons/right-arrow.png"
@@ -32,7 +33,6 @@
       (click)="onLeftArrowClick()"
       src="/assets/icons/right-arrow.png"
     />
-  </div>
   <div class="bullet-container">
     <div
       class="bullet"
@@ -42,7 +42,7 @@
   </div>
 </div>
 <div class="same-info-container">
-  <span style="position: absolute; top: 0; left: 5px; font-family: titleFont">
+  <span style="position: absolute; top: -11px; left: 10px; font-family: titleFont;background-color: white;">
     Common Features</span
   >
   <app-info-row
@@ -90,5 +90,7 @@
     allowfullscreen=""
     loading="lazy"
     referrerpolicy="no-referrer-when-downgrade"
+    (load)="loadingMap()"
   ></iframe>
+  <img style="width: 50px;position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);" class="rotatingAnimation" *ngIf="mapLoading" src="/assets/icons/blades.png" />
 </div>

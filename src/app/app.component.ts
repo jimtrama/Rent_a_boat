@@ -1,9 +1,5 @@
-import {
-  AfterViewInit,
-  Component,
-} from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
 import { Boat } from './models/boat.model';
-
 
 @Component({
   selector: 'app-root',
@@ -13,48 +9,81 @@ import { Boat } from './models/boat.model';
 })
 export class AppComponent implements AfterViewInit {
   public boats: Boat[] = [
-    new Boat({hp:"yamaha 30/40", people:"5",length:"4.5m", imgs:["2.jpeg","3.jpeg"], title:"Blazer Astra"}),
-    new Boat({hp:"yamaha 30/40", people:"5",length:"4.5m", imgs:["1.jpg","2.jpeg","3.jpeg"], title:"Compass"}),
-    new Boat({hp:"mercury 30/40", people:"7",length:"5m", imgs:["1.jpg","2.jpeg","3.jpeg"], title:"Carel",bed:true}),
-    new Boat({hp:"yamaha 30/60", people:"10",length:"6.1m", imgs:["1.jpg","2.jpeg","3.jpeg"], title:"Poseidon"}),
+    new Boat({
+      hp: 'yamaha 30/40',
+      people: '5',
+      length: '4.5m',
+      imgs: ['2.jpeg', '3.jpeg'],
+      title: 'Blazer Astra',
+    }),
+    new Boat({
+      hp: 'yamaha 30/40',
+      people: '5',
+      length: '4.5m',
+      imgs: ['1.jpg', '2.jpeg', '3.jpeg'],
+      title: 'Compass',
+    }),
+    new Boat({
+      hp: 'mercury 30/40',
+      people: '7',
+      length: '5m',
+      imgs: ['1.jpg', '2.jpeg', '3.jpeg'],
+      title: 'Carel',
+      bed: true,
+    }),
+    new Boat({
+      hp: 'yamaha 30/60',
+      people: '10',
+      length: '6.1m',
+      imgs: ['1.jpg', '2.jpeg', '3.jpeg'],
+      title: 'Poseidon',
+    }),
   ];
 
   public selectedIndex = 0;
   public touchStartX = 0;
   private showingLeftIcon = false;
   private showingRightIcon = true;
-  private clicked = false;
+  public mapLoading = true;
 
-  onRightArrowClick(){
-    this.clicked = true;
+  loadingMap() {
+    this.mapLoading = false;
+  }
+
+  onRightArrowClick() {
     this.selectedIndex++;
-    console.log("clicked",this.selectedIndex);
-    
+    console.log('clicked', this.selectedIndex);
+
     const container = document.getElementById('scroll-area');
-    let x = document.getElementById("boat-"+this.selectedIndex)!.getBoundingClientRect().x  * (this.selectedIndex-this.selectedIndex/3);
+    let x =
+      document
+        .getElementById('boat-' + this.selectedIndex)!
+        .getBoundingClientRect().x *
+      (this.selectedIndex - this.selectedIndex / 6);
     console.log(x);
-    
-    container?.scroll({left:x,behavior:'smooth'})
+
+    container?.scroll({ left: x, behavior: 'smooth' });
   }
 
-  onLeftArrowClick(){
-    this.selectedIndex--; 
+  onLeftArrowClick() {
+    this.selectedIndex--;
     const container = document.getElementById('scroll-area');
-    let x = document.getElementById("boat-"+ this.selectedIndex)!.
-    getBoundingClientRect().left;
-    console.log(x,this.selectedIndex);
-    
-    container?.scroll({left:x,behavior:'smooth'})
+    let x = document
+      .getElementById('boat-' + this.selectedIndex)!
+      .getBoundingClientRect().left;
+    console.log(x, this.selectedIndex);
+
+    container?.scroll({ left: x, behavior: 'smooth' });
   }
 
-  facebookClicked(){
-    open("https://www.facebook.com/p/Medusa-boats-rental-100063928245216/")
+  facebookClicked() {
+    open('https://www.facebook.com/p/Medusa-boats-rental-100063928245216/');
   }
-  phoneClicked(){
-    open("tel:+306975616367")
+  phoneClicked() {
+    open('tel:+306975616367');
   }
-  instagramClicked(){
-    open("https://www.instagram.com/medusa_boat_rental")
+  instagramClicked() {
+    open('https://www.instagram.com/medusa_boat_rental');
   }
 
   ngAfterViewInit(): void {
@@ -70,8 +99,7 @@ export class AppComponent implements AfterViewInit {
         for (let i = 0; i < entries.length; i++) {
           if (entries[i].isIntersecting) {
             this.selectedIndex = +entries[i].target.id.split('-')[1];
-            console.log("obs",this.selectedIndex);
-            
+            console.log('obs', this.selectedIndex);
           }
         }
         if (this.selectedIndex > 0) {
