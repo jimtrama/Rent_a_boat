@@ -258,11 +258,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 50px;
+  padding-top: 50px;
   padding-bottom: 50px;
   gap: 30px;
   position: relative;
   flex-wrap: wrap;
+  background-color: black;
 }
 
 .map-container {
@@ -274,4 +275,5 @@
   padding-bottom: 50px;
   max-height: 518px;
   position: relative;
+  background-color: black;
 }

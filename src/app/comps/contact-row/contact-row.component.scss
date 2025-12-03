@@ -1,12 +1,14 @@
 :host{
     padding: 10px 20px;
     border-radius: 10px;
-    border: 2px solid black;
+    border: 2px solid white;
     position: relative;
     font-family: mainFont;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     z-index: 1;
     margin: 0 10px;
+    color: white;
+    cursor: pointer;
 }
 
 .label{
@@ -14,5 +16,8 @@
     top: 0;
     left: 5px;
     transform: translateY(-50%);
-    background-color: white;
+    background-color: black;
+    border-radius: 10px;
+    color: white;
+    padding: 0 5px;
 }
