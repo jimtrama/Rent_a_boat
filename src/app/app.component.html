@@ -96,6 +96,9 @@
   ></iframe>
   <img style="width: 50px;position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);" class="rotatingAnimation" *ngIf="mapLoading" src="/assets/icons/blades.png" />
 </div>
+<div style="background-color: black;color: white;padding-left: 50px;padding-bottom: 30px;font-family: titleFont;">
+  <span>Monday - Sunday 9:00 - 21:30</span>
+</div>
 <div class="img-modal-container" (click)="closeModal()" *ngIf="imgForModal != ''">
   <img class="main-img" [src]="'/assets/boats/'+imgForModal" />
   <img class="icon" src="/assets/icons/cancel.png" (click)="closeModal()" />
