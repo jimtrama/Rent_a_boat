@@ -8,6 +8,9 @@
       *ngFor="let img of boat.imgs; let i = index"
       [src]="'/assets/boats/' + img"
       alt=""
+      (touchstart)="onTouchStartImg($event)"
+      (touchmove)="onTouchMove($event)"
+      (touchend)="onTouchEnd($event)"
     />
   </div>
   <div class="arrows-container">
