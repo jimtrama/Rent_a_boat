@@ -1,0 +1,121 @@
+:host {
+  width: 100vw;
+  height: 150px;
+  overflow-x: hidden;
+  position: relative;
+  display: flex;
+}
+.logo-container {
+  width: 140vw;
+  height: 150px;
+  background: black;
+  transform: rotate(-2deg);
+  position: absolute;
+  top: -50px;
+  left: -10px;
+  overflow: hidden;
+}
+
+img {
+  position: absolute;
+  top: 60%;
+  left: 50vw;
+  transform: rotate(5deg) translate(-50%, -50%);
+  height: 40px;
+  aspect-ratio: 1/1;
+  -webkit-filter: invert(100%); /* Safari/Chrome */
+  filter: invert(100%);
+}
+
+.title {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "prettyFont";
+  font-size: large;
+  color: white;
+}
+
+.boat-icon {
+  position: absolute;
+  top: 200px;
+  left: 0;
+  height: 50px;
+  width: 50px;
+  animation-name: flowing;
+  animation-duration: 4s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  -webkit-filter: invert(100%); /* Safari/Chrome */
+  filter: invert(100%);
+}
+
+
+.blades-icon {
+  height: 50px;
+  position: absolute;
+  left: 95%;
+  bottom: 0;
+  transform: translateX(-50%);
+}
+
+.rotate-blade-right {
+  animation-name: rotate-right;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+@keyframes rotate-right {
+  0% {
+    transform: translateX(-50%) rotate(360deg);
+  }
+  100% {
+    transform: translateX(-50%) rotate(0deg);
+  }
+}
+.rotate-blade-left {
+  animation-name: rotate-left;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+@keyframes rotate-left {
+  0% {
+    transform: translateX(-50%) rotate(0deg);
+  }
+  100% {
+    transform: translateX(-50%) rotate(360deg);
+  }
+}
+
+
+@keyframes flowing {
+  0% {
+    left: -50px;
+    top: 120px;
+  }
+  10% {
+    transform: rotate(-10deg);
+  }
+  20% {
+    transform: rotate(10deg);
+  }
+  30% {
+    transform: rotate(-10deg);
+  }
+  40% {
+    transform: rotate(10deg);
+  }
+  50% {
+    transform: rotate(-10deg);
+  }
+  60% {
+    transform: rotate(10deg);
+  }
+  70% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    left: calc(100% + 50px);
+    top: 90px;
+  }
+}

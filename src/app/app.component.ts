@@ -44,11 +44,6 @@ export class AppComponent implements AfterViewInit {
   public touchStartX = 0;
   private showingLeftIcon = false;
   private showingRightIcon = true;
-  public mapLoading = true;
-
-  loadingMap() {
-    this.mapLoading = false;
-  }
 
   onRightArrowClick() {
     this.selectedIndex++;
@@ -71,15 +66,7 @@ export class AppComponent implements AfterViewInit {
     container?.scroll({ left: x, behavior: 'smooth' });
   }
 
-  facebookClicked() {
-    open('https://www.facebook.com/p/Medusa-boats-rental-100063928245216/');
-  }
-  phoneClicked() {
-    open('tel:+306975616367');
-  }
-  instagramClicked() {
-    open('https://www.instagram.com/medusa_boat_rental');
-  }
+  
 
   ngAfterViewInit(): void {
     const options = {

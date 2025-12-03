@@ -1,0 +1,23 @@
+.info-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  gap: 30px;
+  position: relative;
+  flex-wrap: wrap;
+  background-color: black;
+}
+
+.map-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  aspect-ratio: 1/1;
+  padding-bottom: 20px;
+  max-height: 518px;
+  position: relative;
+  background-color: black;
+}
