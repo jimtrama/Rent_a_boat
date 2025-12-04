@@ -7,7 +7,8 @@ import { Boat } from '../../models/boat.model';
   templateUrl: './fleet.component.html',
   styleUrl: './fleet.component.scss',
 })
-export class FleetComponent {
+export class FleetComponent implements AfterViewInit {
+  
   public boats: Boat[] = [
     new Boat({
       hp: 'yamaha 30/40',
@@ -43,7 +44,10 @@ export class FleetComponent {
   public touchStartX = 0;
   public imgForModal = '';
 
-
+  ngAfterViewInit(): void {
+    document.getElementsByTagName('app-header')[0].scrollIntoView({behavior:'smooth'});
+  }
+  
   onTouchStart(e: TouchEvent) {
     this.touchStartX = e.changedTouches[0].pageX;
   }

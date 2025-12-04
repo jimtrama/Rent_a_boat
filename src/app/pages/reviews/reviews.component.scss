@@ -1,18 +1,30 @@
-:host{
-    width: 100%;
-    height: fit-content;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    align-items: center;
-    justify-content: center;
-    margin-top: 100px;
-    z-index: 2;
-    position: relative;
+:host {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+  z-index: 2;
+  position: relative;
 }
 
-img{
-    height: 200px;
-    min-width: 230px;
+.card {
+    border: 2px solid black;
+    padding: 10px;
     border-radius: 10px;
+    margin: 10px;
+    max-width: 480px;
+  div {
+    display: flex;
+    justify-content: flex-start;
+    img {
+      height: 20px;
+    }
+  }
+  span {
+    font-family: mainFont;
+  }
 }

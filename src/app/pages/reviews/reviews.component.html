@@ -1,5 +1,10 @@
-<img src="/assets/reviews/review1.png" >
-<img src="/assets/reviews/review2.png" >
-<img src="/assets/reviews/review3.png" >
-<img src="/assets/reviews/review4.png" >
-<img src="/assets/reviews/review5.png" >
+<div class="card" *ngFor="let review of reviews" >
+    <div>
+        <img src="/assets/icons/star.png" alt="">
+        <img src="/assets/icons/star.png" alt="">
+        <img src="/assets/icons/star.png" alt="">
+        <img src="/assets/icons/star.png" alt="">
+        <img src="/assets/icons/star.png" alt="">
+    </div>
+    <span>{{review}}</span>
+</div>
