@@ -23,19 +23,23 @@
   </div>
 </div>
 <div class="mobile-links-container" *ngIf="mobileMenuOpen">
-      <button [routerLink]="['home']" routerLinkActive="active-mobile">Home</button>
+      <button [routerLink]="['home']" (click)="closeMenu()" routerLinkActive="active-mobile">Home</button>
       <span></span>
-      <button [routerLink]="['fleet']" routerLinkActive="active-mobile">
+      <button [routerLink]="['fleet']" (click)="closeMenu()" routerLinkActive="active-mobile">
         Our Fleet
       </button>
       <span></span>
-      <button [routerLink]="['destinations']" routerLinkActive="active-mobile">
+      <button [routerLink]="['destinations']" (click)="closeMenu()" routerLinkActive="active-mobile">
         Destinations
       </button>
       <span></span>
-      <button [routerLink]="['reviews']" routerLinkActive="active-mobile">
+      <button [routerLink]="['reviews']" (click)="closeMenu()" routerLinkActive="active-mobile">
         Reviews
       </button>
     </div>
 <img class="blades-icon" src="/assets/icons/turbine.png" />
-<img class="bg-img" src="/assets/sea.webp" >
+<div class="header-fotter-container">
+  <img class="bg-img" src="/assets/sea.webp" >
+<div class="shadow"></div>
+</div>
+

@@ -1,0 +1,33 @@
+:host{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.card{
+    margin-top: 100px;
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    img{
+        width: 50vw;
+        min-width:400px;
+        border-radius: 10px;
+    }
+    span{
+        width: 40%;
+        font-family: prettyFont;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .card{
+  span{
+        width: 80% !important;
+
+    }
+}
+}
