@@ -28,7 +28,7 @@ export class FleetComponent implements AfterViewInit {
       hp: 'mercury 30/40',
       people: '7',
       length: '5m',
-      imgs: ['4.jpeg', '2.jpeg', '3.jpeg'],
+      imgs: ['4.jpeg', '2.jpeg', '7.jpg'],
       title: 'Carel',
       bed: true,
     }),
