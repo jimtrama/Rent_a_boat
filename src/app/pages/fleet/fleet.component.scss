@@ -126,5 +126,14 @@
   margin: 5px;
   border-radius: 20px;
   margin-top: 40px;
+  z-index: 2;
+  background-color: white;
+  .title {
+    position: absolute;
+    top: -11px;
+    left: 10px;
+    font-family: titleFont;
+    background-color: white;
+    border-radius: 10px;
+  }
 }
-

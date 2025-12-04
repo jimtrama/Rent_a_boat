@@ -1,6 +1,6 @@
 :host {
   width: 100vw;
-  height: 150px;
+  height: 200px;
   overflow-x: hidden;
   position: relative;
   display: flex;
@@ -15,6 +15,7 @@
   top: -50px;
   left: -10px;
   overflow: hidden;
+  z-index: 2;
 
   img {
     position: absolute;
@@ -186,4 +187,12 @@
     left: calc(100% + 50px);
     top: 90px;
   }
+}
+.bg-img{
+    position:fixed;
+    top: -100px;
+    z-index: 0;
+    width: 100%;
+    max-height: 371px;
+    object-fit: cover;
 }
