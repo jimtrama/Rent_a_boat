@@ -15,4 +15,8 @@ export class ReviewsComponent {
     "We rented a small boat and had an amazing experience! This family-owned business was extremely friendly and professional. They showed us everything clearly, prices were great, and we didn't have to wait at all. 100% recommended! 🚤☀️…",
     "We had an amazing time renting this boat! Everything was smooth from start to finish—easy booking, clear instructions, and the boat itself was in excellent condition. The staff was friendly, professional, and made sure we were comfortable before setting off. The scenery was beautiful, and cruising around was the perfect way to spend the day. Highly recommend this rental to anyone looking for a fun and relaxing experience on the water!"
   ];
+
+  seeMoreClick(){
+    open("https://www.google.com/maps/place/MEDUSA+Rent+a+Boat+Vourvourou/@40.1894116,23.8074432,15z/data=!4m8!3m7!1s0x14a8bd483088ee0b:0x18881356efef91c5!8m2!3d40.1875929!4d23.7987329!9m1!1b1!16s%2Fg%2F11nx254d23!5m1!1e4?entry=ttu&g_ep=EgoyMDI1MTIwMi4wIKXMDSoASAFQAw%3D%3D");
+  }
 }
