@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { FleetComponent } from './pages/fleet/fleet.component';
 import { DestinationsComponent } from './pages/destinations/destinations.component';
 import { ReviewsComponent } from './pages/reviews/reviews.component';
+import { HomeComponent } from './pages/home/home.component';
 
 const routes: Routes = [
   
@@ -18,9 +19,13 @@ const routes: Routes = [
     path:"fleet",
     component:FleetComponent,
   },
+   {
+    path:"home",
+    component:HomeComponent,
+  },
   {
     path:"**",
-    redirectTo:'fleet',
+    redirectTo:'home',
   },
 ];
 

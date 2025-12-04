@@ -2,12 +2,39 @@
   <img src="/assets/icons/medusa.png" />
   <img class="boat-icon" src="/assets/icons/boat.png" />
   <span class="title">Medusa Boats</span>
-  <div class="menu-container">
-    <button [routerLink]="['fleet']" routerLinkActive="active">Our Fleet</button>
+  <div class="menu-container" *ngIf="!mobileHeader">
+    <button [routerLink]="['home']" routerLinkActive="active">Home</button>
     <span></span>
-    <button [routerLink]="['destinations']" routerLinkActive="active">Destinations</button>
+    <button [routerLink]="['fleet']" routerLinkActive="active">
+      Our Fleet
+    </button>
     <span></span>
-    <button [routerLink]="['reviews']" routerLinkActive="active">Reviews</button>
+    <button [routerLink]="['destinations']" routerLinkActive="active">
+      Destinations
+    </button>
+    <span></span>
+    <button [routerLink]="['reviews']" routerLinkActive="active">
+      Reviews
+    </button>
+  </div>
+  <div class="mobile-menu-container" *ngIf="mobileHeader">
+    <img (click)="toggleMobileMenu()" src="/assets/icons/menu.png" />
+    
   </div>
 </div>
+<div class="mobile-links-container" *ngIf="mobileMenuOpen">
+      <button [routerLink]="['home']" routerLinkActive="active-mobile">Home</button>
+      <span></span>
+      <button [routerLink]="['fleet']" routerLinkActive="active-mobile">
+        Our Fleet
+      </button>
+      <span></span>
+      <button [routerLink]="['destinations']" routerLinkActive="active-mobile">
+        Destinations
+      </button>
+      <span></span>
+      <button [routerLink]="['reviews']" routerLinkActive="active-mobile">
+        Reviews
+      </button>
+    </div>
 <img class="blades-icon" src="/assets/icons/turbine.png" />

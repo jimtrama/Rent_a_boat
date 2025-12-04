@@ -4,6 +4,7 @@
   overflow-x: hidden;
   position: relative;
   display: flex;
+  z-index: 1;
 }
 .logo-container {
   width: 140vw;
@@ -16,50 +17,85 @@
   overflow: hidden;
 
   img {
-  position: absolute;
-  top: 60%;
-  left: 50vw;
-  transform: rotate(5deg) translate(-50%, -50%);
-  height: 40px;
-  aspect-ratio: 1/1;
-  -webkit-filter: invert(100%); /* Safari/Chrome */
-  filter: invert(100%);
-}
-}
-
-.menu-container{
-    display: flex;
-    gap: 20px;
-    bottom: 5px;
-    left: 10px;
     position: absolute;
-    align-items: center;
-
-    button{
-        color: white;
-        background-color: black;
-        font-family: titleFont;
-        cursor: pointer;
-        outline: none;
-        border: none;
-        border-radius: 10px;
-        padding: 10px;
-    }
-
-    span{
-        height: 5px;
-        width: 5px;
-        background-color: white;
-        border-radius: 50%;
-    }
+    top: 60%;
+    left: 50vw;
+    transform: rotate(5deg) translate(-50%, -50%);
+    height: 40px;
+    aspect-ratio: 1/1;
+    -webkit-filter: invert(100%); /* Safari/Chrome */
+    filter: invert(100%);
+  }
 }
 
-.active{
-    background-color: white !important;
-    color: black !important;
+.menu-container {
+  display: flex;
+  gap: 20px;
+  bottom: 5px;
+  left: 10px;
+  position: absolute;
+  align-items: center;
+
+  button {
+    color: white;
+    background-color: black;
+    font-family: titleFont;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+  }
+
+  span {
+    height: 5px;
+    width: 5px;
+    background-color: white;
+    border-radius: 50%;
+  }
 }
 
+.mobile-menu-container {
+  img {
+    filter: invert(1);
+    position: absolute;
+    top: 50%;
+    left: 50px;
+    height: 30px;
+    cursor: pointer;
+  }
+}
+.mobile-links-container {
+  background-color: white;
+  position: absolute;
+  top: 5px;
+  left: 70px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  gap: 2px;
+  border: 1px solid black;
+  button {
+    color: black;
+    background-color: white;
+    font-family: titleFont;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+  }
+}
 
+.active {
+  background-color: white !important;
+  color: black !important;
+}
+.active-mobile {
+  background-color: black !important;
+  color: white !important;
+}
 
 .title {
   position: absolute;
@@ -84,7 +120,6 @@
   -webkit-filter: invert(100%); /* Safari/Chrome */
   filter: invert(100%);
 }
-
 
 .blades-icon {
   height: 50px;
@@ -120,7 +155,6 @@
     transform: translateX(-50%) rotate(360deg);
   }
 }
-
 
 @keyframes flowing {
   0% {
