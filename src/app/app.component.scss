@@ -21,6 +21,16 @@
     align-items: center;
     justify-content: center;
     background-color: rgba(0, 0, 0, 0.6);
+    overflow: hidden;
+
+    div{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        overflow-x: scroll;
+        gap: 25px;
+        margin: 30px;
+    }
     .main-img{
         width: 80%;
         border-radius: 10px;

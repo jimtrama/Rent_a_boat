@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Boat } from '../../models/boat.model';
+import { ModalService } from '../../services/modal.service';
 
 @Component({
   selector: 'app-card',
@@ -13,6 +14,8 @@ export class CardComponent {
   @Output() imgClicked: EventEmitter<string> = new EventEmitter();
 
   public selectedImg = 0;
+
+  constructor(private modalService:ModalService){}
 
   ngAfterViewInit(): void {
     setTimeout(() => {
@@ -41,7 +44,8 @@ export class CardComponent {
   }
 
   onImgClick(img: string) {
-    this.imgClicked.emit(img);
+    this.modalService.addPhotos(this.boat.imgs);
+    this.modalService.openModal();
   }
 
   onRightArrowClick() {

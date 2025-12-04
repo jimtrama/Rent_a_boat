@@ -7,7 +7,9 @@
   <span style="font-family: titleFont">Free Parking</span>
 </div>
 <app-fotter></app-fotter>
-<!-- <div class="img-modal-container" (click)="" *ngIf="imgForModal != ''">
-  <img class="main-img" [src]="'/assets/boats/'+imgForModal" />
-  <img class="icon" src="/assets/icons/cancel.png" (click)="closeModal()" />
-</div> -->
+<div class="img-modal-container" (click)="modalService.closeModal()" *ngIf="modalService.open">
+  <div>
+    <img class="main-img" *ngFor="let photo of modalService.photos" [src]="'/assets/boats/'+photo" />
+  </div>
+  <img class="icon" src="/assets/icons/cancel.png" (click)="modalService.closeModal()" />
+</div>

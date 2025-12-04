@@ -21,14 +21,14 @@ export class FleetComponent implements AfterViewInit {
       hp: 'yamaha 30/40',
       people: '5',
       length: '4.5m',
-      imgs: ['1.jpg', '2.jpeg', '3.jpeg'],
+      imgs: ['1.jpg', '6.jpg', '3.jpeg'],
       title: 'Compass',
     }),
     new Boat({
       hp: 'mercury 30/40',
       people: '7',
       length: '5m',
-      imgs: ['1.jpg', '2.jpeg', '3.jpeg'],
+      imgs: ['4.jpeg', '2.jpeg', '3.jpeg'],
       title: 'Carel',
       bed: true,
     }),
@@ -36,7 +36,7 @@ export class FleetComponent implements AfterViewInit {
       hp: 'yamaha 30/60',
       people: '10',
       length: '6.1m',
-      imgs: ['1.jpg', '2.jpeg', '3.jpeg'],
+      imgs: ['5.jpg', '2.jpeg', '3.jpeg'],
       title: 'Poseidon',
     }),
   ];
@@ -74,14 +74,6 @@ export class FleetComponent implements AfterViewInit {
     } else {
       this.rotateRight();
     }
-  }
-  
-  imageClickedOpenModal(img: string) {
-    this.imgForModal = img;
-  }
-
-  closeModal() {
-    this.imgForModal = '';
   }
 
   private rotateLeft() {
