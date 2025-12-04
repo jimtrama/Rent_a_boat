@@ -7,7 +7,7 @@ import { Boat } from '../../models/boat.model';
   templateUrl: './fleet.component.html',
   styleUrl: './fleet.component.scss',
 })
-export class FleetComponent implements AfterViewInit{
+export class FleetComponent {
   public boats: Boat[] = [
     new Boat({
       hp: 'yamaha 30/40',
@@ -41,66 +41,8 @@ export class FleetComponent implements AfterViewInit{
   ];
 
   public touchStartX = 0;
-  public selectedIndex = 0;
   public imgForModal = '';
-  private showingLeftIcon = false;
-  private showingRightIcon = true;
 
-  ngAfterViewInit(): void {
-    const options = {
-      root: null,
-      rootMargin: '1px',
-      scrollMargin: '1px',
-      threshold: 1.0,
-    };
-
-    const observer = new IntersectionObserver(
-      (entries: IntersectionObserverEntry[], observer: any) => {
-        for (let i = 0; i < entries.length; i++) {
-          if (entries[i].isIntersecting) {
-            this.selectedIndex = +entries[i].target.id.split('-')[1];
-          }
-        }
-        if (this.selectedIndex > 0) {
-          this.showLeftArrow();
-        }
-        if (this.selectedIndex == this.boats.length - 1) {
-          this.hideRightArrow();
-        }
-        if (this.selectedIndex == 0) {
-          this.hideLeftArrow();
-        }
-        if (this.selectedIndex < this.boats.length - 1) {
-          this.showRightArrow();
-        }
-      },
-      options
-    );
-    for (let el of document.getElementsByClassName('card')) {
-      observer.observe(el);
-    }
-  }
-
-  onRightArrowClick() {
-    this.selectedIndex++;
-
-    const container = document.getElementById('scroll-area');
-    let x =
-      document
-        .getElementById('boat-' + this.selectedIndex)!
-        .getBoundingClientRect().x *
-      (this.selectedIndex - this.selectedIndex / 6);
-    container?.scroll({ left: x, behavior: 'smooth' });
-  }
-
-  onLeftArrowClick() {
-    this.selectedIndex--;
-    const container = document.getElementById('scroll-area');
-    let x = document
-      .getElementById('boat-' + this.selectedIndex)!
-      .getBoundingClientRect().left;
-    container?.scroll({ left: x, behavior: 'smooth' });
-  }
 
   onTouchStart(e: TouchEvent) {
     this.touchStartX = e.changedTouches[0].pageX;
@@ -129,7 +71,6 @@ export class FleetComponent implements AfterViewInit{
       this.rotateRight();
     }
   }
-
   
   imageClickedOpenModal(img: string) {
     this.imgForModal = img;
@@ -137,54 +78,6 @@ export class FleetComponent implements AfterViewInit{
 
   closeModal() {
     this.imgForModal = '';
-  }
-
-  private showLeftArrow() {
-    if (!this.showingLeftIcon) {
-      document
-        .getElementsByClassName('arrow-left-icon')[0]
-        .classList.remove('slide-out-left');
-      document
-        .getElementsByClassName('arrow-left-icon')[0]
-        .classList.add('slide-in-left');
-      this.showingLeftIcon = true;
-    }
-  }
-
-  private hideLeftArrow() {
-    if (this.showingLeftIcon) {
-      document
-        .getElementsByClassName('arrow-left-icon')[0]
-        .classList.remove('slide-in-left');
-      document
-        .getElementsByClassName('arrow-left-icon')[0]
-        .classList.add('slide-out-left');
-      this.showingLeftIcon = false;
-    }
-  }
-
-  private hideRightArrow() {
-    if (this.showingRightIcon) {
-      document
-        .getElementsByClassName('arrow-right-icon')[0]
-        .classList.remove('slide-in-right');
-      document
-        .getElementsByClassName('arrow-right-icon')[0]
-        .classList.add('slide-out-right');
-      this.showingRightIcon = false;
-    }
-  }
-
-  private showRightArrow() {
-    if (!this.showingRightIcon) {
-      document
-        .getElementsByClassName('arrow-right-icon')[0]
-        .classList.remove('slide-out-right');
-      document
-        .getElementsByClassName('arrow-right-icon')[0]
-        .classList.add('slide-in-right');
-      this.showingRightIcon = true;
-    }
   }
 
   private rotateLeft() {

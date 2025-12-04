@@ -16,23 +16,6 @@
       (imgClicked)="imageClickedOpenModal($event)"
     />
   </div>
-  <img
-      class="arrow right-arrow"
-      (click)="onRightArrowClick()"
-      src="/assets/icons/right-arrow.png"
-    />
-    <img
-      class="arrow left-arrow"
-      (click)="onLeftArrowClick()"
-      src="/assets/icons/right-arrow.png"
-    />
-  <div class="bullet-container">
-    <div
-      class="bullet"
-      [ngClass]="{ selected: selectedIndex == i }"
-      *ngFor="let boat of boats; let i = index"
-    ></div>
-  </div>
 </div>
 <div class="same-info-container">
   <span class="title">

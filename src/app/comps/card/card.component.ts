@@ -17,7 +17,7 @@ export class CardComponent {
   ngAfterViewInit(): void {
     setTimeout(() => {
       this.calculateImages();
-    });
+    },10);
   }
 
   private calculateImages() {
@@ -45,13 +45,17 @@ export class CardComponent {
   }
 
   onRightArrowClick() {
-    this.selectedImg++;
-    this.calculateImages();
+    if (this.selectedImg < this.boat.imgs.length - 1) {
+      this.selectedImg++;
+      this.calculateImages();
+    }
   }
 
   onLeftArrowClick() {
-    this.selectedImg--;
-    this.calculateImages();
+    if (this.selectedImg >= 1) {
+      this.selectedImg--;
+      this.calculateImages();
+    }
   }
 
   private imageSwinging = false;
@@ -67,10 +71,9 @@ export class CardComponent {
       e.preventDefault();
       let imgs = document.getElementsByClassName(this.boatId + '-img');
       xDiff = e.targetTouches[0].pageX - this.xTouchStart;
-      if(xDiff>0 && this.selectedImg == 0) return;
-      if(xDiff<0 && this.selectedImg == imgs.length-1) return;
+      if (xDiff > 0 && this.selectedImg == 0) return;
+      if (xDiff < 0 && this.selectedImg == imgs.length - 1) return;
       (imgs[this.selectedImg] as HTMLElement).style.left = xDiff + 'px';
-    
     }
 
     if (xDiff < -140 && this.imageSwinging) {
@@ -86,8 +89,8 @@ export class CardComponent {
     }
   }
 
-  onTouchEnd(e:TouchEvent){
+  onTouchEnd(e: TouchEvent) {
     let imgs = document.getElementsByClassName(this.boatId + '-img');
-      (imgs[this.selectedImg] as HTMLElement).style.left = 0 + 'px';
+    (imgs[this.selectedImg] as HTMLElement).style.left = 0 + 'px';
   }
 }

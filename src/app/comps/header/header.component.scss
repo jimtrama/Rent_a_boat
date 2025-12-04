@@ -6,6 +6,7 @@
   display: flex;
   z-index: 1;
   padding-bottom: 50px;
+  overflow: hidden;
 }
 .logo-container {
   width: 140vw;
@@ -79,6 +80,7 @@
   border-radius: 10px;
   gap: 2px;
   border: 1px solid black;
+  padding: 2px;
   button {
     color: black;
     background-color: white;
@@ -88,6 +90,7 @@
     border: none;
     border-radius: 10px;
     padding: 5px;
+    font-size: larger;
   }
 }
 
@@ -134,7 +137,7 @@
 }
 .header-fotter-container{
   width: 100%;
-  position: fixed;
+  position: relative;
   top: 0;
   height: fit-content;
 }

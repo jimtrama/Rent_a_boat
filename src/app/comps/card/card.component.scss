@@ -1,28 +1,30 @@
 :host{
     background-color: white;
     width: 100%;
-    max-width: 347px;
-    min-width: 213px;
     height: 90%;
     min-height: fit-content;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     flex: none;
     scroll-snap-align:center;
     position: relative;
-    gap: 10px;
-    border: 2px solid black;
-    border-radius: 10px;    
+    gap: 10px; 
+    margin-top: 10px;
+    padding: 10px 12px;
+    border-top:1px solid black ;
+}
+:host:nth-child(0){
+    border: none;
 }
 
 .new-container{
     border-radius: 10px;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     gap: 5px;
+    flex-wrap: wrap;
     
 }
 
@@ -52,7 +54,8 @@
 
 .main-container{
     display: flex;
-    width: 95%;
+    width: 340px;
+    height: fit-content;
     flex-wrap: wrap;
     gap: 10px;
     margin-top: 20px;

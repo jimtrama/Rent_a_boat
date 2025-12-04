@@ -13,8 +13,8 @@ export class FotterComponent {
   facebookClicked() {
     open('https://www.facebook.com/p/Medusa-boats-rental-100063928245216/');
   }
-  phoneClicked() {
-    open('tel:+306975616367');
+  phoneClicked(str:string) {
+    open(`tel:+30${str}`,'_self');
   }
   instagramClicked() {
     open('https://www.instagram.com/medusa_boat_rental');
