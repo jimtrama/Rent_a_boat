@@ -13,7 +13,8 @@
     scroll-snap-align:center;
     position: relative;
     gap: 10px;
-
+    border: 2px solid black;
+    border-radius: 10px;    
 }
 
 .new-container{
@@ -22,6 +23,7 @@
     flex-direction: column;
     justify-content: center;
     gap: 5px;
+    
 }
 
 .imgs-container{

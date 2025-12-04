@@ -7,9 +7,12 @@
     align-items: center;
     justify-content: center;
     margin-top: 100px;
+    z-index: 2;
+    position: relative;
 }
 
 img{
     height: 200px;
     min-width: 230px;
+    border-radius: 10px;
 }

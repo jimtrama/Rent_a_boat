@@ -145,7 +145,8 @@
     bottom: 0;
     transform: translateY(80%);
     z-index: 2;
-    background-color: rgba($color: #ffffff, $alpha: 0.7);
+    background-color: rgba($color: #ffffff, $alpha: 0.4);
+    border-radius: 10px;
 }
 .rotate-blade-right {
   animation-name: rotate-right;
