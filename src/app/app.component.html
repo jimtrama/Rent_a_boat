@@ -2,7 +2,7 @@
 <router-outlet></router-outlet>
 <canvas id="canvas" width="700px" height="700px" style="position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);"></canvas>
 <div
-  style="width: 100; display: flex; justify-content: center; margin-top: 20px"
+  style="width: 100%; display: flex; justify-content: center; margin-top: 20px;position: relative;z-index: 2;"
 >
   <img style="height: 40px" src="/assets/icons/parking.png" />
   <span style="font-family: titleFont">Free Parking</span>
@@ -14,4 +14,3 @@
   </div>
   <img class="icon" src="/assets/icons/cancel.png" (click)="modalService.closeModal()" />
 </div>
-<img id="source-img" style="display: none;" src="/assets/icons/boat.png" >
