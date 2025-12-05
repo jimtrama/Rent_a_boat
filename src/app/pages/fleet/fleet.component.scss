@@ -132,3 +132,37 @@
     border-radius: 10px;
   }
 }
+
+.people-container{
+  border-radius: 14px;
+  border: 2px solid black;
+  margin: 20px;
+  padding: 10px;
+  display: flex;
+  gap: 10px;
+  position: relative;
+  button{
+    background-color: white;
+    color: black;
+    padding:10px;
+    border: none;
+    font-family: prettyFont;
+    font-weight: bolder;
+    cursor: pointer;
+    border-radius: 15px;
+  }
+
+  span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: white;
+    transform: translateY(-50%);
+    font-family: mainFont;
+  }
+
+  .selected{
+    background-color: black;
+    color:white;
+  }
+}

@@ -1,4 +1,11 @@
 <div class="outer-wrapper">
+  <div class="people-container" >
+    <span>People Capacity</span>
+    <button (click)="boatFilter(0)" [ngClass]="{'selected':boatFilterValue==0}" >All</button>
+    <button (click)="boatFilter(5)" [ngClass]="{'selected':boatFilterValue==5}">5</button>
+    <button (click)="boatFilter(7)" [ngClass]="{'selected':boatFilterValue==7}">7</button>
+    <button (click)="boatFilter(10)"[ngClass]="{'selected':boatFilterValue==10}" >10</button>
+  </div>
   <div
     id="scroll-area"
     (touchend)="onTouchEnd($event)"
@@ -9,7 +16,7 @@
   >
     <app-card
       class="card"
-      *ngFor="let boat of boats; let i = index"
+      *ngFor="let boat of boatsToShow; let i = index"
       [boat]="boat"
       [boatId]="i"
       [id]="'boat-' + i"

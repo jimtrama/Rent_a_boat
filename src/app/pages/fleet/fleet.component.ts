@@ -1,4 +1,4 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { Boat } from '../../models/boat.model';
 
 @Component({
@@ -7,8 +7,7 @@ import { Boat } from '../../models/boat.model';
   templateUrl: './fleet.component.html',
   styleUrl: './fleet.component.scss',
 })
-export class FleetComponent implements AfterViewInit {
-  
+export class FleetComponent implements OnInit, AfterViewInit {
   public boats: Boat[] = [
     new Boat({
       hp: 'yamaha 30/40',
@@ -41,13 +40,22 @@ export class FleetComponent implements AfterViewInit {
     }),
   ];
 
+  boatsToShow: Boat[] = [];
+  boatFilterValue = 0;
+
   public touchStartX = 0;
   public imgForModal = '';
 
-  ngAfterViewInit(): void {
-    document.getElementsByTagName('app-header')[0].scrollIntoView({behavior:'smooth'});
+  ngOnInit(): void {
+    this.boatsToShow = [...this.boats];
   }
-  
+
+  ngAfterViewInit(): void {
+    document
+      .getElementsByTagName('app-header')[0]
+      .scrollIntoView({ behavior: 'smooth' });
+  }
+
   onTouchStart(e: TouchEvent) {
     this.touchStartX = e.changedTouches[0].pageX;
   }
@@ -73,6 +81,20 @@ export class FleetComponent implements AfterViewInit {
       this.rotateLeft();
     } else {
       this.rotateRight();
+    }
+  }
+
+  boatFilter(num: number) {
+    this.boatFilterValue = num;
+    this.boatsToShow = [];
+    if (num == 0) {
+      this.boatsToShow = [...this.boats];
+    } else {
+      for (let boat of this.boats) {
+        if (+boat.people == num) {
+          this.boatsToShow.push(boat);
+        }
+      }
     }
   }
 
