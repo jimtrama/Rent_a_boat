@@ -1,9 +1,10 @@
 :host{
     min-width: 172px;
+    max-width: 220px;
     height: 50px;
     display: flex;
     align-items:center;
-    justify-content: space-between;
+    justify-content: center;
     gap: 10px;
     font-size: 15px;
     color: black;
