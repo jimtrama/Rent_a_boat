@@ -1,6 +1,6 @@
-<span style="font-family: titleFont">{{ boat.title }}</span>
+
 <div class="new-container">
-  <div style="display: flex;flex-direction: column;justify-content: center;">
+  <div style="display: flex;flex-direction: column;justify-content: center;margin-top: 20px;">
     <div class="imgs-container">
     <img
       (click)="onImgClick(img)"
@@ -17,11 +17,13 @@
   </div>
   <div class="arrows-container">
     <img
+    *ngIf="selectedImg!=0"
       class="arrow left-icon"
       (click)="onLeftArrowClick()"
       src="/assets/icons/right-arrow.png"
     />
     <img
+    *ngIf="selectedImg != boat.imgs.length-1"
       class="arrow right-icon"
       (click)="onRightArrowClick()"
       src="/assets/icons/right-arrow.png"
@@ -31,6 +33,7 @@
   
   
   <div class="main-container">
+    <span style="font-family: titleFont;flex-grow: 1;width: 100%;">{{ boat.title }}</span>
     <app-info-row text="Hp" icon="horse" [value]="boat.hp" />
     <app-info-row text="Max People" icon="people" [value]="boat.people" />
     <app-info-row text="Length" icon="ruler" [value]="boat.length" />

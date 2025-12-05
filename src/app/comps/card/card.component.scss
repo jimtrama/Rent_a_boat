@@ -15,7 +15,7 @@
     padding: 10px 12px;
     border-top:1px solid black ;
 }
-:host:nth-child(0){
+:host:nth-child(1){
     border: none;
 }
 
@@ -57,10 +57,11 @@
     display: flex;
     width: 340px;
     height: fit-content;
-    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 10px;
     margin-top: 20px;
-    justify-content: center;
 }
 
 .arrows-container{
