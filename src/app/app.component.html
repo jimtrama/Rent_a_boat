@@ -1,5 +1,6 @@
 <app-header></app-header>
 <router-outlet></router-outlet>
+<canvas id="canvas" width="700px" height="700px" style="position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);"></canvas>
 <div
   style="width: 100; display: flex; justify-content: center; margin-top: 20px"
 >
@@ -13,3 +14,4 @@
   </div>
   <img class="icon" src="/assets/icons/cancel.png" (click)="modalService.closeModal()" />
 </div>
+<img id="source-img" style="display: none;" src="/assets/icons/boat.png" >

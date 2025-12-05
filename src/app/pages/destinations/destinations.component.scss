@@ -4,8 +4,11 @@
     align-items: center;
     justify-content: center;
     position: relative;
+    z-index: 2;
 }
 .card{
+    position: relative;
+    z-index: 1;
     margin-top: 100px;
     display: flex;
     gap: 30px;
@@ -20,6 +23,8 @@
     span{
         width: 40%;
         font-family: prettyFont;
+        background-color: white;
+        border-radius: 20px;
     }
 }
 

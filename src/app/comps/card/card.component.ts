@@ -72,7 +72,7 @@ export class CardComponent {
   onTouchMove(e: TouchEvent) {
     let xDiff = 0;
     if (this.imageSwinging) {
-      e.preventDefault();
+      //e.preventDefault();
       let imgs = document.getElementsByClassName(this.boatId + '-img');
       xDiff = e.targetTouches[0].pageX - this.xTouchStart;
       if (xDiff > 0 && this.selectedImg == 0) return;
