@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { Boat } from '../../models/boat.model';
+import { BladesService } from '../../services/blades.service';
 
 @Component({
   selector: 'app-fleet',
@@ -46,6 +47,8 @@ export class FleetComponent implements OnInit, AfterViewInit {
   public touchStartX = 0;
   public imgForModal = '';
 
+  constructor(private bladeService:BladesService){}
+
   ngOnInit(): void {
     this.boatsToShow = [...this.boats];
   }
@@ -64,9 +67,9 @@ export class FleetComponent implements OnInit, AfterViewInit {
     let touchEndX = e.changedTouches[0].pageX;
     let isLeftSwipe = this.touchStartX > touchEndX;
     if (isLeftSwipe) {
-      this.rotateLeft();
+      this.bladeService.rotateLeft.next();
     } else {
-      this.rotateRight();
+      this.bladeService.rotateRight.next();
     }
   }
 
@@ -78,9 +81,9 @@ export class FleetComponent implements OnInit, AfterViewInit {
     let xEnd = e.layerX;
     let isLeftSwipe = this.touchStartX > xEnd;
     if (isLeftSwipe) {
-      this.rotateLeft();
+      this.bladeService.rotateLeft.next();
     } else {
-      this.rotateRight();
+      this.bladeService.rotateRight.next();
     }
   }
 
@@ -96,33 +99,5 @@ export class FleetComponent implements OnInit, AfterViewInit {
         }
       }
     }
-  }
-
-  private rotateLeft() {
-    document
-      .getElementsByClassName('blades-icon')[0]
-      .classList.remove('rotate-blade-right');
-    document
-      .getElementsByClassName('blades-icon')[0]
-      .classList.remove('rotate-blade-left');
-    setTimeout(() => {
-      document
-        .getElementsByClassName('blades-icon')[0]
-        .classList.add('rotate-blade-left');
-    });
-  }
-
-  private rotateRight() {
-    document
-      .getElementsByClassName('blades-icon')[0]
-      .classList.remove('rotate-blade-left');
-    document
-      .getElementsByClassName('blades-icon')[0]
-      .classList.remove('rotate-blade-right');
-    setTimeout(() => {
-      document
-        .getElementsByClassName('blades-icon')[0]
-        .classList.add('rotate-blade-right');
-    });
   }
 }
