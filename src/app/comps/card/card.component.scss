@@ -15,7 +15,7 @@
     padding: 10px 12px;
     border-top:1px solid black ;
 }
-:host:nth-child(0){
+:host:nth-child(1){
     border: none;
 }
 
@@ -57,10 +57,17 @@
     display: flex;
     width: 340px;
     height: fit-content;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 20px;
+    flex-direction: column;
     justify-content: center;
+    align-items:  flex-start;
+    gap: 5px;
+    margin-top: 20px;
+}
+
+@media screen and (max-width:743px) {
+    .main-container{
+        align-items: center;
+    }
 }
 
 .arrows-container{
@@ -82,4 +89,27 @@
 }
 .left-icon{
     transform: rotate(-180deg);
+}
+
+.card{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 70%;
+    img{
+        height: 30px;
+    }
+    .bullet{
+        height: 10px;
+        width: 10px;
+        border-radius: 50%;
+        background-color: black;
+    }
+    .title{
+        font-size: larger;
+        font-family: mainFont;
+    }
+    .info{
+        font-family: titleFont;
+    }
 }
