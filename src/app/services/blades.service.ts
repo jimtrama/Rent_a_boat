@@ -14,9 +14,11 @@ export class BladesService {
 
   constructor() { 
     this.$rotateLeft.subscribe(()=>{
+      if(!this.rotating)
       this._rotateLeft();
     })
     this.$rotateRight.subscribe(()=>{
+      if(!this.rotating)
       this._rotateRight();
     })
   }
