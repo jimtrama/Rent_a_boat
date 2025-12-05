@@ -59,9 +59,15 @@
     height: fit-content;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    gap: 10px;
+    align-items:  flex-start;
+    gap: 5px;
     margin-top: 20px;
+}
+
+@media screen and (max-width:743px) {
+    .main-container{
+        align-items: center;
+    }
 }
 
 .arrows-container{
@@ -83,4 +89,27 @@
 }
 .left-icon{
     transform: rotate(-180deg);
+}
+
+.card{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 70%;
+    img{
+        height: 30px;
+    }
+    .bullet{
+        height: 10px;
+        width: 10px;
+        border-radius: 50%;
+        background-color: black;
+    }
+    .title{
+        font-size: larger;
+        font-family: mainFont;
+    }
+    .info{
+        font-family: titleFont;
+    }
 }

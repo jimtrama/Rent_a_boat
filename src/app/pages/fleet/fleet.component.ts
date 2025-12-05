@@ -11,21 +11,21 @@ export class FleetComponent implements AfterViewInit {
   
   public boats: Boat[] = [
     new Boat({
-      hp: 'yamaha 30/40',
+      hp: '30/40 yamaha',
       people: '5',
       length: '4.5m',
       imgs: ['2.jpeg', '3.jpeg'],
       title: 'Blazer Astra',
     }),
     new Boat({
-      hp: 'yamaha 30/40',
+      hp: '30/40 yamaha',
       people: '5',
       length: '4.5m',
       imgs: ['1.jpg', '6.jpg', '3.jpeg'],
       title: 'Compass',
     }),
     new Boat({
-      hp: 'mercury 30/40',
+      hp: '30/40 mercury',
       people: '7',
       length: '5m',
       imgs: ['4.jpeg', '2.jpeg', '7.jpg'],
@@ -33,7 +33,7 @@ export class FleetComponent implements AfterViewInit {
       bed: true,
     }),
     new Boat({
-      hp: 'yamaha 30/60',
+      hp: '30/60 yamaha',
       people: '10',
       length: '6.1m',
       imgs: ['5.jpg', '2.jpeg', '3.jpeg'],

@@ -1,46 +1,68 @@
-
 <div class="new-container">
-  <div style="display: flex;flex-direction: column;justify-content: center;margin-top: 20px;">
+  <div
+    style="
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-top: 20px;
+    "
+  >
     <div class="imgs-container">
-    <img
-      (click)="onImgClick(img)"
-      [id]="'img-' + i"
-      [class]="boatId + '-img' + ' img'"
-      *ngFor="let img of boat.imgs; let i = index"
-      [src]="'/assets/boats/' + img"
-      alt=""
-      (touchstart)="onTouchStartImg($event)"
-      (touchmove)="onTouchMove($event)"
-      (touchend)="onTouchEnd($event)"
-    />
-    
+      <img
+        (click)="onImgClick(img)"
+        [id]="'img-' + i"
+        [class]="boatId + '-img' + ' img'"
+        *ngFor="let img of boat.imgs; let i = index"
+        [src]="'/assets/boats/' + img"
+        alt=""
+        (touchstart)="onTouchStartImg($event)"
+        (touchmove)="onTouchMove($event)"
+        (touchend)="onTouchEnd($event)"
+      />
+    </div>
+    <div class="arrows-container">
+      <img
+        *ngIf="selectedImg != 0"
+        class="arrow left-icon"
+        (click)="onLeftArrowClick()"
+        src="/assets/icons/right-arrow.png"
+      />
+      <img
+        *ngIf="selectedImg != boat.imgs.length - 1"
+        class="arrow right-icon"
+        (click)="onRightArrowClick()"
+        src="/assets/icons/right-arrow.png"
+      />
+    </div>
   </div>
-  <div class="arrows-container">
-    <img
-    *ngIf="selectedImg!=0"
-      class="arrow left-icon"
-      (click)="onLeftArrowClick()"
-      src="/assets/icons/right-arrow.png"
-    />
-    <img
-    *ngIf="selectedImg != boat.imgs.length-1"
-      class="arrow right-icon"
-      (click)="onRightArrowClick()"
-      src="/assets/icons/right-arrow.png"
-    />
-  </div>
-  </div>
-  
-  
+
   <div class="main-container">
-    <span style="font-family: titleFont;flex-grow: 1;width: 100%;">{{ boat.title }}</span>
-    <app-info-row text="Hp" icon="horse" [value]="boat.hp" />
-    <app-info-row text="Max People" icon="people" [value]="boat.people" />
-    <app-info-row text="Length" icon="ruler" [value]="boat.length" />
-    <app-info-row
-      text="Sundeck"
-      icon="deck-chair"
-      [value]="boat.bed ? 'Deck Bed' : 'Yes'"
-    />
+    <span style="font-family: titleFont; flex-grow: 1; width: 100%">{{
+      boat.title
+    }}</span>
+    <div class="card">
+      <div class="bullet" ></div>
+      <img src="/assets/icons/horse.png" />
+      <span class="title">Hp:</span>
+      <span class="info" >{{ boat.hp }}</span>
+    </div>
+    <div class="card">
+      <div class="bullet" ></div>
+      <img src="/assets/icons/people.png" />
+      <span class="title">Max People:</span>
+      <span class="info" >{{ boat.people }}</span>
+    </div>
+    <div class="card">
+      <div class="bullet" ></div>
+      <img src="/assets/icons/ruler.png" />
+      <span class="title">Length:</span>
+      <span class="info" >{{ boat.length }}</span>
+    </div>
+    <div class="card">
+      <div class="bullet" ></div>
+      <img src="/assets/icons/deck-chair.png" />
+      <span class="title">Sundeck:</span>
+      <span class="info" >{{ boat.bed ? 'Deck Bed' : 'Yes' }}</span>
+    </div>
   </div>
 </div>
