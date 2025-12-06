@@ -1,4 +1,4 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { Boat } from './models/boat.model';
 import { ModalService } from './services/modal.service';
 import { BladesService } from './services/blades.service';
@@ -10,7 +10,7 @@ import { Rockets } from './animation_bullets/rockets';
   standalone: false,
   styleUrl: './app.component.scss',
 })
-export class AppComponent implements AfterViewInit {
+export class AppComponent implements AfterViewInit,OnInit {
   private prevScrollTop = 0;
   private ctx!: CanvasRenderingContext2D | null;
   public width = 700;
@@ -21,6 +21,10 @@ export class AppComponent implements AfterViewInit {
     public modalService: ModalService,
     private bladesService: BladesService
   ) {}
+  ngOnInit(): void {
+    (document.getElementById('canvas') as HTMLCanvasElement ).width = window.innerWidth-150;
+    (document.getElementById('canvas') as HTMLCanvasElement ).height = window.innerHeight;
+  }
 
   ngAfterViewInit(): void {
     document
