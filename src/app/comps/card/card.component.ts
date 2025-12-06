@@ -80,13 +80,13 @@ export class CardComponent {
       (imgs[this.selectedImg] as HTMLElement).style.left = xDiff + 'px';
     }
 
-    if (xDiff < -140 && this.imageSwinging) {
+    if (xDiff < -14 && this.imageSwinging) {
       this.selectedImg++;
       this.calculateImages();
       this.imageSwinging = false;
     }
 
-    if (xDiff > 140 && this.imageSwinging) {
+    if (xDiff > 14 && this.imageSwinging) {
       this.selectedImg--;
       this.calculateImages();
       this.imageSwinging = false;
