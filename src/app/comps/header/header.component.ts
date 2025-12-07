@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, viewChild, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -9,13 +10,25 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
   public mobileHeader = false;
   public mobileMenuOpen = false;
+  public route:string = 'home'
+
+  constructor(private router:Router){}
+
   ngOnInit(): void {
     this.mobileHeader = window.innerWidth < 520;
   }
+
   toggleMobileMenu(){ 
     this.mobileMenuOpen = !this.mobileMenuOpen;
   }
+
   closeMenu(){
     this.mobileMenuOpen = false;
+    
+  }
+
+  navigate(route:string){
+    this.route = route;
+    this.router.navigate([route]);
   }
 }

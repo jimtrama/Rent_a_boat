@@ -4,26 +4,25 @@
   <span class="title">Medusa Boats</span>
   <img class="blades-icon" src="/assets/icons/turbine.png" />
   <div class="menu-container" *ngIf="!mobileHeader">
-    <button [routerLink]="['home']" routerLinkActive="active">Home</button>
+    <button appAnimetable (click)="navigate('home')" [ngClass]="{'active':route=='home'}">Home</button>
     <span></span>
-    <button [routerLink]="['fleet']" routerLinkActive="active">
+    <button appAnimetable (click)="navigate('fleet')" [ngClass]="{'active':route=='fleet'}">
       Our Fleet
     </button>
     <span></span>
-    <button [routerLink]="['destinations']" routerLinkActive="active">
+    <button appAnimetable (click)="navigate('destinations')"  [ngClass]="{'active':route=='destinations'}" >
       Destinations
     </button>
     <span></span>
-    <button [routerLink]="['reviews']" routerLinkActive="active">
+    <button appAnimetable (click)="navigate('reviews')" [ngClass]="{'active':route=='reviews'}" >
       Reviews
     </button>
   </div>
   <div class="mobile-menu-container" *ngIf="mobileHeader">
-    <img (click)="toggleMobileMenu()" src="/assets/icons/menu.png" />
-    
+    <img appAnimetable (click)="toggleMobileMenu()" src="/assets/icons/menu.png" />
   </div>
 </div>
-<div class="mobile-links-container" *ngIf="mobileMenuOpen">
+<div #mobileMenuContainer class="mobile-links-container" *ngIf="mobileMenuOpen">
       <button [routerLink]="['home']" (click)="closeMenu()" routerLinkActive="active-mobile">Home</button>
       <span></span>
       <button [routerLink]="['fleet']" (click)="closeMenu()" routerLinkActive="active-mobile">

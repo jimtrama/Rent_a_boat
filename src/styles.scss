@@ -44,3 +44,19 @@ body{
     transform: translate(-50%, -50%) rotate(360deg);
   }
 }
+
+
+.scale-animation{
+  animation-name: scale-a;
+  animation-duration: 1s;
+}
+
+@keyframes scale-a {
+  0%{
+    transform: scale(1.1);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+

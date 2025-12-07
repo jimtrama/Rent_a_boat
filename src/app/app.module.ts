@@ -12,6 +12,7 @@ import { FleetComponent } from './pages/fleet/fleet.component';
 import { DestinationsComponent } from './pages/destinations/destinations.component';
 import { ReviewsComponent } from './pages/reviews/reviews.component';
 import { HomeComponent } from './pages/home/home.component';
+import { AnimetableDirective } from './directives/animetable.directive';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +24,8 @@ import { HomeComponent } from './pages/home/home.component';
     FleetComponent,
     DestinationsComponent,
     ReviewsComponent,
-    HomeComponent
+    HomeComponent,
+    AnimetableDirective
   ],
   imports: [
     BrowserModule,
