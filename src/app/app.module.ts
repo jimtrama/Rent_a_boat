@@ -13,6 +13,8 @@ import { DestinationsComponent } from './pages/destinations/destinations.compone
 import { ReviewsComponent } from './pages/reviews/reviews.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AnimetableDirective } from './directives/animetable.directive';
+import { MobileHeaderComponent } from './comps/mobile-header/mobile-header.component';
+import { provideAnimations } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,13 +27,16 @@ import { AnimetableDirective } from './directives/animetable.directive';
     DestinationsComponent,
     ReviewsComponent,
     HomeComponent,
-    AnimetableDirective
+    AnimetableDirective,
+    MobileHeaderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [
+    provideAnimations()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,33 @@
+<div [@openClose]="open?'open':'close'">
+  <button
+    [routerLink]="['home']"
+    (click)="toggleMenu()"
+    routerLinkActive="active-mobile"
+  >
+    Home
+  </button>
+  <span></span>
+  <button
+    [routerLink]="['fleet']"
+    (click)="toggleMenu()"
+    routerLinkActive="active-mobile"
+  >
+    Our Fleet
+  </button>
+  <span></span>
+  <button
+    [routerLink]="['destinations']"
+    (click)="toggleMenu()"
+    routerLinkActive="active-mobile"
+  >
+    Destinations
+  </button>
+  <span></span>
+  <button
+    [routerLink]="['reviews']"
+    (click)="toggleMenu()"
+    routerLinkActive="active-mobile"
+  >
+    Reviews
+  </button>
+</div>

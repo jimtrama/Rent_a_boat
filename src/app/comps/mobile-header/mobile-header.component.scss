@@ -1,0 +1,30 @@
+div{
+  background-color: white;
+  position: fixed;
+  left: 20px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  gap: 2px;
+  border: 1px solid black;
+  padding: 2px;
+  animation-duration: 1s;
+  animation-fill-mode:forwards ;
+  button {
+    color: black;
+    background-color: white;
+    font-family: titleFont;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+    font-size: larger;
+  }
+}
+
+.active-mobile {
+  background-color: black !important;
+  color: white !important;
+}

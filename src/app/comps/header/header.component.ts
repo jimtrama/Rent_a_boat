@@ -2,7 +2,7 @@ import { Component, ElementRef, OnInit, viewChild, ViewChild } from '@angular/co
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-header',
+selector: 'app-header',
   standalone: false,
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
@@ -15,7 +15,7 @@ export class HeaderComponent implements OnInit {
   constructor(private router:Router){}
 
   ngOnInit(): void {
-    this.mobileHeader = window.innerWidth < 520;
+    this.mobileHeader = window.innerWidth < 1120;     
   }
 
   toggleMobileMenu(){ 
@@ -23,11 +23,10 @@ export class HeaderComponent implements OnInit {
   }
 
   closeMenu(){
-    this.mobileMenuOpen = false;
-    
+    this.mobileMenuOpen = false; 
   }
 
-  navigate(route:string){
+  navigate(route:string){     
     this.route = route;
     this.router.navigate([route]);
   }

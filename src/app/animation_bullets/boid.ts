@@ -23,7 +23,7 @@ export class Boid {
   private width: number;
   private height: number;
   private r: number = 5;
-  private colors = ["#50DA4C","#DDBB8E","#C401C4"]
+  private colors = ["#356ce3ff","#2b56e3ff","#010393ff"]
   private color_index =0;
 
   constructor(width: number, heigth: number, id: number) {

@@ -22,21 +22,8 @@
     <img appAnimetable (click)="toggleMobileMenu()" src="/assets/icons/menu.png" />
   </div>
 </div>
-<div #mobileMenuContainer class="mobile-links-container" *ngIf="mobileMenuOpen">
-      <button [routerLink]="['home']" (click)="closeMenu()" routerLinkActive="active-mobile">Home</button>
-      <span></span>
-      <button [routerLink]="['fleet']" (click)="closeMenu()" routerLinkActive="active-mobile">
-        Our Fleet
-      </button>
-      <span></span>
-      <button [routerLink]="['destinations']" (click)="closeMenu()" routerLinkActive="active-mobile">
-        Destinations
-      </button>
-      <span></span>
-      <button [routerLink]="['reviews']" (click)="closeMenu()" routerLinkActive="active-mobile">
-        Reviews
-      </button>
-    </div>
+<app-mobile-header [(open)]="mobileMenuOpen"></app-mobile-header>
+
 
 <div class="header-fotter-container">
   <img class="bg-img" src="/assets/sea.webp" >

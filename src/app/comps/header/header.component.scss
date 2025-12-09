@@ -23,7 +23,7 @@
     position: absolute;
     top: 60%;
     left: 50vw;
-    transform: rotate(5deg) translate(-50%, -50%);
+    transform: rotate(2deg) translate(-50%, -50%);
     height: 40px;
     aspect-ratio: 1/1;
     -webkit-filter: invert(100%); /* Safari/Chrome */
@@ -70,68 +70,17 @@
   }
 }
 
-.mobile-links-container {
-  background-color: white;
-  position: fixed;
-  top: -150px;
-  left: 20px;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  border-radius: 10px;
-  gap: 2px;
-  border: 1px solid black;
-  padding: 2px;
-  animation-name: slide-in;
-  animation-duration: 1s;
-  animation-fill-mode:forwards ;
-  button {
-    color: black;
-    background-color: white;
-    font-family: titleFont;
-    cursor: pointer;
-    outline: none;
-    border: none;
-    border-radius: 10px;
-    padding: 5px;
-    font-size: larger;
-  }
-}
-
-.slide-out{
-  animation-name: slide-out-animaton !important;
-}
-@keyframes slide-out-animation {
-  0%{
-    top: 80px;
-  }
-  100%{
-    top: -150px;
-  }
-}
-@keyframes slide-in {
-  0%{
-    top:-150px
-  }
-  100%{
-    top: 80px;
-  }
-}
-
 .active {
   background-color: white !important;
   color: black !important;
 }
-.active-mobile {
-  background-color: black !important;
-  color: white !important;
-}
+
 
 .title {
   position: absolute;
-  top: 50%;
-  left: 60%;
-  transform: translateX(-50%);
+  top: 85%;
+  left: 50vw;
+  transform: translate(-50%,-50%) rotate(2deg);
   font-family: "prettyFont";
   font-size: large;
   color: white;
@@ -154,8 +103,8 @@
 .blades-icon {
   height: 40px;
   position: absolute;
-  left: 60%;
-  bottom: 0;
+  left: 95vw;
+  top: 45%;
   transform: translateX(-50%);
   z-index: 2;
 }
