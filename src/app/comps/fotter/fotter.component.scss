@@ -13,7 +13,15 @@
   flex-wrap: wrap;
   background-color: black;
 }
-
+.icons-container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  img{
+    height: 30px;
+  }
+}
 .map-container {
   display: flex;
   justify-content: center;

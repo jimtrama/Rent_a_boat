@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, viewChild, ViewChild } from '@angular/core';
+import { Component, OnInit, viewChild, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,7 +10,7 @@ selector: 'app-header',
 export class HeaderComponent implements OnInit {
   public mobileHeader = false;
   public mobileMenuOpen = false;
-  public route:string = 'home'
+  public route:string = ''
 
   constructor(private router:Router){}
 

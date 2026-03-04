@@ -6,7 +6,10 @@ import { ReviewsComponent } from './pages/reviews/reviews.component';
 import { HomeComponent } from './pages/home/home.component';
 
 const routes: Routes = [
-  
+  {
+    path:"",
+    component:HomeComponent,
+  },
   {
     path:"destinations",
     component:DestinationsComponent
@@ -19,13 +22,9 @@ const routes: Routes = [
     path:"fleet",
     component:FleetComponent,
   },
-   {
-    path:"home",
-    component:HomeComponent,
-  },
   {
     path:"**",
-    redirectTo:'home',
+    redirectTo:'',
   },
 ];
 
