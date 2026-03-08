@@ -75,12 +75,11 @@
   color: black !important;
 }
 
-
 .title {
   position: absolute;
   top: 85%;
   left: 50vw;
-  transform: translate(-50%,-50%) rotate(2deg);
+  transform: translate(-50%, -50%) rotate(2deg);
   font-family: "prettyFont";
   font-size: large;
   color: #d1be53;
@@ -108,7 +107,7 @@
   transform: translateX(-50%);
   z-index: 2;
 }
-.header-fotter-container{
+.header-fotter-container {
   width: 100%;
   position: relative;
   top: 0;
@@ -172,9 +171,6 @@
     top: 90px;
   }
 }
-.bg-img{
-    width: 100%;
-    max-height: 371px;
-    object-fit: cover;
-    z-index: 0;
+.bg-img {
+  width: 100%;
 }

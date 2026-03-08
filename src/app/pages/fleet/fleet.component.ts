@@ -14,7 +14,7 @@ export class FleetComponent implements OnInit, AfterViewInit {
       hp: '30/40 yamaha',
       people: '5',
       length: '4.5m',
-      imgs: ['2.jpeg','5.jpg','10.jpeg','18.jpeg','19.jpeg'],
+      imgs: ['2.jpeg','5.jpg','10.jpeg','18.jpeg','19.jpeg','20.jpeg'],
       title: 'Blazer Astra',
     }),
     new Boat({
