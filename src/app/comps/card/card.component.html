@@ -58,11 +58,11 @@
       <span class="title">Length:</span>
       <span class="info" >{{ boat.length }}</span>
     </div>
-    <div class="card">
+    <div *ngIf="boat.bed" class="card">
       <div class="bullet" ></div>
       <img src="/assets/icons/deck-chair.png" />
       <span class="title">Sundeck:</span>
-      <span class="info" >{{ boat.bed ? 'Deck Bed' : 'Yes' }}</span>
+      <span class="info" >Deck Bed</span>
     </div>
   </div>
 </div>

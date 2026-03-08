@@ -14,30 +14,31 @@ export class FleetComponent implements OnInit, AfterViewInit {
       hp: '30/40 yamaha',
       people: '5',
       length: '4.5m',
-      imgs: ['2.jpeg', '3.jpeg'],
+      imgs: ['2.jpeg','5.jpg','10.jpeg','18.jpeg','19.jpeg'],
       title: 'Blazer Astra',
     }),
     new Boat({
       hp: '30/40 yamaha',
       people: '5',
       length: '4.5m',
-      imgs: ['1.jpg', '6.jpg', '3.jpeg'],
+      imgs: ['6.jpg','9.webp','13.webp','17.jpeg'],
       title: 'Compass',
     }),
     new Boat({
       hp: '30/40 mercury',
-      people: '7',
+      people: '6+1',
       length: '5m',
-      imgs: ['4.jpeg', '2.jpeg', '7.jpg'],
+      imgs: ["1.jpg",'4.jpeg', '3.jpeg'],
       title: 'Carel',
       bed: true,
     }),
     new Boat({
       hp: '30/60 yamaha',
-      people: '10',
+      people: '8+2',
       length: '6.1m',
-      imgs: ['5.jpg', '2.jpeg', '3.jpeg'],
+      imgs: ['8.webp','12.webp','14.jpeg','15.jpeg','16.jpeg'],
       title: 'Poseidon',
+      bed:true
     }),
   ];
 

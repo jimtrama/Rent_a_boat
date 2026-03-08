@@ -24,10 +24,10 @@
     top: 60%;
     left: 50vw;
     transform: rotate(2deg) translate(-50%, -50%);
-    height: 40px;
+    height: 60px;
     aspect-ratio: 1/1;
-    -webkit-filter: invert(100%); /* Safari/Chrome */
-    filter: invert(100%);
+    // -webkit-filter: invert(100%); /* Safari/Chrome */
+    // filter: invert(100%);
   }
 }
 
@@ -83,7 +83,7 @@
   transform: translate(-50%,-50%) rotate(2deg);
   font-family: "prettyFont";
   font-size: large;
-  color: white;
+  color: #d1be53;
 }
 
 .boat-icon {
