@@ -6,12 +6,10 @@ import { Directive, HostListener, ViewContainerRef } from '@angular/core';
 })
 export class AnimetableDirective {
   constructor(private el: ViewContainerRef) {
-    console.log(el.element.nativeElement as HTMLElement);
   }
 
   @HostListener('click')
   onClick() {
-    console.log('clicked');
     (this.el.element.nativeElement as HTMLElement).classList.add(
       'scale-animation'
     );

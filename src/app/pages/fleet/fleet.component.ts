@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { Boat } from '../../models/boat.model';
 import { BladesService } from '../../services/blades.service';
+import { BrowserService } from '../../services/browser.service';
 
 @Component({
   selector: 'app-fleet',
@@ -48,13 +49,14 @@ export class FleetComponent implements OnInit, AfterViewInit {
   public touchStartX = 0;
   public imgForModal = '';
 
-  constructor(private bladeService:BladesService){}
+  constructor(private bladeService:BladesService,private browserService:BrowserService){}
 
   ngOnInit(): void {
     this.boatsToShow = [...this.boats];
   }
 
   ngAfterViewInit(): void {
+    if(this.browserService.isBrowser)
     document
       .getElementsByTagName('app-header')[0]
       .scrollIntoView({ behavior: 'smooth' });
@@ -95,7 +97,7 @@ export class FleetComponent implements OnInit, AfterViewInit {
       this.boatsToShow = [...this.boats];
     } else {
       for (let boat of this.boats) {
-        if (+boat.people == num) {
+        if (+(boat.people.split("+")[0]) == num) {
           this.boatsToShow.push(boat);
         }
       }

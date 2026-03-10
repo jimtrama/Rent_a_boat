@@ -1,10 +1,10 @@
 <div class="outer-wrapper">
   <div class="people-container" >
-    <span>People Capacity</span>
-    <button appAnimetable (click)="boatFilter(0)" [ngClass]="{'selected':boatFilterValue==0}" >All</button>
+    <span>{{'fleet.title' | translate}}</span>
+    <button appAnimetable (click)="boatFilter(0)" [ngClass]="{'selected':boatFilterValue==0}" >{{'fleet.all'|translate}}</button>
     <button appAnimetable (click)="boatFilter(5)" [ngClass]="{'selected':boatFilterValue==5}">5</button>
-    <button appAnimetable (click)="boatFilter(7)" [ngClass]="{'selected':boatFilterValue==7}">7</button>
-    <button appAnimetable (click)="boatFilter(10)"[ngClass]="{'selected':boatFilterValue==10}" >10</button>
+    <button appAnimetable (click)="boatFilter(6)" [ngClass]="{'selected':boatFilterValue==6}">7</button>
+    <button appAnimetable (click)="boatFilter(8)"[ngClass]="{'selected':boatFilterValue==8}" >10</button>
   </div>
   <div
     id="scroll-area"
@@ -24,23 +24,21 @@
   </div>
 </div>
 <div class="same-info-container">
-  <span class="title">Equipment & incurance</span>
+  <span class="title">{{'fleet.equipment.title' | translate}}</span>
   <app-info-row
-    text="Fuel tank"
+    [text]="'fleet.equipment.fuel.title' | translate"
     icon="gas-station"
-    value="Start with full tank"
+    [value]="'fleet.equipment.fuel.value' | translate"
   ></app-info-row>
-  <app-info-row text="GPS" icon="gps" value="Tracking System"></app-info-row>
-  <app-info-row text="Map" icon="map" value="GPS Navigation"></app-info-row>
-  <app-info-row text="Mp3 Player" icon="music" value="USB/Bt" />
-  <app-info-row text="Box" icon="ice-box" value="Cooler" />
-  <app-info-row text="Ladder" icon="swim-ladder" value="Swim Ladder" />
-  <app-info-row text="Trim" icon="engine" value="Power Trim" />
-  <app-info-row text="First Aid" icon="kit" value="Safety Kit" />
-  <app-info-row text="Deck chair" icon="seat" value="Deck chair" />
+  <app-info-row [text]="'fleet.equipment.gps.title' | translate" icon="gps" [value]="'fleet.equipment.gps.value' | translate"></app-info-row>
+  <app-info-row [text]="'fleet.equipment.map.title' | translate" icon="map" [value]="'fleet.equipment.map.value' | translate"></app-info-row>
+  <app-info-row [text]="'fleet.equipment.mp3.title' | translate" icon="music" [value]="'fleet.equipment.mp3.value' | translate" />
+  <app-info-row [text]="'fleet.equipment.box.title' | translate" icon="ice-box" [value]="'fleet.equipment.box.value' | translate" />
+  <app-info-row [text]="'fleet.equipment.ladder.title' | translate" icon="swim-ladder" [value]="'fleet.equipment.ladder.value' | translate" />
+  <app-info-row [text]="'fleet.equipment.trim.title' | translate" icon="engine" [value]="'fleet.equipment.trim.value' | translate" />
+  <app-info-row [text]="'fleet.equipment.aid.title' | translate" icon="kit" [value]="'fleet.equipment.aid.value' | translate" />
+  <app-info-row [text]="'fleet.equipment.chair.title' | translate" icon="seat" [value]="'fleet.equipment.chair.value' | translate" />
   <div class="insurance"> 
-    The boat is delivered after thorough safety inspection, so that it meets all its requirements for navigation. 
- The boat is insured against body injuries and property damage as a result of collision against third parties at sea. 
- Upon delivering the boat, the customer agrees that all terms and conditions are met.
+    {{'fleet.equipment.insurance' | translate}}
   </div>
 </div>

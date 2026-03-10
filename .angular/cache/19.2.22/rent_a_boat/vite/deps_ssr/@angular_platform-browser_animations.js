@@ -11,10 +11,11 @@ import {
 import {
   BrowserModule,
   DomRendererFactory2
-} from "./chunk-HGPRXD3S.js";
+} from "./chunk-Y2R6N7XE.js";
+import "./chunk-NWPYFADT.js";
 import {
   DOCUMENT
-} from "./chunk-TRQEH4BN.js";
+} from "./chunk-WOTASOK7.js";
 import {
   ANIMATION_MODULE_TYPE,
   Inject,

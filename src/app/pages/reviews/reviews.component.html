@@ -1,8 +1,8 @@
 <div style="display: flex;align-items: center;justify-content: center;gap: 10px;margin-bottom: 0;">
-    <span style="font-family: mainFont;">From google maps</span>
+    <span style="font-family: mainFont;">{{'reviews.title'|translate}}</span>
     <img style="height: 30px;border-radius: 10px;" src="/assets/icons/google.png" >
 </div>
-<div class="card" *ngFor="let review of reviews" >
+<div class="card" >
     <div>
         <img src="/assets/icons/star.png" alt="">
         <img src="/assets/icons/star.png" alt="">
@@ -10,8 +10,58 @@
         <img src="/assets/icons/star.png" alt="">
         <img src="/assets/icons/star.png" alt="">
     </div>
-    <span>{{review}}</span>
+    <span>{{'reviews.1'|translate}}</span>
+</div>
+<div class="card" >
+    <div>
+        <img src="/assets/icons/star.png" alt="">
+        <img src="/assets/icons/star.png" alt="">
+        <img src="/assets/icons/star.png" alt="">
+        <img src="/assets/icons/star.png" alt="">
+        <img src="/assets/icons/star.png" alt="">
+    </div>
+    <span>{{'reviews.2'|translate}}</span>
+</div>
+<div class="card" >
+    <div>
+        <img src="/assets/icons/star.png" alt="">
+        <img src="/assets/icons/star.png" alt="">
+        <img src="/assets/icons/star.png" alt="">
+        <img src="/assets/icons/star.png" alt="">
+        <img src="/assets/icons/star.png" alt="">
+    </div>
+    <span>{{'reviews.3'|translate}}</span>
+</div>
+<div class="card" >
+    <div>
+        <img src="/assets/icons/star.png" alt="">
+        <img src="/assets/icons/star.png" alt="">
+        <img src="/assets/icons/star.png" alt="">
+        <img src="/assets/icons/star.png" alt="">
+        <img src="/assets/icons/star.png" alt="">
+    </div>
+    <span>{{'reviews.4'|translate}}</span>
+</div>
+<div class="card" >
+    <div>
+        <img src="/assets/icons/star.png" alt="">
+        <img src="/assets/icons/star.png" alt="">
+        <img src="/assets/icons/star.png" alt="">
+        <img src="/assets/icons/star.png" alt="">
+        <img src="/assets/icons/star.png" alt="">
+    </div>
+    <span>{{'reviews.5'|translate}}</span>
+</div>
+<div class="card" >
+    <div>
+        <img src="/assets/icons/star.png" alt="">
+        <img src="/assets/icons/star.png" alt="">
+        <img src="/assets/icons/star.png" alt="">
+        <img src="/assets/icons/star.png" alt="">
+        <img src="/assets/icons/star.png" alt="">
+    </div>
+    <span>{{'reviews.6'|translate}}</span>
 </div>
 <div>
-    <button (click)="seeMoreClick()">see more</button>
+    <button (click)="seeMoreClick()">{{'reviews.more'|translate}}</button>
 </div>

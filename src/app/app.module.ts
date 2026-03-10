@@ -15,6 +15,10 @@ import { HomeComponent } from './pages/home/home.component';
 import { AnimetableDirective } from './directives/animetable.directive';
 import { MobileHeaderComponent } from './comps/mobile-header/mobile-header.component';
 import { provideAnimations } from '@angular/platform-browser/animations';
+import { HttpClient, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import {TranslateLoader, TranslateModule} from '@ngx-translate/core'
+import { provideTranslateHttpLoader, TranslateHttpLoader } from '@ngx-translate/http-loader'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,10 +37,17 @@ import { provideAnimations } from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    TranslateModule.forRoot({
+      loader: provideTranslateHttpLoader({
+        prefix: './assets/i18n/',
+        suffix: '.json'
+      })
+    })
   ],
   providers: [
     provideAnimations(),
-    provideClientHydration(withEventReplay())
+    provideClientHydration(withEventReplay()),
+    provideHttpClient(withInterceptorsFromDi())
   ],
   bootstrap: [AppComponent]
 })

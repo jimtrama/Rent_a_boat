@@ -174,3 +174,21 @@
 .bg-img {
   width: 100%;
 }
+
+.language-container {
+  position: absolute;
+  left: calc(100vw - 40px);
+  top: 100%;
+  transform: translate(-50%,-110%);
+  display: flex;
+  gap: 20px;
+}
+
+.flag{
+  background: transparent;
+  outline: none;
+  border: none;
+  img{
+    height: 24px;
+  }
+}

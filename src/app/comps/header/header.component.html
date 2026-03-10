@@ -3,29 +3,54 @@
   <img class="boat-icon" src="/assets/icons/boat.png" />
   <span class="title">Medusa Boats</span>
   <img class="blades-icon" src="/assets/icons/turbine.png" />
-  <div class="menu-container" *ngIf="!mobileHeader">
-    <button appAnimetable (click)="navigate('')" [ngClass]="{'active':route==''}">Home</button>
-    <span></span>
-    <button appAnimetable (click)="navigate('fleet')" [ngClass]="{'active':route=='fleet'}">
-      Our Fleet
-    </button>
-    <span></span>
-    <button appAnimetable (click)="navigate('destinations')"  [ngClass]="{'active':route=='destinations'}" >
-      Destinations
-    </button>
-    <span></span>
-    <button appAnimetable (click)="navigate('reviews')" [ngClass]="{'active':route=='reviews'}" >
-      Reviews
-    </button>
-  </div>
+  <ng-container *ngIf="!mobileHeader && isBrowser">
+    <div class="menu-container">
+      <button
+        appAnimetable
+        (click)="navigate('')"
+        [ngClass]="{ active: route == '' }"
+       
+      >{{'header.home' | translate}}</button>
+      <span></span>
+      <button
+        appAnimetable
+        (click)="navigate('fleet')"
+        [ngClass]="{ active: route == 'fleet' }"
+      >
+        {{'header.fleet' | translate}}
+      </button>
+      <span></span>
+      <button
+        appAnimetable
+        (click)="navigate('destinations')"
+        [ngClass]="{ active: route == 'destinations' }"
+      >
+        {{'header.dest' | translate}}
+      </button>
+      <span></span>
+      <button
+        appAnimetable
+        (click)="navigate('reviews')"
+        [ngClass]="{ active: route == 'reviews' }"
+      >
+        {{'header.reviews' | translate}}
+      </button>
+    </div>
+  </ng-container>
   <div class="mobile-menu-container" *ngIf="mobileHeader">
-    <img appAnimetable (click)="toggleMobileMenu()" src="/assets/icons/menu.png" />
+    <img
+      appAnimetable
+      (click)="toggleMobileMenu()"
+      src="/assets/icons/menu.png"
+    />
+  </div>
+  <div class="language-container">
+    <button class="flag" (click)="setEnglish()"><img src="/assets/icons/english.png" /></button>
+    <button class="flag" (click)="setGreek()"><img src="/assets/icons/greek.png" /></button>
   </div>
 </div>
 <app-mobile-header [(open)]="mobileMenuOpen"></app-mobile-header>
 
-
 <div class="header-fotter-container">
-  <img class="bg-img" src="/assets/sea.jpeg">
+  <img class="bg-img" src="/assets/sea.jpeg" />
 </div>
-

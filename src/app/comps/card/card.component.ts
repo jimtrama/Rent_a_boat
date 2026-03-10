@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Boat } from '../../models/boat.model';
 import { ModalService } from '../../services/modal.service';
+import { BrowserService } from '../../services/browser.service';
 
 @Component({
   selector: 'app-card',
@@ -15,31 +16,30 @@ export class CardComponent {
 
   public selectedImg = 0;
 
-  constructor(private modalService:ModalService){}
+  constructor(
+    private modalService: ModalService,
+    private broswerService: BrowserService,
+  ) {}
 
   ngAfterViewInit(): void {
     setTimeout(() => {
       this.calculateImages();
-    },10);
+    }, 100);
   }
 
   private calculateImages() {
-    let imgs = document.getElementsByClassName(this.boatId + '-img');
-    for (let i = this.selectedImg; i < imgs.length; i++) {
-      (imgs[i] as HTMLElement).style.left = i * 10 + 'px';
-      (imgs[i] as HTMLElement).style.height =
-        90 - (i - this.selectedImg) * 8 + '%';
-      (imgs[i] as HTMLElement).style.zIndex = imgs.length - i + '';
-      (imgs[i] as HTMLElement).style.transform =
-        'rotate(' + (i - this.selectedImg) * 2 + 'deg)';
-    }
-
-    for (let i = this.selectedImg - 1; i >= 0; i--) {
-      (imgs[i] as HTMLElement).style.left = i * 10 + 'px';
-      (imgs[i] as HTMLElement).style.height = 90 - i * 5 + '%';
-      (imgs[i] as HTMLElement).style.zIndex = i + '';
-      (imgs[i] as HTMLElement).style.transform =
-        'rotate(' + (i - this.selectedImg) * 2 + 'deg)';
+    if (this.broswerService.isBrowser) {
+      let imgs = document.getElementsByClassName(this.boatId + '-img');
+      for (let i = 0; i < imgs.length; i++) {
+        const layer = imgs.length - Math.abs(i - this.selectedImg);
+        (imgs[i] as HTMLElement).style.left = (i) * 10 + 'px';
+        (imgs[i] as HTMLElement).style.height =
+          90 + (i) + '%';
+        (imgs[i] as HTMLElement).style.zIndex = layer + '';
+        (imgs[i] as HTMLElement).style.transform =
+          'rotate(' + (i - this.selectedImg) * 1 + 'deg)';
+      }
+      (imgs[this.selectedImg] as HTMLElement).style.zIndex = imgs.length + '';
     }
   }
 

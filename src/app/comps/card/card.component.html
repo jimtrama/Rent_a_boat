@@ -37,32 +37,44 @@
   </div>
 
   <div class="main-container">
-    <span style="font-family: titleFont; flex-grow: 1; width: 100%;font-size: larger;font-weight: bold;">{{
-      boat.title
-    }}</span>
+    <span
+      style="
+        font-family: titleFont;
+        flex-grow: 1;
+        width: 100%;
+        font-size: larger;
+        font-weight: bold;
+      "
+      >{{ boat.title }}</span
+    >
     <div class="card">
-      <div class="bullet" ></div>
+      <div class="bullet"></div>
       <img src="/assets/icons/horse.png" />
-      <span class="title">Hp:</span>
-      <span class="info" >{{ boat.hp }}</span>
+      <span class="title">HP:</span>
+      <span class="info">{{ boat.hp }}</span>
     </div>
     <div class="card">
-      <div class="bullet" ></div>
-      <img src="/assets/icons/people.png" />
-      <span class="title">Max People:</span>
-      <span class="info" >{{ boat.people }}</span>
+      <div style="display: flex; align-items: center; gap: 10px">
+        <div class="bullet"></div>
+        <img src="/assets/icons/people.png" />
+        <span class="title">{{ "fleet.boat.people" | translate }}</span>
+      </div>
+      <span class="info">{{ boat.people }}</span>
     </div>
     <div class="card">
-      <div class="bullet" ></div>
-      <img src="/assets/icons/ruler.png" />
-      <span class="title">Length:</span>
-      <span class="info" >{{ boat.length }}</span>
+      <div style="display: flex; align-items: center; gap: 10px">
+        <div class="bullet"></div>
+        <img src="/assets/icons/ruler.png" />
+        <span class="title">{{ "fleet.boat.length" | translate }}</span>
+      </div>
+
+      <span class="info">{{ boat.length }}</span>
     </div>
     <div *ngIf="boat.bed" class="card">
-      <div class="bullet" ></div>
+      <div class="bullet"></div>
       <img src="/assets/icons/deck-chair.png" />
-      <span class="title">Sundeck:</span>
-      <span class="info" >Deck Bed</span>
+      <span class="title">{{ "fleet.boat.sundeck" | translate }}</span>
+      <span class="info">{{ "fleet.boat.sundeckValue" | translate }}</span>
     </div>
   </div>
 </div>

@@ -28,7 +28,7 @@
 
 .imgs-container{
     display: flex;
-    overflow-x: scroll;
+    overflow: hidden;
     width: 300px;
     height: 300px;
     gap: 10px;

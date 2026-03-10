@@ -26,7 +26,6 @@ export class MobileHeaderComponent {
   @Input() open!: boolean;
 
   toggleMenu() {
-    console.log(this.open);
     this.open = !this.open;
     this.openChange.emit(this.open);
     

@@ -4,12 +4,12 @@
     <img src="assets/icons/whatsapp.png" >
   </div>
   <app-contact-row
-    label="Aki's Phone"
+    [label]="'footer.akis'|translate"
     value="+306975616367"
     (click)="phoneClicked('6975616367')"
   ></app-contact-row>
   <app-contact-row
-    label="Xrisa's Phone"
+    [label]="'footer.xrisa'|translate"
     value="+306951331881"
     (click)="phoneClicked('6951331881')"
   ></app-contact-row>
@@ -25,7 +25,7 @@
   ></app-contact-row>
 </div>
 <div style="background-color: black;color: white;padding-left: 50px;padding-bottom: 30px;font-family: titleFont;">
-  <span>Monday - Sunday 9:00 - 21:30</span>
+  <span>{{'footer.dates' | translate}} 9:00 - 21:30</span>
 </div>
 <div class="map-container">
   <iframe

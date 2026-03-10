@@ -5,7 +5,7 @@
   style="width: 100%; display: flex; justify-content: center; margin-top: 20px;position: relative;z-index: 2;"
 >
   <img style="height: 40px" src="/assets/icons/parking.png" />
-  <span style="font-family: titleFont">Free Parking</span>
+  <span style="font-family: titleFont">{{'footer.parking' | translate}}</span>
 </div>
 <app-fotter></app-fotter>
 <div class="img-modal-container" (click)="modalService.closeModal()" *ngIf="modalService.open">
