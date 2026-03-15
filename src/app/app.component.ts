@@ -51,19 +51,7 @@ export class AppComponent implements AfterViewInit, OnInit {
         window.innerHeight;
     }
 
-    this.title.setTitle('Rent a Boat in Halkidiki | Rent A Boat');
-
-    this.meta.updateTag({
-      name: 'description',
-      content:
-        'Book luxury boats, yachts and speedboats in Vourvourou at the best prices.',
-    });
-
-    this.meta.updateTag({
-      name: 'keywords',
-      content:
-        'rent boat, vourvourou rental, greece boats , medusa rent a boat, vourvourou rent a boat',
-    });
+    this.title.setTitle('Rent a Boat in Vourvourou | Boat rental Vourvourou');
   }
 
   ngAfterViewInit(): void {
