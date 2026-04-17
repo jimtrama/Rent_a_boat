@@ -127,6 +127,7 @@
   margin-top: 40px;
   z-index: 2;
   background-color: white;
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.14);
   .title {
     position: absolute;
     top: -11px;
@@ -140,13 +141,14 @@
 .people-container{
   background-color: white;
   z-index: 2;
-  border-radius: 14px;
-  border: 2px solid black;
+  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.85);
   margin: 20px;
   padding: 10px;
   display: flex;
   gap: 10px;
   position: relative;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
   button{
     background-color: white;
     color: black;
@@ -182,10 +184,10 @@
   gap: 10px;
   font-size: 15px;
   color: black;
-  border-radius: 10px;
+  border-radius: 14px;
   padding: 5px 30px;
   position: relative;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.18);
   z-index: 2;
   background-color: rgb(252, 243, 224);
   font-family: titleFont;

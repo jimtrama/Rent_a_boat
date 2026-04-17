@@ -24,11 +24,18 @@
     position: relative;
     width: 70%;
     background-color: white;
-    border: 1px solid black;
-    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.85);
+    border-radius: 16px;
     padding: 20px;
     font-family: titleFont;
     max-width: 395px;
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.14);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 20px 42px rgba(0, 0, 0, 0.2);
 }
 .row{
     display: flex;
@@ -53,6 +60,7 @@ button{
     font-size: larger;
     border-radius: 16px;
     cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18);
 }
 
 button:active{
