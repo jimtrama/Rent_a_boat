@@ -1,8 +1,5 @@
 import { createRequire } from 'module';const require = createRequire(import.meta.url);
 import {
-  HTTP_ROOT_INTERCEPTOR_FNS
-} from "./chunk-4FWCMBE6.js";
-import {
   BrowserDomAdapter,
   BrowserModule,
   EVENT_MANAGER_PLUGINS,
@@ -15,6 +12,9 @@ import {
   getDOM,
   setRootDomAdapter
 } from "./chunk-NWPYFADT.js";
+import {
+  HTTP_ROOT_INTERCEPTOR_FNS
+} from "./chunk-4FWCMBE6.js";
 import {
   DOCUMENT,
   PLATFORM_SERVER_ID,
@@ -16830,4 +16830,4 @@ export {
    * License: MIT
    *)
 */
-//# sourceMappingURL=chunk-Y4XNKXBV.js.map
+//# sourceMappingURL=chunk-Z6RWKDIF.js.map

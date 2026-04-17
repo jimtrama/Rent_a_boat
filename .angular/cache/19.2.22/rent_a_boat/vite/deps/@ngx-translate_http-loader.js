@@ -1,11 +1,11 @@
 import {
-  HttpBackend,
-  HttpClient
-} from "./chunk-N2BZX5PP.js";
-import "./chunk-PP55DOIE.js";
-import {
   TranslateLoader
 } from "./chunk-ZW3VIB5K.js";
+import {
+  HttpBackend,
+  HttpClient
+} from "./chunk-5WLAECWG.js";
+import "./chunk-BK26BVX2.js";
 import {
   Injectable,
   InjectionToken,
