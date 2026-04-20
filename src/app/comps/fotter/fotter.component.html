@@ -1,43 +1,66 @@
-<div class="info-container">
-  <div class="icons-container">
-    <img src="assets/icons/viber.png" >
-    <img src="assets/icons/whatsapp.png" >
-  </div>
-  <app-contact-row
-    [label]="'footer.akis'|translate"
-    value="+306975616367"
-    (click)="phoneClicked('6975616367')"
-  ></app-contact-row>
-  <app-contact-row
-    [label]="'footer.xrisa'|translate"
-    value="+306951331881"
-    (click)="phoneClicked('6951331881')"
-  ></app-contact-row>
-  <app-contact-row
-    label="Facebook"
-    value="@medusa_boats"
-    (click)="facebookClicked()"
-  ></app-contact-row>
-  <app-contact-row
-    label="Instagram"
-    value="@medusa_boats"
-    (click)="instagramClicked()"
-  ></app-contact-row>
-</div>
-<div style="background-color: black;color: white;padding-left: 50px;padding-bottom: 30px;font-family: titleFont;">
-  <span>{{'footer.dates' | translate}} 9:00 - 21:30</span>
-</div>
-<div class="map-container">
-  <iframe
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d33728.97480175974!2d23.78113599349991!3d40.199975376357195!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a8bd483088ee0b%3A0x18881356efef91c5!2sMEDUSA%20Rent%20a%20Boat%20Vourvourou!5e0!3m2!1sel!2sgr!4v1764709633242!5m2!1sel!2sgr"
-    width="90%"
-    height="90%"
-    style="border: 0; border-radius: 10px"
-    allowfullscreen=""
-    loading="lazy"
-    referrerpolicy="no-referrer-when-downgrade"
-    (load)="loadingMap()"
-  ></iframe>
-  <img style="width: 50px;position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);filter: invert(1);" class="rotatingAnimation" *ngIf="mapLoading" src="/assets/icons/blades.png" />
-</div>
+<footer class="footer-shell">
+  <section class="info-container">
+    <div class="brand-block">
+      <span class="eyebrow">Medusa Boat Rental</span>
+      <h2>{{ "footer.title" | translate }}</h2>
+      <p>{{ "footer.subtitle" | translate }}</p>
+    </div>
 
+    <div class="contact-grid">
+      <app-contact-row
+        [label]="'footer.akis' | translate"
+        value="+30 697 561 6367"
+        (click)="phoneClicked('6975616367')"
+      ></app-contact-row>
+      <app-contact-row
+        [label]="'footer.xrisa' | translate"
+        value="+30 695 133 1881"
+        (click)="phoneClicked('6951331881')"
+      ></app-contact-row>
+      <app-contact-row
+        label="Facebook"
+        value="@medusa_boats"
+        (click)="facebookClicked()"
+      ></app-contact-row>
+      <app-contact-row
+        label="Instagram"
+        value="@medusa_boat_rental"
+        (click)="instagramClicked()"
+      ></app-contact-row>
+    </div>
+
+    <div class="seo-links">
+      <span class="seo-links-title">{{ "footer.searchTitle" | translate }}</span>
+      <p class="seo-links-copy">{{ "footer.searchIntro" | translate }}</p>
+      <div class="seo-link-grid">
+        <a routerLink="/vourvourou-boat-rental">Vourvourou Boat Rental</a>
+        <a routerLink="/rent-a-boat-vourvourou">Rent a Boat Vourvourou</a>
+        <a routerLink="/boat-rent-diaporos">Boat Rent Diaporos</a>
+        <a routerLink="/blue-lagoon-boat-rental">Blue Lagoon Boat Rental</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="map-container">
+    <div class="map-copy">
+      <span class="eyebrow">{{ "footer.mapTitle" | translate }}</span>
+      <h3>{{ "footer.locationTitle" | translate }}</h3>
+      <p>{{ "footer.locationText" | translate }}</p>
+      <span class="hours">{{ "footer.dates" | translate }} 9:00 - 21:30</span>
+    </div>
+
+    <div class="map-frame">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d33728.97480175974!2d23.78113599349991!3d40.199975376357195!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a8bd483088ee0b%3A0x18881356efef91c5!2sMEDUSA%20Rent%20a%20Boat%20Vourvourou!5e0!3m2!1sel!2sgr!4v1764709633242!5m2!1sel!2sgr"
+        width="100%"
+        height="100%"
+        style="border: 0"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        (load)="loadingMap()"
+      ></iframe>
+      <img class="map-loader rotatingAnimation" *ngIf="mapLoading" src="/assets/icons/blades.png" />
+    </div>
+  </section>
+</footer>

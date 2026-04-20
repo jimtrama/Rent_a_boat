@@ -12,6 +12,7 @@ import { FleetComponent } from './pages/fleet/fleet.component';
 import { DestinationsComponent } from './pages/destinations/destinations.component';
 import { ReviewsComponent } from './pages/reviews/reviews.component';
 import { HomeComponent } from './pages/home/home.component';
+import { SeoLandingComponent } from './pages/seo-landing/seo-landing.component';
 import { AnimetableDirective } from './directives/animetable.directive';
 import { MobileHeaderComponent } from './comps/mobile-header/mobile-header.component';
 import { provideAnimations } from '@angular/platform-browser/animations';
@@ -31,6 +32,7 @@ import { provideTranslateHttpLoader, TranslateHttpLoader } from '@ngx-translate/
     DestinationsComponent,
     ReviewsComponent,
     HomeComponent,
+    SeoLandingComponent,
     AnimetableDirective,
     MobileHeaderComponent
   ],

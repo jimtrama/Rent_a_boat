@@ -1,12 +1,5 @@
 <div class="new-container">
-  <div
-    style="
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      margin-top: 20px;
-    "
-  >
+  <div class="gallery-column">
     <div class="imgs-container">
       <img
         (click)="onImgClick(img)"
@@ -37,43 +30,37 @@
   </div>
 
   <div class="main-container">
-    <span
-      style="
-        font-family: titleFont;
-        flex-grow: 1;
-        width: 100%;
-        font-size: larger;
-        font-weight: bold;
-      "
-      >{{ boat.title }}</span
-    >
+    <span class="boat-title">{{ boat.title }}</span>
     <div class="card">
-      <div class="bullet"></div>
-      <img src="/assets/icons/horse.png" />
-      <span class="title">HP:</span>
+      <div class="card-head">
+        <div class="bullet"></div>
+        <img src="/assets/icons/horse.png" alt="" />
+        <span class="title">HP</span>
+      </div>
       <span class="info">{{ boat.hp }}</span>
     </div>
     <div class="card">
-      <div style="display: flex; align-items: center; gap: 10px">
+      <div class="card-head">
         <div class="bullet"></div>
-        <img src="/assets/icons/people.png" />
+        <img src="/assets/icons/people.png" alt="" />
         <span class="title">{{ "fleet.boat.people" | translate }}</span>
       </div>
       <span class="info">{{ boat.people }}</span>
     </div>
     <div class="card">
-      <div style="display: flex; align-items: center; gap: 10px">
+      <div class="card-head">
         <div class="bullet"></div>
-        <img src="/assets/icons/ruler.png" />
+        <img src="/assets/icons/ruler.png" alt="" />
         <span class="title">{{ "fleet.boat.length" | translate }}</span>
       </div>
-
       <span class="info">{{ boat.length }}</span>
     </div>
     <div *ngIf="boat.bed" class="card">
-      <div class="bullet"></div>
-      <img src="/assets/icons/deck-chair.png" />
-      <span class="title">{{ "fleet.boat.sundeck" | translate }}</span>
+      <div class="card-head">
+        <div class="bullet"></div>
+        <img src="/assets/icons/deck-chair.png" alt="" />
+        <span class="title">{{ "fleet.boat.sundeck" | translate }}</span>
+      </div>
       <span class="info">{{ "fleet.boat.sundeckValue" | translate }}</span>
     </div>
   </div>

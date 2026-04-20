@@ -18,6 +18,22 @@ export const serverRoutes: ServerRoute[] = [
     renderMode: RenderMode.Prerender,
   },
   {
+    path: 'vourvourou-boat-rental',
+    renderMode: RenderMode.Prerender,
+  },
+  {
+    path: 'rent-a-boat-vourvourou',
+    renderMode: RenderMode.Prerender,
+  },
+  {
+    path: 'boat-rent-diaporos',
+    renderMode: RenderMode.Prerender,
+  },
+  {
+    path: 'blue-lagoon-boat-rental',
+    renderMode: RenderMode.Prerender,
+  },
+  {
     path: '**',
     renderMode: RenderMode.Client,
   },

@@ -1,33 +1,14 @@
-<div [@openClose]="open?'open':'close'">
-  <button
-    [routerLink]="['home']"
-    (click)="toggleMenu()"
-    routerLinkActive="active-mobile"
-  >
-    {{'header.home' | translate}}
+<div class="mobile-menu" [@openClose]="open ? 'open' : 'close'">
+  <button [routerLink]="['/']" (click)="toggleMenu()" routerLinkActive="active-mobile" [routerLinkActiveOptions]="{ exact: true }">
+    {{ "header.home" | translate }}
   </button>
-  <span></span>
-  <button
-    [routerLink]="['fleet']"
-    (click)="toggleMenu()"
-    routerLinkActive="active-mobile"
-  >
-    {{'header.fleet' | translate}}
+  <button [routerLink]="['/fleet']" (click)="toggleMenu()" routerLinkActive="active-mobile">
+    {{ "header.fleet" | translate }}
   </button>
-  <span></span>
-  <button
-    [routerLink]="['destinations']"
-    (click)="toggleMenu()"
-    routerLinkActive="active-mobile"
-  >
-    {{'header.dest' | translate}}
+  <button [routerLink]="['/destinations']" (click)="toggleMenu()" routerLinkActive="active-mobile">
+    {{ "header.dest" | translate }}
   </button>
-  <span></span>
-  <button
-    [routerLink]="['reviews']"
-    (click)="toggleMenu()"
-    routerLinkActive="active-mobile"
-  >
-    {{'header.reviews' | translate}}
+  <button [routerLink]="['/reviews']" (click)="toggleMenu()" routerLinkActive="active-mobile">
+    {{ "header.reviews" | translate }}
   </button>
 </div>

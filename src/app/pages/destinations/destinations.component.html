@@ -1,12 +1,31 @@
-<div class="card" >
-    <img  src="/assets/destinations/diaporos.jpeg"/>
-    <span>{{'dest.diaporos' | translate}}</span>
-</div>
-<div class="card">
-    <img src="/assets/destinations/blue.jpg"/>
-    <span>{{'dest.bule' | translate}}</span>
-</div>
-<div class="card" >
-    <img  src="/assets/destinations/mystri.webp"/>
-    <span>{{'dest.hawaii' | translate}}</span>
-</div>
+<section class="destinations-page">
+  <section class="intro-card">
+    <span class="eyebrow">{{ "header.dest" | translate }}</span>
+    <h1 class="section-title">{{ "dest.title" | translate }}</h1>
+    <p class="section-copy">{{ "dest.intro" | translate }}</p>
+  </section>
+
+  <article class="card">
+    <img src="/assets/destinations/diaporos.jpeg" alt="Diaporos Island" />
+    <div class="content">
+      <span class="name">{{ "dest.diaporosName" | translate }}</span>
+      <p>{{ "dest.diaporos" | translate }}</p>
+    </div>
+  </article>
+
+  <article class="card reverse">
+    <img src="/assets/destinations/blue.jpg" alt="Blue Lagoon" />
+    <div class="content">
+      <span class="name">{{ "dest.blueName" | translate }}</span>
+      <p>{{ "dest.bule" | translate }}</p>
+    </div>
+  </article>
+
+  <article class="card">
+    <img src="/assets/destinations/mystri.webp" alt="Hawaii Beach" />
+    <div class="content">
+      <span class="name">{{ "dest.hawaiiName" | translate }}</span>
+      <p>{{ "dest.hawaii" | translate }}</p>
+    </div>
+  </article>
+</section>

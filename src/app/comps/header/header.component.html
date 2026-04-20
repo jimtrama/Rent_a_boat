@@ -1,56 +1,41 @@
-<div class="logo-container">
-  <img class="logo-img" src="/assets/icons/logo.jpg" />
-  <img class="boat-icon" src="/assets/icons/boat.png" />
-  <h1 class="title">Rent a boat Vourvourou</h1>
-  <img class="blades-icon" src="/assets/icons/turbine.png" />
-  <ng-container *ngIf="!mobileHeader && isBrowser">
-    <div class="menu-container">
-      <button
-        appAnimetable
-        (click)="navigate('')"
-        [ngClass]="{ active: route == '' }"
-       
-      >{{'header.home' | translate}}</button>
-      <span></span>
-      <button
-        appAnimetable
-        (click)="navigate('fleet')"
-        [ngClass]="{ active: route == 'fleet' }"
-      >
-        {{'header.fleet' | translate}}
+<header class="site-header">
+  <div class="nav-shell">
+    <button class="brand" (click)="navigate('')">
+      <img class="logo-img" src="/assets/icons/logo.jpg" alt="Medusa Boat Rental" />
+      <span class="brand-copy">
+        <strong>Medusa</strong>
+        <small>Boat Rental</small>
+      </span>
+    </button>
+
+    <img class="blades-icon" src="/assets/icons/turbine.png" alt="" />
+
+    <nav class="menu-container" *ngIf="!mobileHeader">
+      <button appAnimetable [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        {{ "header.home" | translate }}
       </button>
-      <span></span>
-      <button
-        appAnimetable
-        (click)="navigate('destinations')"
-        [ngClass]="{ active: route == 'destinations' }"
-      >
-        {{'header.dest' | translate}}
+      <button appAnimetable [routerLink]="['/fleet']" routerLinkActive="active">
+        {{ "header.fleet" | translate }}
       </button>
-      <span></span>
-      <button
-        appAnimetable
-        (click)="navigate('reviews')"
-        [ngClass]="{ active: route == 'reviews' }"
-      >
-        {{'header.reviews' | translate}}
+      <button appAnimetable [routerLink]="['/destinations']" routerLinkActive="active">
+        {{ "header.dest" | translate }}
+      </button>
+      <button appAnimetable [routerLink]="['/reviews']" routerLinkActive="active">
+        {{ "header.reviews" | translate }}
+      </button>
+    </nav>
+
+    <div class="header-actions">
+      <div class="language-container">
+        <button class="flag" (click)="setEnglish()"><img src="/assets/icons/english.png" alt="English" /></button>
+        <button class="flag" (click)="setGreek()"><img src="/assets/icons/greek.png" alt="Greek" /></button>
+      </div>
+
+      <button class="mobile-menu-container" *ngIf="mobileHeader" (click)="toggleMobileMenu()">
+        <img appAnimetable src="/assets/icons/menu.png" alt="" />
       </button>
     </div>
-  </ng-container>
-  <div class="mobile-menu-container" *ngIf="mobileHeader">
-    <img
-      appAnimetable
-      (click)="toggleMobileMenu()"
-      src="/assets/icons/menu.png"
-    />
   </div>
-  <div class="language-container">
-    <button class="flag" (click)="setEnglish()"><img src="/assets/icons/english.png" /></button>
-    <button class="flag" (click)="setGreek()"><img src="/assets/icons/greek.png" /></button>
-  </div>
-</div>
-<app-mobile-header [(open)]="mobileMenuOpen"></app-mobile-header>
 
-<div class="header-fotter-container">
-  <img class="bg-img" src="/assets/sea.jpeg" />
-</div>
+  <app-mobile-header [(open)]="mobileMenuOpen"></app-mobile-header>
+</header>

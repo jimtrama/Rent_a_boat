@@ -24,17 +24,16 @@ export class BladesService {
   }
 
   private _rotateLeft() {
+    const icon = document.getElementsByClassName('blades-icon')[0] as HTMLElement | undefined;
+    if (!icon) {
+      return;
+    }
+
     this.rotating = true;
-    document
-      .getElementsByClassName('blades-icon')[0]
-      .classList.remove('rotate-blade-right');
-    document
-      .getElementsByClassName('blades-icon')[0]
-      .classList.remove('rotate-blade-left');
+    icon.classList.remove('rotate-blade-right');
+    icon.classList.remove('rotate-blade-left');
     setTimeout(() => {
-      document
-        .getElementsByClassName('blades-icon')[0]
-        .classList.add('rotate-blade-left');
+      icon.classList.add('rotate-blade-left');
     });
     setTimeout(()=>{
       this.rotating = false;
@@ -42,17 +41,16 @@ export class BladesService {
   }
 
   private _rotateRight() {
+    const icon = document.getElementsByClassName('blades-icon')[0] as HTMLElement | undefined;
+    if (!icon) {
+      return;
+    }
+
     this.rotating = true;
-    document
-      .getElementsByClassName('blades-icon')[0]
-      .classList.remove('rotate-blade-left');
-    document
-      .getElementsByClassName('blades-icon')[0]
-      .classList.remove('rotate-blade-right');
+    icon.classList.remove('rotate-blade-left');
+    icon.classList.remove('rotate-blade-right');
     setTimeout(() => {
-      document
-        .getElementsByClassName('blades-icon')[0]
-        .classList.add('rotate-blade-right');
+      icon.classList.add('rotate-blade-right');
     });
     setTimeout(()=>{
       this.rotating = false;

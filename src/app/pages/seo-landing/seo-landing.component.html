@@ -1,0 +1,43 @@
+<section class="landing-page" *ngIf="content">
+  <section class="hero-card">
+    <div class="hero-copy">
+      <span class="eyebrow">{{ content.badge }}</span>
+      <h1 class="section-title">{{ content.title }}</h1>
+      <p class="section-copy">{{ content.intro }}</p>
+
+      <div class="hero-actions">
+        <button class="primary-btn" (click)="navigate('/fleet')">
+          {{ "homePage.see" | translate }}
+        </button>
+        <button class="secondary-btn" (click)="navigate('/destinations')">
+          {{ "header.dest" | translate }}
+        </button>
+      </div>
+
+      <div class="highlights">
+        <div class="highlight-pill" *ngFor="let item of content.highlights">{{ item }}</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sections-grid">
+    <article class="card" *ngFor="let section of content.sections">
+      <span class="title">{{ section.title }}</span>
+      <p class="section-copy">{{ section.body }}</p>
+    </article>
+  </section>
+
+  <section class="faq-shell">
+    <div class="faq-header">
+      <span class="eyebrow">{{ content.title }}</span>
+      <h2>{{ "homePage.faqTitle" | translate }}</h2>
+    </div>
+
+    <div class="faq-grid">
+      <article class="faq-card" *ngFor="let item of content.faq">
+        <h3>{{ item.question }}</h3>
+        <p>{{ item.answer }}</p>
+      </article>
+    </div>
+  </section>
+</section>

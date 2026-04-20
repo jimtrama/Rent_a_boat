@@ -1,12 +1,5 @@
 import { isPlatformBrowser } from '@angular/common';
-import {
-  Component,
-  Inject,
-  OnInit,
-  PLATFORM_ID,
-  viewChild,
-  ViewChild,
-} from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { BrowserService } from '../../services/browser.service';
@@ -20,25 +13,23 @@ import { BrowserService } from '../../services/browser.service';
 export class HeaderComponent implements OnInit {
   public mobileHeader = false;
   public mobileMenuOpen = false;
-  public route: string = '';
-  public t: string = '';
   public isBrowser: boolean;
+  private readonly mobileBreakpoint = 980;
   constructor(
     private router: Router,
     private translateService: TranslateService,
-    private broswerService:BrowserService
+    private broswerService: BrowserService,
   ) {
     this.isBrowser = this.broswerService.isBrowser;
   }
 
   ngOnInit(): void {
-    if (this.isBrowser) {
-      this.mobileHeader = window.innerWidth < 1120;
-    }
+    this.updateHeaderMode();
+  }
 
-    // this.translateService.get('header.home').subscribe(v=>{
-    //   this.t = v;
-    // });
+  @HostListener('window:resize')
+  onResize() {
+    this.updateHeaderMode();
   }
 
   toggleMobileMenu() {
@@ -50,8 +41,8 @@ export class HeaderComponent implements OnInit {
   }
 
   navigate(route: string) {
-    this.route = route;
     this.router.navigate([route]);
+    this.mobileMenuOpen = false;
   }
 
   setEnglish() {
@@ -62,5 +53,17 @@ export class HeaderComponent implements OnInit {
   setGreek() {
     localStorage.setItem('lang', 'gr');
     this.translateService.use('gr');
+  }
+
+  private updateHeaderMode() {
+    if (!this.isBrowser) {
+      return;
+    }
+
+    this.mobileHeader = window.innerWidth < this.mobileBreakpoint;
+
+    if (!this.mobileHeader) {
+      this.mobileMenuOpen = false;
+    }
   }
 }

@@ -44,7 +44,7 @@ export class CardComponent {
   }
 
   onImgClick(img: string) {
-    this.modalService.addPhotos(this.boat.imgs);
+    this.modalService.addPhotos(this.boat.imgs, this.boat.title);
     this.modalService.openModal();
   }
 

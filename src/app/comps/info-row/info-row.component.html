@@ -1,5 +1,7 @@
-<p>{{text}}</p>
-<img [src]="'/assets/icons/'+icon+'.png'">
-<div>
-    {{value}}
+<div class="icon-wrap">
+  <img [src]="'/assets/icons/' + icon + '.png'" alt="" />
+</div>
+<div class="copy">
+  <p>{{ text }}</p>
+  <span>{{ value }}</span>
 </div>

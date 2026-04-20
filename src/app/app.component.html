@@ -1,16 +1,49 @@
-<app-header></app-header>
-<router-outlet></router-outlet>
-<canvas id="canvas" width="700px" height="700px" style="position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);"></canvas>
-<div
-  style="width: 100%; display: flex; justify-content: center; margin-top: 20px;position: relative;z-index: 2;"
->
-  <img style="height: 40px" src="/assets/icons/parking.png" />
-  <span style="font-family: titleFont">{{'footer.parking' | translate}}</span>
+<div class="app-shell">
+  <div class="glow glow-left"></div>
+  <div class="glow glow-right"></div>
+  <div class="glow glow-bottom"></div>
+
+  <img
+    class="scroll-boat"
+    src="/assets/icons/medusa-boat.svg"
+    alt=""
+    [style.transform]="boatTransform"
+  />
+
+  <app-header></app-header>
+
+  <main class="page-shell">
+    <router-outlet></router-outlet>
+  </main>
+
+  <app-fotter></app-fotter>
 </div>
-<app-fotter></app-fotter>
-<div class="img-modal-container" (click)="modalService.closeModal()" *ngIf="modalService.open">
-  <div>
-    <img class="main-img" *ngFor="let photo of modalService.photos" [src]="'/assets/boats/'+photo" />
-  </div>
-  <img class="icon" src="/assets/icons/cancel.png" (click)="modalService.closeModal()" />
+
+<div
+  class="img-modal-container"
+  (click)="modalService.closeModal()"
+  *ngIf="modalService.open"
+>
+  <div class="modal-glow modal-glow-left"></div>
+  <div class="modal-glow modal-glow-right"></div>
+
+  <section class="modal-panel" (click)="$event.stopPropagation()">
+    <span class="modal-eyebrow">{{ modalService.title }}</span>
+
+    <button class="icon modal-close" (click)="modalService.closeModal()">
+      <img
+        src="/assets/icons/cancel.png"
+        [alt]="'modal.closeAlt' | translate"
+      />
+    </button>
+
+    <div class="modal-track">
+      <img
+        class="main-img"
+        *ngFor="let photo of modalService.photos"
+        [src]="'/assets/boats/' + photo"
+        alt="Medusa boat rental gallery image"
+      />
+    </div>
+  </section>
 </div>

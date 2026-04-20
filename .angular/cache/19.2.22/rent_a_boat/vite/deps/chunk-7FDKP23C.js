@@ -15,9 +15,10 @@ import {
   ɵɵdefineNgModule,
   ɵɵdefinePipe,
   ɵɵgetInheritedFactory
-} from "./chunk-7EEOF5RR.js";
+} from "./chunk-GDQ7QKAD.js";
 import {
   Subject,
+  __spreadValues,
   concat,
   concatMap,
   defer,
@@ -28,10 +29,7 @@ import {
   shareReplay,
   switchMap,
   take
-} from "./chunk-P6U2JBMQ.js";
-import {
-  __spreadValues
-} from "./chunk-3OV72XIM.js";
+} from "./chunk-S35MAB2V.js";
 
 // node_modules/@ngx-translate/core/fesm2022/ngx-translate-core.mjs
 function _(key) {
@@ -1272,4 +1270,4 @@ export {
   defaultProviders,
   TranslateModule
 };
-//# sourceMappingURL=chunk-ZW3VIB5K.js.map
+//# sourceMappingURL=chunk-7FDKP23C.js.map
