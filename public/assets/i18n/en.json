@@ -1,0 +1,156 @@
+{
+    "header":{
+        "home":"home",
+        "fleet":"Our Fleet",
+        "dest":"Destinations",
+        "reviews":"Reviews"
+    },
+    "homePage":{
+        "heroTitle":"Boat rental made for quiet, beautiful days on the water.",
+        "heroSubtitle":"Start from Vourvourou, reach Diaporos with ease, and spend the day between Blue Lagoon and hidden coves with Medusa.",
+        "heroBadge1":"No license needed",
+        "heroBadge2":"Blue Lagoon and Diaporos routes",
+        "heroBadge3":"Family-run local support",
+        "localTitle":"Local knowledge that changes the whole day",
+        "localText":"Because Medusa is based in Vourvourou, we can help you pick the right boat, understand the route and enjoy the area around Diaporos with more confidence and less stress.",
+        "routeTitle":"The route people remember most",
+        "routeText":"Blue Lagoon, Diaporos and the quiet coves around Sithonia create the kind of boat day that feels easy, bright and unforgettable from the first stop to the last.",
+        "whoTitle":"Who we are",
+        "who":"At Medusa Boat Rental we love the sea and we want to share this experience with you in Halkidiki. We are a team of professionals with many years of experience in the field of marine activities and boat trips in Diaporos area. Our goal is to offer safe, comfortable and unforgettable sea tours for every visitor who wants to discover the hidden beauties of the area.",
+        "provideTitle":"What we provide",
+        "provide":{
+            "1":"Boat rentals without a captain or a license",
+            "2":"Excursions to beautiful coves and secluded beaches",
+            "3":"Safety equipment and fully equipped boats",
+            "4":"Training & guidance for those without experience",
+            "5":"High-level service, always with a smile"
+        },
+        "chooseTitle":"Why choose us",
+        "choose":{
+            "1":"Safety & reliability: Our boats are regularly maintained and meet all specifications.",
+            "2":"Professionalism: Our team is always there for you for whatever you need.",
+            "3":"Affordable prices",
+            "4":"Local knowledge: We know the most beautiful and “secret” locations better than anyone.",
+            "5":"Unique experiences: Each excursion is tailored to your needs and desires."
+        },
+        "faqEyebrow":"Local answers",
+        "faqTitle":"Questions guests ask before they book",
+        "faqIntro":"A few practical answers before you head out on the water with Medusa.",
+        "faq":{
+            "1":{
+                "q":"Do I need a license to rent a boat in Vourvourou?",
+                "a":"For selected boats up to the local legal limit, no boating license is required. Before departure, the Medusa team explains the controls, the safe route and the main points around Diaporos and Blue Lagoon."
+            },
+            "2":{
+                "q":"What are the best places to visit with a boat rental from Vourvourou?",
+                "a":"The most popular stops are Diaporos island, Blue Lagoon, Hawaii Beach and the small hidden coves around the Vourvourou bay. These are exactly the places most travelers want to reach when they search for boat rental in Vourvourou."
+            },
+            "3":{
+                "q":"Is Medusa close to Diaporos?",
+                "a":"Yes. Medusa operates in Vourvourou, which is the main departure point for quick access to Diaporos. That makes the company a strong fit for searches such as boat rent Diaporos and Vourvourou boat rental."
+            },
+            "4":{
+                "q":"Are your boats suitable for families and first-time visitors?",
+                "a":"Yes. Many guests are couples, families or first-time renters who want a calm and easy day at sea. Medusa focuses on clean boats, clear instructions, safety equipment and practical local guidance."
+            },
+            "5":{
+                "q":"Why choose a local Vourvourou boat rental instead of a bigger platform?",
+                "a":"A local team can usually give better route advice, faster support and more accurate guidance for weather, sea conditions and the best swimming spots around Diaporos. That local trust is one of the reasons guests search directly for Vourvourou boat rental businesses."
+            }
+        },
+        "see":"See our boats"
+    },
+    "fleet":{
+        "title":"People Capacity",
+        "all":"All",
+        "introTitle":"Choose the boat that fits your day best",
+        "introText":"A carefully selected fleet built for comfort, safety and easy coastal exploration around Vourvourou.",
+        "boat":{
+            "people":"Max People:",
+            "length":"Length:",
+            "sundeck":"Sundeck:",
+            "sundeckValue":"Deck Bed"
+        },
+        "equipment":{
+            "title":"Equipment & insurance",
+            "fuel":{
+                "title":"Fuel tank",
+                "value":"Start with full tank"
+            },
+            "gps":{
+                "title":"GPS",
+                "value":"Tracking System"
+            },
+            "map":{
+                "title":"Map",
+                "value":"GPS Navigation"
+            },
+            "mp3":{
+                "title":"Mp3 Player",
+                "value":"USB/Bt"
+            },
+            "box":{
+                "title":"Box",
+                "value":"Cooler"
+            },
+            "ladder":{
+                "title":"Ladder",
+                "value":"Swim Ladder"
+            },
+            "trim":{
+                "title":"Trim",
+                "value":"Power Trim"
+            },
+            "aid":{
+                "title":"First Aid",
+                "value":"Safety Kit"
+            },
+            "chair":{
+                "title":"Deck chair",
+                "value":"Deck chair"
+            },
+            "insurance":"The boat is delivered after thorough safety inspection, so that it meets all its requirements for navigation. The boat is insured against body injuries and property damage as a result of collision against third parties at sea. Upon delivering the boat, the customer agrees that all terms and conditions are met."
+            
+        }
+    },
+    "dest":{
+        "title":"Routes through water that barely looks real",
+        "intro":"Start from Vourvourou and drift between quiet coves, shallow lagoons and the clear blue water that makes this area unforgettable.",
+        "diaporosName":"Diaporos Island",
+        "blueName":"Blue Lagoon",
+        "hawaiiName":"Hawaii Beach",
+        "diaporos":"Diaporos Island is a small but stunning island located just off the coast of Vourvourou in the region of Sithonia, part of northern Greece. Known for its crystal-clear turquoise waters, secluded coves, and lush pine forests, the island is a favorite destination for boat trips and day excursions. One of its most famous spots is the shallow lagoon called Blue Lagoon, where the calm, transparent water creates the feeling of swimming in a natural pool. With no large developments and a peaceful natural atmosphere, Diaporos offers visitors a tranquil escape and some of the most beautiful swimming spots in Halkidiki.",
+        "bule":"Blue Lagoon is a shallow bay with a white sandy sea bottom. This combination of white sand and shallow water allows the water to take a very glacier-blue color. From above it seems as if someone turned on underwater lights to lighten the lagoon like a dazzling gem – it’s absolutely stunning!",
+        "hawaii":"This small jewel, which is only a short distance from the coast of Vourvourou, is a genuine heaven on earth. The natives gave it the nickname “Hawaii” with good reason because of its naturally white, blindingly bright beaches and lush, green forests. You will be astounded by the unique splendor of this location on the southern tip of Diaporos island once you arrive there. It also offers captivating, deep, tranquil seas that are perfect for endless swimming. This beach is undoubtedly the closest thing to a beautiful tropical paradise that you can find."
+    },
+    "reviews":{
+        "title":"From google maps",
+        "heroTitle":"Guests remember how effortless the day felt",
+        "subtitle":"Real words from travelers who rented with Medusa and spent the day on the water around Vourvourou.",
+        "googleLabel":"Google rating",
+        "more":"see more",
+        "1":"We rented a big boat for 9 people and the boat was amazing. A brand new boat and for a very fair price ( it was much cheaper than other places which we checked). We had lots of fun and the owner was helpful and patient to explain everything we needed. Him and his wife were also welcoming, nice beautiful people! ❤️ Many thanks for this amazing experience.",
+        "2":"Very friendly guide that showed us the best beaches to relax on. The boats were clean and in top condition. The prices are also fair and when in a bigger group it becomes a very cheap way to have a lot of fun for a small price.",
+        "3":"Service was perfect. Boat is nice looking, very comfortable and very well equipped.",
+        "4":"We enjoyed our trip renting the boat in Medusa company.  Everything is perfect. Recommend to everybody who wants to enjoy trip on the boat",
+        "5":"We rented a small boat and had an amazing experience! This family-owned business was extremely friendly and professional. They showed us everything clearly, prices were great, and we didn't have to wait at all. 100% recommended! 🚤☀️…",
+        "6":"We had an amazing time renting this boat! Everything was smooth from start to finish—easy booking, clear instructions, and the boat itself was in excellent condition. The staff was friendly, professional, and made sure we were comfortable before setting off. The scenery was beautiful, and cruising around was the perfect way to spend the day. Highly recommend this rental to anyone looking for a fun and relaxing experience on the water!"
+    },
+    "footer":{
+        "title":"Talk to Medusa before you sail out",
+        "subtitle":"We help you choose the right boat, explain the route and keep the whole experience calm, clear and enjoyable from the first minute.",
+        "mapTitle":"Location",
+        "locationTitle":"Vourvourou, right by the water",
+        "locationText":"Find us near the shore and start your route toward Diaporos, Blue Lagoon and the hidden beaches around Sithonia.",
+        "searchTitle":"Helpful route pages",
+        "searchIntro":"Explore a few focused pages about the places and routes guests care about most.",
+        "parking":"Free Parking",
+        "akis":"Aki's",
+        "xrisa":"Xrisa's",
+        "dates":"Monday - Sunday"
+    },
+    "modal":{
+        "eyebrow":"Medusa Fleet",
+        "closeAlt":"Close gallery"
+    }
+}

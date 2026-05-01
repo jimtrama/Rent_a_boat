@@ -1,0 +1,33 @@
+<svg width="640" height="420" viewBox="0 0 640 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="boatGlow" x1="121" y1="90" x2="472" y2="332" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#C7F5FF"/>
+      <stop offset="0.52" stop-color="#75D8FF"/>
+      <stop offset="1" stop-color="#1E88D9"/>
+    </linearGradient>
+    <linearGradient id="boatSoft" x1="180" y1="150" x2="416" y2="285" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F5FDFF" stop-opacity="0.92"/>
+      <stop offset="1" stop-color="#7ACDFF" stop-opacity="0.62"/>
+    </linearGradient>
+    <filter id="softBlur" x="0" y="0" width="640" height="420" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="22"/>
+    </filter>
+  </defs>
+
+  <g opacity="0.38" filter="url(#softBlur)">
+    <ellipse cx="330" cy="300" rx="170" ry="46" fill="#49CFFF"/>
+  </g>
+
+  <path d="M142 254C181 257 228 261 274 261H407C451 261 487 254 523 243L545 266C480 296 452 305 390 315L212 314C176 309 140 293 109 265L142 254Z" fill="url(#boatGlow)" fill-opacity="0.18"/>
+
+  <path d="M183 112L252 111L290 172H384L444 219H206L183 112Z" stroke="url(#boatGlow)" stroke-width="14" stroke-linejoin="round"/>
+  <path d="M132 237L205 220H444L530 237L505 268C470 291 432 302 384 307H218C177 302 138 284 109 253L132 237Z" stroke="url(#boatGlow)" stroke-width="16" stroke-linejoin="round"/>
+  <path d="M232 78L239 31" stroke="url(#boatSoft)" stroke-width="12" stroke-linecap="round"/>
+  <path d="M241 44L338 89" stroke="url(#boatSoft)" stroke-width="12" stroke-linecap="round"/>
+  <path d="M249 109L285 172" stroke="url(#boatSoft)" stroke-width="10" stroke-linecap="round"/>
+  <path d="M316 171V221" stroke="url(#boatSoft)" stroke-width="10" stroke-linecap="round"/>
+  <path d="M369 171V221" stroke="url(#boatSoft)" stroke-width="10" stroke-linecap="round"/>
+  <path d="M178 278C238 293 290 298 355 298C420 298 470 292 522 276" stroke="url(#boatSoft)" stroke-width="8" stroke-linecap="round" opacity="0.7"/>
+  <circle cx="296" cy="196" r="11" fill="#D9FAFF"/>
+  <circle cx="350" cy="196" r="11" fill="#D9FAFF"/>
+</svg>

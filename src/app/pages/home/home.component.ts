@@ -1,5 +1,6 @@
 import { AfterViewInit, Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { BrowserService } from '../../services/browser.service';
 
 @Component({
   selector: 'app-home',
@@ -8,9 +9,10 @@ import { Router } from '@angular/router';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent implements AfterViewInit {
-  constructor(private router:Router){}
+  constructor(private router:Router,private broswerService:BrowserService){}
 
   ngAfterViewInit(): void {
+    if(this.broswerService.isBrowser)
     document
       .getElementsByTagName('app-header')[0]
       .scrollIntoView({ behavior: 'smooth' });

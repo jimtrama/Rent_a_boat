@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://medusaboatrental.gr/sitemap.xml
+Host: https://medusaboatrental.gr

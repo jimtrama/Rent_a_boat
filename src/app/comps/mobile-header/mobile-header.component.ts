@@ -14,8 +14,8 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrl: './mobile-header.component.scss',
   animations: [
     trigger('openClose', [
-      state('open', style({ top: '80px' })),
-      state('close', style({ top: '-200px' })),
+      state('open', style({ opacity: 1, transform: 'translate(-50%, 0)', pointerEvents: 'auto' })),
+      state('close', style({ opacity: 0, transform: 'translate(-50%, -20px)', pointerEvents: 'none' })),
       transition('open => close', [animate('0.3s')]),
       transition('close => open', [animate('0.3s')]),
     ]),
@@ -26,7 +26,6 @@ export class MobileHeaderComponent {
   @Input() open!: boolean;
 
   toggleMenu() {
-    console.log(this.open);
     this.open = !this.open;
     this.openChange.emit(this.open);
     

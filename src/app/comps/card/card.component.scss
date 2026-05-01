@@ -1,115 +1,177 @@
 :host{
-    background-color: transparent;
-    width:fit-content;
-    height: 90%;
-    min-height: fit-content;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex: none;
-    scroll-snap-align:center;
+    width: min(100%, 560px);
+    display: block;
     position: relative;
-    gap: 10px; 
     margin-top: 10px;
-    padding: 10px 12px;
-    box-shadow: rgba(74, 74, 74, 0.8) 0px 5px 15px;
-    border-radius: 10px;
-    background-color: white;
+    padding: 16px;
+    border-radius: 24px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+  box-shadow: var(--shadow-lg);
+  backdrop-filter: blur(18px);
+  animation: revealBoatCard 0.8s ease both;
+  transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
 }
+
+:host:hover {
+  transform: translateY(-6px);
+  border-color: rgba(122, 215, 255, 0.28);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+}
+
 .new-container{
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    gap: 5px;
-    flex-wrap: wrap;
-    
+    display: grid;
+    gap: 18px;
+}
+
+.gallery-column{
+    display: grid;
+    gap: 16px;
 }
 
 .imgs-container{
     display: flex;
-    overflow-x: scroll;
-    width: 300px;
-    height: 300px;
+    overflow: hidden;
+    width: 100%;
+    height: 320px;
     gap: 10px;
     justify-content: flex-start;
     align-items: center;
-    scroll-snap-type: x mandatory;
-    scroll-snap-align: center;
     position:relative;
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.04);
 }
 
 .img{
     object-fit: cover;
     position:absolute;
-    width: calc(90% - 10px);
-    height: 100%;
-    border-radius: 10px;
-    transition: all 1.2s;
-    margin: 10px;
-    box-shadow: rgba(255, 255, 255, 0.35) 0px 5px 15px;
+    width: calc(100% - 48px);
+    height: calc(100% - 30px);
+    border-radius: 18px;
+    transition: all 0.8s ease;
+    margin: 15px 24px;
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.22);
     cursor: pointer;
 }
 
 .main-container{
-    display: flex;
-    width: 340px;
-    height: fit-content;
-    flex-direction: column;
-    justify-content: center;
-    align-items:  flex-start;
-    gap: 5px;
-    margin-top: 20px;
-    background-color: white;
-    border-radius: 10px;
+    display: grid;
+    gap: 12px;
 }
 
-@media screen and (max-width:743px) {
-    .main-container{
-        align-items: center;
-    }
+.boat-title{
+    font-family: prettyFont;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    color: var(--text);
+    animation: floatTitle 6s ease-in-out infinite;
 }
 
 .arrows-container{
-    width: 50%;
     display: flex;
     gap: 10px;
-    align-self: center;
     justify-content: center;
 }
 
 .arrow{
-    height: 20px;
-    width: 20px;
+    height: 42px;
+    width: 42px;
     border-radius: 50%;
-    background-color: white;
+    background: rgba(255, 255, 255, 0.08);
     cursor: pointer;
     padding: 10px;
-    box-shadow: rgba(150, 150, 150, 0.35) 0px 5px 15px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
+    transition: transform 0.18s ease, background-color 0.18s ease;
+}
+
+.arrow:hover {
+    transform: scale(1.08);
+    background: rgba(122, 215, 255, 0.14);
 }
 .left-icon{
     transform: rotate(-180deg);
+}
+
+.left-icon:hover{
+    transform: rotate(-180deg) scale(1.08);
 }
 
 .card{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 70%;
-    img{
-        height: 30px;
+    gap: 14px;
+    padding: 14px 16px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--line);
+    transition: transform 0.22s ease, background-color 0.22s ease;
+}
+
+.card:hover{
+    transform: translateX(4px);
+    background: rgba(122, 215, 255, 0.08);
+}
+
+.card-head{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.card img{
+    height: 24px;
+}
+
+.bullet{
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #7ad7ff 0%, #b8f4ff 100%);
+    animation: pulseBullet 2.4s ease-in-out infinite;
+}
+
+.title{
+    font-family: mainFont;
+    color: var(--muted);
+    height: fit-content;
+}
+
+.info{
+    font-family: titleFont;
+}
+
+@media screen and (max-width:743px) {
+    .card{
+        flex-direction: column;
+        align-items: flex-start;
     }
-    .bullet{
-        height: 10px;
-        width: 10px;
-        border-radius: 50%;
-        background-color: black;
+}
+
+@keyframes revealBoatCard {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
     }
-    .title{
-        font-size: larger;
-        font-family: mainFont;
+    100% {
+        opacity: 1;
+        transform: translateY(0);
     }
-    .info{
-        font-family: titleFont;
+}
+
+@keyframes floatTitle {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-3px);
+    }
+}
+
+@keyframes pulseBullet {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.3);
     }
 }

@@ -1,0 +1,156 @@
+:host {
+  display: block;
+  position: relative;
+  z-index: 2;
+}
+
+.landing-page {
+  width: var(--content-width);
+  margin: 18px auto 0;
+  display: grid;
+  gap: 24px;
+}
+
+.hero-card,
+.card,
+.faq-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-lg);
+  backdrop-filter: blur(18px);
+}
+
+.hero-card {
+  padding: clamp(22px, 4vw, 40px);
+  border-radius: 32px;
+}
+
+.hero-copy {
+  display: grid;
+  gap: 18px;
+}
+
+.eyebrow,
+.title {
+  width: fit-content;
+  height: fit-content;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(122, 215, 255, 0.1);
+  color: var(--primary);
+  font-family: titleFont;
+  letter-spacing: 0.08em;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.primary-btn,
+.secondary-btn {
+  min-height: 50px;
+  padding: 0 22px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: titleFont;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  cursor: pointer;
+}
+
+.primary-btn {
+  color: #02101c;
+  background: linear-gradient(135deg, #7ad7ff 0%, #b8f4ff 100%);
+  box-shadow: 0 0 28px rgba(122, 215, 255, 0.22);
+}
+
+.secondary-btn {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--line);
+  color: var(--text);
+}
+
+.primary-btn:hover,
+.secondary-btn:hover {
+  transform: translateY(-2px);
+}
+
+.highlights {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.highlight-pill {
+  padding: 12px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--muted);
+}
+
+.sections-grid,
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.card,
+.faq-card {
+  padding: 24px;
+  border-radius: 26px;
+  display: grid;
+  gap: 14px;
+}
+
+.faq-shell {
+  display: grid;
+  gap: 18px;
+}
+
+.faq-header {
+  display: grid;
+  gap: 12px;
+  width: min(760px, 100%);
+
+  h2 {
+    font-family: titleFont;
+    font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+    line-height: 1.08;
+  }
+}
+
+.faq-card {
+  h3 {
+    font-family: titleFont;
+    line-height: 1.4;
+    font-size: 1.05rem;
+  }
+
+  p {
+    color: var(--muted);
+    line-height: 1.75;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .sections-grid,
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .landing-page {
+    width: min(calc(100vw - 24px), 640px);
+  }
+
+  .hero-card {
+    padding: 20px;
+    border-radius: 26px;
+  }
+}

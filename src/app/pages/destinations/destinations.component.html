@@ -1,8 +1,31 @@
-<div class="card">
-    <img src="/assets/destinations/blue.jpg"/>
-    <span>Blue Lagoon is a shallow bay with a white sandy sea bottom. This combination of white sand and shallow water allows the water to take a very glacier-blue color. From above it seems as if someone turned on underwater lights to lighten the lagoon like a dazzling gem – it’s absolutely stunning!</span>
-</div>
-<div class="card" >
-    <img  src="/assets/destinations/mystri.webp"/>
-    <span>This small jewel, which is only a short distance from the coast of Vourvourou, is a genuine heaven on earth. The natives gave it the nickname “Hawaii” with good reason because of its naturally white, blindingly bright beaches and lush, green forests. You will be astounded by the unique splendor of this location on the southern tip of Diaporos island once you arrive there. It also offers captivating, deep, tranquil seas that are perfect for endless swimming. This beach is undoubtedly the closest thing to a beautiful tropical paradise that you can find.</span>
-</div>
+<section class="destinations-page">
+  <section class="intro-card">
+    <span class="eyebrow">{{ "header.dest" | translate }}</span>
+    <h1 class="section-title">{{ "dest.title" | translate }}</h1>
+    <p class="section-copy">{{ "dest.intro" | translate }}</p>
+  </section>
+
+  <article class="card">
+    <img src="/assets/destinations/diaporos.jpeg" alt="Diaporos Island" />
+    <div class="content">
+      <span class="name">{{ "dest.diaporosName" | translate }}</span>
+      <p>{{ "dest.diaporos" | translate }}</p>
+    </div>
+  </article>
+
+  <article class="card reverse">
+    <img src="/assets/destinations/blue.jpg" alt="Blue Lagoon" />
+    <div class="content">
+      <span class="name">{{ "dest.blueName" | translate }}</span>
+      <p>{{ "dest.bule" | translate }}</p>
+    </div>
+  </article>
+
+  <article class="card">
+    <img src="/assets/destinations/mystri.webp" alt="Hawaii Beach" />
+    <div class="content">
+      <span class="name">{{ "dest.hawaiiName" | translate }}</span>
+      <p>{{ "dest.hawaii" | translate }}</p>
+    </div>
+  </article>
+</section>

@@ -1,17 +1,35 @@
-<div style="display: flex;align-items: center;justify-content: center;gap: 10px;margin-bottom: 0;">
-    <span style="font-family: mainFont;">From google maps</span>
-    <img style="height: 30px;border-radius: 10px;" src="/assets/icons/google.png" >
-</div>
-<div class="card" *ngFor="let review of reviews" >
+<section class="reviews-page">
+  <section class="reviews-intro">
     <div>
-        <img src="/assets/icons/star.png" alt="">
-        <img src="/assets/icons/star.png" alt="">
-        <img src="/assets/icons/star.png" alt="">
-        <img src="/assets/icons/star.png" alt="">
-        <img src="/assets/icons/star.png" alt="">
+      <span class="eyebrow">{{ "reviews.title" | translate }}</span>
+      <h1 class="section-title">{{ "reviews.heroTitle" | translate }}</h1>
+      <p class="section-copy">{{ "reviews.subtitle" | translate }}</p>
     </div>
-    <span>{{review}}</span>
-</div>
-<div>
-    <button (click)="seeMoreClick()">see more</button>
-</div>
+
+    <div class="google-badge">
+      <img src="/assets/icons/google.png" alt="Google" />
+      <strong>5.0</strong>
+      <span>{{ "reviews.googleLabel" | translate }}</span>
+    </div>
+  </section>
+
+  <div class="reviews-grid">
+    <article class="card" *ngFor="let item of [1,2,3,4,5,6]">
+      <div class="review-top">
+        <div class="stars">
+          <img src="/assets/icons/star.png" alt="" />
+          <img src="/assets/icons/star.png" alt="" />
+          <img src="/assets/icons/star.png" alt="" />
+          <img src="/assets/icons/star.png" alt="" />
+          <img src="/assets/icons/star.png" alt="" />
+        </div>
+        <img class="google-icon" src="/assets/icons/google.png" alt="" />
+      </div>
+      <span>{{ ("reviews." + item) | translate }}</span>
+    </article>
+  </div>
+
+  <div class="cta-row">
+    <button (click)="seeMoreClick()">{{ "reviews.more" | translate }}</button>
+  </div>
+</section>

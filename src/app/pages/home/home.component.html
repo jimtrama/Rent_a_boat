@@ -1,62 +1,101 @@
 
- 
-<div class="card" >
-    <span class="title" >Who we are</span>
-    <span>
-        At Medusa Boat Rental we love the sea and we want to share this experience with you in Halkidiki. We are a team of professionals with many years of experience in the field of marine activities and boat trips in Diaporos area. Our goal is to offer safe, comfortable and unforgettable sea tours for every visitor who wants to discover the hidden beauties of the area.
-    </span>
-</div>
-<div class="card" >
-    <span class="title" >What we provide</span>
-    <div class="row" >
-        <span class="bullet" ></span>
-        <span>Boat rentals with or without a captain</span>
-    </div>
-    <div class="row" >
-        <span class="bullet" ></span>
-        <span>Organized excursions to beautiful coves and secluded beaches</span>
-    </div>
-    <div class="row" >
-        <span class="bullet" ></span>
-        <span>Safety equipment and fully equipped boats</span>
-    </div>
-    <div class="row" >
-        <span class="bullet" ></span>
-        <span>Training & guidance for those without experience</span>
-    </div>
-    <div class="row" >
-        <span class="bullet" ></span>
-        <span>Flexible packages for families, couples or groups</span>
-    </div>
-    <div class="row" >
-        <span class="bullet" ></span>
-        <span>High-level service, always with a smile</span>
-    </div>
-</div>
+<section class="home-page">
+  <section class="hero-card">
+    <div class="hero-copy">
+      <span class="eyebrow">Medusa Boat Rental</span>
+      <h1 class="section-title">{{ "homePage.heroTitle" | translate }}</h1>
+      <p class="section-copy">{{ "homePage.heroSubtitle" | translate }}</p>
 
-<div class="card" >
-    <span class="title" >Why choose us</span>
-    <div class="row" >
-        <span class="bullet" ></span>
-        <span>Safety & reliability: Our boats are regularly maintained and meet all specifications.</span>
+      <div class="hero-actions">
+        <button class="primary-btn" (click)="navigateToBoats()">
+          {{ "homePage.see" | translate }}
+        </button>
+        <a class="secondary-btn" routerLink="/destinations">
+          {{ "header.dest" | translate }}
+        </a>
+      </div>
+
+      <div class="hero-points">
+        <div class="point-card">{{ "homePage.heroBadge1" | translate }}</div>
+        <div class="point-card">{{ "homePage.heroBadge2" | translate }}</div>
+        <div class="point-card">{{ "homePage.heroBadge3" | translate }}</div>
+      </div>
     </div>
-    <div class="row" >
-        <span class="bullet" ></span>
-        <span>Professionalism: Our team is always there for you for whatever you need.</span>
+
+    <div class="hero-media">
+      <img
+        src="/assets/sea.jpeg"
+        alt="Vourvourou boat rental route toward Diaporos and Blue Lagoon"
+        loading="eager"
+        fetchpriority="high"
+      />
     </div>
-    <div class="row" >
-        <span class="bullet" ></span>
-        <span>Affordable prices with no hidden fees.</span>
+  </section>
+
+  <section class="seo-strip">
+    <article class="card seo-card">
+      <span class="title">{{ "homePage.localTitle" | translate }}</span>
+      <p class="section-copy">{{ "homePage.localText" | translate }}</p>
+    </article>
+    <article class="card seo-card">
+      <span class="title">{{ "homePage.routeTitle" | translate }}</span>
+      <p class="section-copy">{{ "homePage.routeText" | translate }}</p>
+    </article>
+  </section>
+
+  <section class="cards-grid">
+    <article class="card">
+      <span class="title">{{ "homePage.whoTitle" | translate }}</span>
+      <p class="section-copy">{{ "homePage.who" | translate }}</p>
+    </article>
+
+    <article class="card">
+      <span class="title">{{ "homePage.provideTitle" | translate }}</span>
+      <div class="row"><span class="bullet"></span><span>{{ "homePage.provide.1" | translate }}</span></div>
+      <div class="row"><span class="bullet"></span><span>{{ "homePage.provide.2" | translate }}</span></div>
+      <div class="row"><span class="bullet"></span><span>{{ "homePage.provide.3" | translate }}</span></div>
+      <div class="row"><span class="bullet"></span><span>{{ "homePage.provide.4" | translate }}</span></div>
+      <div class="row"><span class="bullet"></span><span>{{ "homePage.provide.5" | translate }}</span></div>
+    </article>
+
+    <article class="card">
+      <span class="title">{{ "homePage.chooseTitle" | translate }}</span>
+      <div class="row"><span class="bullet"></span><span>{{ "homePage.choose.1" | translate }}</span></div>
+      <div class="row"><span class="bullet"></span><span>{{ "homePage.choose.2" | translate }}</span></div>
+      <div class="row"><span class="bullet"></span><span>{{ "homePage.choose.3" | translate }}</span></div>
+      <div class="row"><span class="bullet"></span><span>{{ "homePage.choose.4" | translate }}</span></div>
+      <div class="row"><span class="bullet"></span><span>{{ "homePage.choose.5" | translate }}</span></div>
+    </article>
+  </section>
+
+  <section class="faq-shell">
+    <div class="faq-header">
+      <span class="eyebrow">{{ "homePage.faqEyebrow" | translate }}</span>
+      <h2>{{ "homePage.faqTitle" | translate }}</h2>
+      <p>{{ "homePage.faqIntro" | translate }}</p>
     </div>
-    <div class="row" >
-        <span class="bullet" ></span>
-        <span>Local knowledge: We know the most beautiful and “secret” locations better than anyone.</span>
+
+    <div class="faq-grid">
+      <article class="card faq-card">
+        <h3>{{ "homePage.faq.1.q" | translate }}</h3>
+        <p>{{ "homePage.faq.1.a" | translate }}</p>
+      </article>
+      <article class="card faq-card">
+        <h3>{{ "homePage.faq.2.q" | translate }}</h3>
+        <p>{{ "homePage.faq.2.a" | translate }}</p>
+      </article>
+      <article class="card faq-card">
+        <h3>{{ "homePage.faq.3.q" | translate }}</h3>
+        <p>{{ "homePage.faq.3.a" | translate }}</p>
+      </article>
+      <article class="card faq-card">
+        <h3>{{ "homePage.faq.4.q" | translate }}</h3>
+        <p>{{ "homePage.faq.4.a" | translate }}</p>
+      </article>
+      <article class="card faq-card">
+        <h3>{{ "homePage.faq.5.q" | translate }}</h3>
+        <p>{{ "homePage.faq.5.a" | translate }}</p>
+      </article>
     </div>
-    <div class="row" >
-        <span class="bullet" ></span>
-        <span>Unique experiences: Each excursion is tailored to your needs and desires.</span>
-    </div>
-</div>
-<div style="width: 100%;text-align: center;z-index: 1;position: relative;" >
-    <button (click)="navigateToBoats()" >See our boats</button>
-</div>
+  </section>
+</section>

@@ -1,31 +1,41 @@
-<div class="logo-container">
-  <img class="logo-img" src="/assets/icons/medusa.png" />
-  <img class="boat-icon" src="/assets/icons/boat.png" />
-  <span class="title">Medusa Boats</span>
-  <img class="blades-icon" src="/assets/icons/turbine.png" />
-  <div class="menu-container" *ngIf="!mobileHeader">
-    <button appAnimetable (click)="navigate('home')" [ngClass]="{'active':route=='home'}">Home</button>
-    <span></span>
-    <button appAnimetable (click)="navigate('fleet')" [ngClass]="{'active':route=='fleet'}">
-      Our Fleet
+<header class="site-header">
+  <div class="nav-shell">
+    <button class="brand" (click)="navigate('')">
+      <img class="logo-img" src="/assets/icons/logo.jpg" alt="Medusa Boat Rental" />
+      <span class="brand-copy">
+        <strong>Medusa</strong>
+        <small>Boat Rental</small>
+      </span>
     </button>
-    <span></span>
-    <button appAnimetable (click)="navigate('destinations')"  [ngClass]="{'active':route=='destinations'}" >
-      Destinations
-    </button>
-    <span></span>
-    <button appAnimetable (click)="navigate('reviews')" [ngClass]="{'active':route=='reviews'}" >
-      Reviews
-    </button>
+
+    <img class="blades-icon" src="/assets/icons/turbine.png" alt="" />
+
+    <nav class="menu-container" *ngIf="!mobileHeader">
+      <button appAnimetable [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        {{ "header.home" | translate }}
+      </button>
+      <button appAnimetable [routerLink]="['/fleet']" routerLinkActive="active">
+        {{ "header.fleet" | translate }}
+      </button>
+      <button appAnimetable [routerLink]="['/destinations']" routerLinkActive="active">
+        {{ "header.dest" | translate }}
+      </button>
+      <button appAnimetable [routerLink]="['/reviews']" routerLinkActive="active">
+        {{ "header.reviews" | translate }}
+      </button>
+    </nav>
+
+    <div class="header-actions">
+      <div class="language-container">
+        <button class="flag" (click)="setEnglish()"><img src="/assets/icons/english.png" alt="English" /></button>
+        <button class="flag" (click)="setGreek()"><img src="/assets/icons/greek.png" alt="Greek" /></button>
+      </div>
+
+      <button class="mobile-menu-container" *ngIf="mobileHeader" (click)="toggleMobileMenu()">
+        <img appAnimetable src="/assets/icons/menu.png" alt="" />
+      </button>
+    </div>
   </div>
-  <div class="mobile-menu-container" *ngIf="mobileHeader">
-    <img appAnimetable (click)="toggleMobileMenu()" src="/assets/icons/menu.png" />
-  </div>
-</div>
-<app-mobile-header [(open)]="mobileMenuOpen"></app-mobile-header>
 
-
-<div class="header-fotter-container">
-  <img class="bg-img" src="/assets/sea.webp" >
-</div>
-
+  <app-mobile-header [(open)]="mobileMenuOpen"></app-mobile-header>
+</header>
