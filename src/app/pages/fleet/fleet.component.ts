@@ -30,7 +30,7 @@ export class FleetComponent implements OnInit, AfterViewInit {
       people: '6+1',
       length: '5m',
       imgs: ["1.jpg",'4.jpeg', '3.jpeg'],
-      title: 'Carel',
+      title: 'Karel',
       bed: true,
     }),
     new Boat({
